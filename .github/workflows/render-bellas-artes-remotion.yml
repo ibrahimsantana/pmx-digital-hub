@@ -38,6 +38,11 @@ jobs:
           test -f public/pmx_logo.webp || (echo 'Missing public/pmx_logo.webp' && exit 2)
           test -f public/colectivo_logo.webp || (echo 'Missing public/colectivo_logo.webp' && exit 2)
 
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
       - name: Prepare higher-quality Jen source
         run: |
           ffmpeg -y -i public/jen_master.mp4 \
