@@ -18,8 +18,8 @@ const safe = {left: 72, right: 72, top: 88, bottom: 170};
 
 const BrandBug: React.FC = () => (
   <div style={{position:'absolute', top:safe.top, left:safe.left, right:safe.right, display:'flex', alignItems:'center', justifyContent:'space-between', zIndex:20}}>
-    <Img src={staticFile('colectivo_logo.png')} style={{width:118, height:118, objectFit:'contain'}} />
-    <Img src={staticFile('pmx_logo.png')} style={{width:390, height:98, objectFit:'contain'}} />
+    <Img src={staticFile('colectivo_logo.webp')} style={{width:118, height:118, objectFit:'contain'}} />
+    <Img src={staticFile('pmx_logo.webp')} style={{width:390, height:98, objectFit:'contain'}} />
   </div>
 );
 
@@ -88,8 +88,8 @@ const Closing: React.FC = () => {
   return (
     <AbsoluteFill style={{background:C.field, padding:`${safe.top}px ${safe.right}px ${safe.bottom}px ${safe.left}px`}}>
       <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-        <Img src={staticFile('colectivo_logo.png')} style={{width:150,height:150,objectFit:'contain'}} />
-        <Img src={staticFile('pmx_logo.png')} style={{width:430,height:110,objectFit:'contain'}} />
+        <Img src={staticFile('colectivo_logo.webp')} style={{width:150,height:150,objectFit:'contain'}} />
+        <Img src={staticFile('pmx_logo.webp')} style={{width:430,height:110,objectFit:'contain'}} />
       </div>
       <div style={{marginTop:230, opacity, scale}}>
         <GoldRule width={260}/>
