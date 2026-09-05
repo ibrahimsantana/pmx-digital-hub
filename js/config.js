@@ -17,7 +17,7 @@ window.PMX_CONFIG = Object.freeze({
   calendarUrl: "",
   gopackgoUrl: "",
   analytics: Object.freeze({
-    GA4_MEASUREMENT_ID: "",
+    GA4_MEASUREMENT_ID: "G-QEN5F5YY14",
     hubVersion: "p0",
     eventVersion: "1.0"
   }),

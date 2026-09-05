@@ -17,7 +17,7 @@ Repository target:
 
 ## STATUS
 
-`PASS · GA4 instrumentation implemented · Local QA passed · Measurement ID pending`
+`PASS · GA4 instrumentation active · Local QA passed · Live QA pending`
 
 ## GIT
 
@@ -69,10 +69,10 @@ Student benefits:
 `NOT A BUILD BLOCKER`
 
 GitHub Pages:
-`NOT CONFIGURED · INTENTIONALLY DEFERRED`
+`ACTIVE · AUTOMATIC REDEPLOY EXPECTED AFTER PUSH`
 
 Public Hub URL:
-`HOLD · NOT DEPLOYED`
+`https://ibrahimsantana.github.io/pmx-digital-hub/`
 
 Custom domain:
 `FUTURE / OPTIONAL`
@@ -138,13 +138,13 @@ GitHub Pages measurement spec:
 `PASS · SPEC V0.1 RECEIVED`
 
 Final instrumentation:
-`IMPLEMENTED · LOCAL QA PASS · MEASUREMENT ID PENDING`
+`ACTIVE · LIVE QA PENDING`
 
 GA4 provider:
 `GOOGLE ANALYTICS 4 STANDARD · gtag.js`
 
 GA4 Measurement ID:
-`PENDING · GA4_MEASUREMENT_ID=""`
+`PASS · G-QEN5F5YY14`
 
 Event helper:
 `PASS · pmxTrack(eventName, extraParams) · SINGLE SEND POINT`
@@ -156,7 +156,7 @@ REGISTRO_CONFIRMADO:
 `HOLD · DO NOT FIRE P0`
 
 External data transmission:
-`NONE`
+`GA4 EVENT DATA ONLY · NO PII`
 
 ## BUILD
 
@@ -185,7 +185,7 @@ Unconfirmed operational values:
 `EXPLICIT TECHNICAL PLACEHOLDERS`
 
 Deployment:
-`NOT STARTED`
+`GITHUB PAGES ACTIVE · REDEPLOY EXPECTED AFTER PUSH`
 
 ## QA
 
@@ -225,6 +225,9 @@ Analytics test cases:
 GA4 disabled behavior:
 `PASS · NO gtag.js LOAD · NO EXTERNAL SEND · CTA FUNCTIONAL`
 
+GA4 active behavior:
+`PASS · LOCAL PROVIDER LOAD · HUB_VIEW AND CLICK_REGISTRO SENT ONCE`
+
 Attribution persistence:
 `PASS · SESSION STORAGE · INSTAGRAM STORY TO DIRECT NAVIGATION VERIFIED`
 
@@ -256,7 +259,7 @@ FINAL REMOTE HEAD:
 ### Later-phase dependencies
 
 For GA4 activation:
-`APPROVED GA4 MEASUREMENT ID REQUIRED`
+`CLOSED · APPROVED MEASUREMENT ID G-QEN5F5YY14 CONFIGURED`
 
 For final visual parity:
 `APPROVED FIGMA HANDOFF / AUTHORITATIVE ASSETS REQUIRED`
@@ -266,8 +269,8 @@ For public URL:
 
 ## NEXT ACTION
 
-After an approved Measurement ID is supplied:
-`ACTIVATE GA4 · VALIDATE REAL EVENTS IN DEBUGVIEW`
+After automatic Pages redeploy:
+`VALIDATE REAL EVENTS IN GA4 DEBUGVIEW`
 
 Do not configure GitHub Pages, integrate Figma or begin another phase automatically.
 
