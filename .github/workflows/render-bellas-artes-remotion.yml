@@ -1,0 +1,57 @@
+name: Render · Bellas Artes · Remotion
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - remotion/bellas-artes-2026
+    paths:
+      - 'remotion/bellas-artes-2026/**'
+      - '.github/workflows/render-bellas-artes-remotion.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: remotion/bellas-artes-2026
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: remotion/bellas-artes-2026/package-lock.json
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Verify required media
+        run: |
+          test -f public/jen_master.mp4 || (echo 'Missing public/jen_master.mp4' && exit 2)
+          test -f public/pmx_logo.png || (echo 'Missing public/pmx_logo.png' && exit 2)
+          test -f public/colectivo_logo.png || (echo 'Missing public/colectivo_logo.png' && exit 2)
+
+      - name: Render Reel
+        run: npm run render
+
+      - name: Render Cover
+        run: npm run still
+
+      - name: Upload render artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: PMX-Bellas-Artes-Remotion-Render
+          path: |
+            remotion/bellas-artes-2026/out/pmx-bellas-artes-reel.mp4
+            remotion/bellas-artes-2026/out/pmx-bellas-artes-cover.png
+          if-no-files-found: error
+          retention-days: 14
