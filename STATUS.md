@@ -9,15 +9,18 @@ Partnership ID:
 `PMX-PART-2026-WINGSTOP-COND-001`
 
 Repository:
-`ibrahimsantana/pmx-digital-hub`
+`packersmexico/packersmexico.github.io`
+
+Organization:
+`packersmexico`
 
 ## CURRENT PHASE
 
-`FASE 2B · FIGMA VISUAL HANDOFF IMPLEMENTATION`
+`FASE 2B · PUBLIC HUB IMPLEMENTATION + FINAL QA`
 
 ## STATUS
 
-`FIGMA HANDOFF IMPLEMENTED · PUBLIC REDEPLOY / REAL-BROWSER QA PENDING`
+`FIGMA HANDOFF IMPLEMENTED · ORG MIGRATION PASS · PUBLIC HUB ACTIVE · FINAL MOBILE QA PENDING`
 
 ## INFRASTRUCTURE
 
@@ -25,7 +28,16 @@ P0 hosting:
 `GitHub Pages · ACTIVE`
 
 Public Hub URL:
-`https://ibrahimsantana.github.io/pmx-digital-hub/`
+`https://packersmexico.github.io/`
+
+Repository migration:
+`PASS · MOVED FROM ibrahimsantana/pmx-digital-hub TO packersmexico/packersmexico.github.io`
+
+GitHub App access:
+`PASS · ChatGPT Codex Connector INSTALLED ON packersmexico · ALL REPOSITORIES`
+
+Latest Pages deploy after social activation:
+`PASS · COMPLETED · SUCCESS`
 
 Architecture:
 `STATIC HTML + CSS + JAVASCRIPT · NO BUILD SYSTEM · NO NEW DEPENDENCIES`
@@ -63,6 +75,9 @@ Game ID:
 Week 1:
 `Packers @ Minnesota Vikings · DOM 13 SEP · 14:25 CDMX`
 
+Community arrival:
+`14:00 CDMX`
+
 Venue:
 `Wingstop Condesa · CDMX`
 
@@ -74,6 +89,28 @@ Registration URL:
 
 Maps:
 `PASS · WINGSTOP CONDESA PLACE ID VERIFIED · GOOGLE MAPS SEARCH URL CONFIGURED`
+
+Calendar:
+`PASS · PUBLIC PMX CALENDAR ACTIVE · WEEK 1 EVENT CREATED`
+
+Calendar name:
+`PACKERS MÉXICO · Game Days 2026–27`
+
+Calendar event Hub URL:
+`https://packersmexico.github.io/`
+
+GoPackGo MX:
+`PASS · YOUTUBE DESTINATION ACTIVE`
+
+GoPackGo destination:
+`https://www.youtube.com/@gopackgomx6092`
+
+Social destinations:
+- `TikTok · https://www.tiktok.com/@packers_mx`
+- `Facebook · https://www.facebook.com/gopackgomx/`
+- `Instagram · https://www.instagram.com/packers_mx/`
+- `X · https://x.com/Packers_Mx`
+- `YouTube · https://www.youtube.com/@gopackgomx6092`
 
 Promo:
 `OFF`
@@ -128,21 +165,13 @@ REGISTRO_CONFIRMADO:
 Integrity:
 `CLICK_REGISTRO ≠ REGISTRO_CONFIRMADO ≠ ASISTENCIA_MEDIDA`
 
-## IMPLEMENTATION
-
-Files updated:
-- `index.html`
-- `css/styles.css`
-- `js/config.js`
-- `js/app.js`
-- `STATUS.md`
-- `assets/README.md`
-
 Analytics implementation:
-`UNCHANGED`
+`UNCHANGED DURING ORG MIGRATION / SOCIAL ACTIVATION`
 
 Taxonomy:
 `UNCHANGED`
+
+## IMPLEMENTATION
 
 Conditional modules:
 `PROMO ON/OFF · SPECIAL ON/OFF READY`
@@ -152,6 +181,9 @@ Responsive:
 `768–1099 one column wide / 34px margin`
 `≥1100 61.8/38.2 / 89px margin / 1262px max width`
 
+Active destinations:
+`REGISTRO · MAPS · CALENDARIO · GOPACKGO MX · FACEBOOK · INSTAGRAM · X · TIKTOK · YOUTUBE`
+
 ## QA
 
 JavaScript syntax:
@@ -160,29 +192,38 @@ JavaScript syntax:
 Figma contract translation:
 `PASS · HTML/CSS/JS IMPLEMENTED`
 
-Real GitHub Pages redeploy:
-`PENDING`
+GitHub Pages deploy:
+`PASS · COMPLETED · SUCCESS`
 
 Real browser:
-`PENDING`
+`PASS · HUB LOAD CONFIRMED ON https://packersmexico.github.io/`
+
+Desktop functional inspection:
+`PASS OPERATIVO · NO CLIPPING/OVERFLOW OBSERVED · CTA/MAPS/CALENDAR WORKING`
 
 Mobile 390×844:
-`PENDING REAL DEPLOY QA`
+`PENDING FORMAL FINAL QA`
 
 Desktop 1440×900:
-`PENDING REAL DEPLOY QA`
+`PENDING FORMAL FINAL QA AGAINST FIGMA REFERENCE`
 
 Primary CTA:
-`CONFIGURED · FORMS.APP CURRENT`
+`PASS · FORMS.APP CURRENT`
 
 Maps:
-`PASS · VERIFIED WINGSTOP CONDESA DESTINATION CONFIGURED`
+`PASS · VERIFIED WINGSTOP CONDESA DESTINATION`
+
+Calendar:
+`PASS · PUBLIC CALENDAR DESTINATION WORKING`
+
+Social / GoPackGo:
+`CONFIGURED · PUBLIC DEPLOY PASS · CLICK QA PENDING`
 
 Promo OFF:
-`IMPLEMENTED · ZERO RESERVED GAP`
+`PASS · ZERO RESERVED GAP`
 
 Special OFF:
-`IMPLEMENTED · ZERO RESERVED GAP`
+`PASS · ZERO RESERVED GAP`
 
 Keyboard focus:
 `IMPLEMENTED · GOLD 2PX / 4PX OFFSET`
@@ -201,25 +242,27 @@ Impact:
 Impact:
 `Text data remains; visual rival asset collapses silently per DATA PENDING behavior.`
 
-### Operational URL hold
-`Calendar / GoPackGo / social destinations are still unverified or blank in config.`
+### Non-blocking partner asset hold
+`Wingstop annual master HQ and RETURN 02 photography remain pending`
 
 Impact:
-`Those controls remain disabled until authoritative URLs are supplied. Maps is configured and enabled.`
+`Partner and hero slots remain modular/replacement-safe.`
 
 ## NEXT ACTION
 
-After GitHub Pages redeploy:
-`RUN REAL-BROWSER VISUAL + FUNCTIONAL QA ON 390×844 AND 1440×900`
+`MATERIALIZE PMX HORIZONTAL V1.1 EXACT ASSET`
 
 Then:
-`VERIFY PRIMARY CTA · MAPS · UTM PRESERVATION · GA4 EVENTS · CONDITIONAL STATES · CONSOLE`
+`RUN FINAL 390×844 + 1440×900 VISUAL/FUNCTIONAL QA`
 
-Do not declare technical PASS until public deployed result is inspected.
+Verify:
+`REGISTRO · MAPS · CALENDAR · SOCIAL · GOPACKGO · UTM PRESERVATION · GA4 EVENTS · CONSOLE`
+
+Do not declare final technical PASS until mobile and desktop reference QA are closed.
 
 ## LAST RELEVANT CHANGE
 
-`feat: integrate Figma visual handoff V0.1`
+`feat: activate PMX social and GoPackGo links`
 
-Previous GA4 activation commit:
-`4256d1a79c07d13fab83215f472866aedfc71846`
+Commit:
+`5f1d71da7592c6e4891a60ea2d7cb98a8ee43b4c`
