@@ -2,267 +2,145 @@
 
 ## PROJECT
 
-Project:
-`PMX DIGITAL HUB`
+Project: `PMX DIGITAL HUB`
 
-Partnership ID:
-`PMX-PART-2026-WINGSTOP-COND-001`
+Partnership ID: `PMX-PART-2026-WINGSTOP-COND-001`
 
-Repository:
-`packersmexico/packersmexico.github.io`
+Repository: `packersmexico/packersmexico.github.io`
 
-Organization:
-`packersmexico`
+Public Hub: `https://packersmexico.github.io/`
 
 ## CURRENT PHASE
 
-`FASE 2B · PUBLIC HUB IMPLEMENTATION + FINAL QA`
+`FASE 2B · PUBLIC QA + ASSET CLOSEOUT`
 
 ## STATUS
 
-`FIGMA HANDOFF IMPLEMENTED · ORG MIGRATION PASS · PUBLIC HUB ACTIVE · FINAL MOBILE QA PENDING`
+`ORG MIGRATION PASS · PAGES ACTIVE · WEEK 1 CONFIGURED · FINAL IDENTITY / EXTERNAL COPY / EXACT QA HOLDS ONLY`
 
 ## INFRASTRUCTURE
 
-P0 hosting:
-`GitHub Pages · ACTIVE`
+- GitHub Pages: `ACTIVE`
+- Organization: `packersmexico`
+- Default branch: `main`
+- Architecture: `STATIC HTML + CSS + JAVASCRIPT · NO BUILD SYSTEM`
+- Latest verified Pages deploy: `64dbe6e0f66f16bcf4764bd47c4ae60a251d75d9 · SUCCESS`
 
-Public Hub URL:
-`https://packersmexico.github.io/`
+## WEEK 1
 
-Repository migration:
-`PASS · MOVED FROM ibrahimsantana/pmx-digital-hub TO packersmexico/packersmexico.github.io`
+- Game ID: `PMX-WS-2026-W01`
+- Matchup: `Packers @ Minnesota Vikings`
+- Date: `DOM 13 SEP 2026`
+- Community arrival: `14:00 CDMX`
+- Kickoff: `14:25 CDMX`
+- Venue: `Wingstop Condesa · CDMX`
+- Public wording LOCKED: `Casa Oficial de Packers en CDMX`
+- Registration: `https://share.forms.app/form/6a96032ee64cd5f15d1688aa`
+- Maps: `PASS`
+- Public calendar: `PASS`
+- Calendar Week 1 event: `PASS · 14:00 ARRIVAL / 14:25 KICKOFF`
+- Promo: `OFF`
+- Special: `OFF`
 
-GitHub App access:
-`PASS · ChatGPT Codex Connector INSTALLED ON packersmexico · ALL REPOSITORIES`
+## SOCIAL / DESTINATIONS
 
-Latest Pages deploy after social activation:
-`PASS · COMPLETED · SUCCESS`
+- Facebook: `https://www.facebook.com/gopackgomx/`
+- Instagram: `https://www.instagram.com/packers_mx/`
+- X: `https://x.com/Packers_Mx`
+- TikTok: `https://www.tiktok.com/@packers_mx`
+- YouTube: `https://www.youtube.com/@gopackgomx6092`
+- GoPackGo MX: `YouTube · https://www.youtube.com/@gopackgomx6092`
 
-Architecture:
-`STATIC HTML + CSS + JAVASCRIPT · NO BUILD SYSTEM · NO NEW DEPENDENCIES`
+State: `PASS · CONFIGURED AND DEPLOYED`
 
-## FIGMA HANDOFF
+## IDENTITY / ASSETS
 
-Visual source of truth:
-`FIGMA → CODEX · PMX DIGITAL HUB VISUAL HANDOFF V0.1`
+Authoritative PMX logo:
+`PMX_LOGO_HISTORICO_HORIZONTAL_CANVA_MASTER_V1.1.svg`
 
-Mobile reference:
-`390×844 · NORMAL · PROMO OFF · PROMO ON · SPECIAL ON · DATA PENDING`
+Authoritative Figma component located:
+`fileKey z30v1pEwZPp7F4sV7JaExJ · node 75:4098 · PMX/Logo/Current/Horizontal/V1.1`
 
-Desktop reference:
-`1440×900 · 61.8 / 38.2`
+Figma verification:
+`CURRENT V1.1 COMPONENT FOUND · 800×200 PREVIEW VERIFIED · SVG EXPORT AVAILABLE`
 
-Implementation rules preserved:
-- `Field Dark #081D13`
-- `Lambeau Green #123B31`
-- `Gold #FFC62F`
-- `Cream #F2E8CF`
-- `Bebas Neue + Montserrat`
-- responsive margins `21 / 34 / 89`
-- primary CTA `CONFIRMA TU ASISTENCIA`
-- secondary CTA `CÓMO LLEGAR`
-- `Casa Oficial de Packers en CDMX`
-- Promo OFF and Special OFF collapse with no dead space
-- no generic card/pill/dashboard treatment
-- keyboard focus uses `2px Gold` with `4px` offset
+Repository materialization:
+`HOLD · CURRENT RUNTIME CANNOT RETRIEVE THE SHORT-LIVED FIGMA EXPORT BYTES`
 
-## CONTENT / WEEK 1
-
-Game ID:
-`PMX-WS-2026-W01`
-
-Week 1:
-`Packers @ Minnesota Vikings · DOM 13 SEP · 14:25 CDMX`
-
-Community arrival:
-`14:00 CDMX`
-
-Venue:
-`Wingstop Condesa · CDMX`
-
-Registration:
-`PASS · USER-CONFIRMED CURRENT`
-
-Registration URL:
-`https://share.forms.app/form/6a96032ee64cd5f15d1688aa`
-
-Maps:
-`PASS · WINGSTOP CONDESA PLACE ID VERIFIED · GOOGLE MAPS SEARCH URL CONFIGURED`
-
-Calendar:
-`PASS · PUBLIC PMX CALENDAR ACTIVE · WEEK 1 EVENT CREATED`
-
-Calendar name:
-`PACKERS MÉXICO · Game Days 2026–27`
-
-Calendar event Hub URL:
-`https://packersmexico.github.io/`
-
-GoPackGo MX:
-`PASS · YOUTUBE DESTINATION ACTIVE`
-
-GoPackGo destination:
-`https://www.youtube.com/@gopackgomx6092`
-
-Social destinations:
-- `TikTok · https://www.tiktok.com/@packers_mx`
-- `Facebook · https://www.facebook.com/gopackgomx/`
-- `Instagram · https://www.instagram.com/packers_mx/`
-- `X · https://x.com/Packers_Mx`
-- `YouTube · https://www.youtube.com/@gopackgomx6092`
-
-Promo:
-`OFF`
-
-Special:
-`OFF`
-
-## ASSETS
-
-PMX Horizontal V1.1:
-`HOLD · EXACT ASSET NOT YET MATERIALIZED IN REPOSITORY`
-
-Safe behavior:
-`TECHNICAL PLACEHOLDER ONLY · NO RECONSTRUCTION`
+Public safe fallback while held:
+`TEXT BRAND FALLBACK ONLY · NO FAKE LOGO · NO INTERNAL "ASSET PENDING" LABEL`
 
 NFL-MIN-LOGO-01:
 `PASS DOCUMENTAL · MATERIALIZATION HOLD ONLY · NON-BLOCKING`
 
-WS-LOGO-01.jpg:
-`MATERIALIZED IN PROJECT CONTEXT · SOURCE-VERIFIED TECHNICAL ASSET · MASTER FORMAT HOLD`
+WS-LOGO-01:
+`SOURCE-VERIFIED TECHNICAL ASSET · MASTER FORMAT HOLD`
 
 Wingstop Condesa photography:
 `RETURN 02 PENDING · NON-BLOCKING`
 
-Hero photo behavior while pending:
-`LAMBEAU GREEN REPLACEABLE SLOT · NO WRONG PHOTO`
-
 ## ANALYTICS
 
-GA4:
-`ACTIVE · LIVE CORE QA PASS · CUSTOM DIMENSIONS PASS`
+GA4: `ACTIVE · LIVE CORE QA PASS · CUSTOM DIMENSIONS PASS`
 
-Measurement ID:
-`G-QEN5F5YY14`
+Measurement ID: `G-QEN5F5YY14`
 
-Custom dimensions:
-`8/8 · EVENT SCOPE`
+Custom dimensions: `8/8 · EVENT SCOPE`
 
-Formal QA cutoff:
-`2026-09-05T11:55:39-06:00`
+Formal QA cutoff: `2026-09-05T11:55:39-06:00`
 
 Baseline rule:
-`≤ 11:55:39 = TEST / SETUP · EXCLUDE FROM CAMPAIGN PERFORMANCE`
-`> 11:55:39 = ELIGIBLE FOR LIVE CAMPAIGN PERFORMANCE`
+- `≤ 11:55:39 = TEST / SETUP · EXCLUDE FROM CAMPAIGN PERFORMANCE`
+- `> 11:55:39 = ELIGIBLE FOR LIVE CAMPAIGN PERFORMANCE`
 
 Events preserved:
 `HUB_VIEW · CLICK_REGISTRO · CLICK_MAPS · CLICK_PROMO · CLICK_CALENDAR · CLICK_GOPACKGO · CLICK_SOCIAL · QR_OPEN`
 
-REGISTRO_CONFIRMADO:
-`HOLD · DO NOT FIRE P0`
+`REGISTRO_CONFIRMADO = HOLD · DO NOT FIRE P0`
 
 Integrity:
 `CLICK_REGISTRO ≠ REGISTRO_CONFIRMADO ≠ ASISTENCIA_MEDIDA`
 
-Analytics implementation:
-`UNCHANGED DURING ORG MIGRATION / SOCIAL ACTIVATION`
+## PUBLIC QA
 
-Taxonomy:
-`UNCHANGED`
+- Org migration: `PASS`
+- Root URL: `PASS`
+- Registration destination: `PASS`
+- Maps destination: `PASS`
+- Calendar destination: `PASS`
+- Social destinations: `DEPLOYED`
+- GoPackGo destination: `DEPLOYED`
+- Promo OFF: `PASS · ZERO RESERVED GAP`
+- Special OFF: `PASS · ZERO RESERVED GAP`
+- Internal implementation labels exposed publicly: `FIXED`
+- Pending visual green slot in DATA PENDING: `FIXED · COLLAPSES SILENTLY`
+- Exact final `390×844` browser QA: `PENDING AFTER LATEST DEPLOY`
+- Exact final `1440×900` browser QA: `PENDING AFTER LATEST DEPLOY`
 
-## IMPLEMENTATION
+## REMAINING HOLDS
 
-Conditional modules:
-`PROMO ON/OFF · SPECIAL ON/OFF READY`
+### P0 · PMX logo physical materialization
+The authoritative asset and Figma component are identified. Do not reconstruct. Replace the text fallback only when the exact V1.1 bytes are available.
 
-Responsive:
-`≤767 one column / 21px margin`
-`768–1099 one column wide / 34px margin`
-`≥1100 61.8/38.2 / 89px margin / 1262px max width`
+### P0 · External forms.app wording
+Verify/correct the external form to use the locked public wording:
+`Casa Oficial de Packers en CDMX`
 
-Active destinations:
-`REGISTRO · MAPS · CALENDARIO · GOPACKGO MX · FACEBOOK · INSTAGRAM · X · TIKTOK · YOUTUBE`
+If the form still says a broader/official-sounding phrase, publication remains on HOLD until corrected.
 
-## QA
-
-JavaScript syntax:
-`PASS · node --check`
-
-Figma contract translation:
-`PASS · HTML/CSS/JS IMPLEMENTED`
-
-GitHub Pages deploy:
-`PASS · COMPLETED · SUCCESS`
-
-Real browser:
-`PASS · HUB LOAD CONFIRMED ON https://packersmexico.github.io/`
-
-Desktop functional inspection:
-`PASS OPERATIVO · NO CLIPPING/OVERFLOW OBSERVED · CTA/MAPS/CALENDAR WORKING`
-
-Mobile 390×844:
-`PENDING FORMAL FINAL QA`
-
-Desktop 1440×900:
-`PENDING FORMAL FINAL QA AGAINST FIGMA REFERENCE`
-
-Primary CTA:
-`PASS · FORMS.APP CURRENT`
-
-Maps:
-`PASS · VERIFIED WINGSTOP CONDESA DESTINATION`
-
-Calendar:
-`PASS · PUBLIC CALENDAR DESTINATION WORKING`
-
-Social / GoPackGo:
-`CONFIGURED · PUBLIC DEPLOY PASS · CLICK QA PENDING`
-
-Promo OFF:
-`PASS · ZERO RESERVED GAP`
-
-Special OFF:
-`PASS · ZERO RESERVED GAP`
-
-Keyboard focus:
-`IMPLEMENTED · GOLD 2PX / 4PX OFFSET`
-
-## BLOCKERS
-
-### Non-blocking identity asset hold
-`PMX Horizontal V1.1 exact repo asset not materialized`
-
-Impact:
-`Public implementation continues with a clearly labeled technical placeholder; logo is not fabricated.`
-
-### Non-blocking rival asset hold
-`NFL-MIN-LOGO-01 exact SVG materialization pending`
-
-Impact:
-`Text data remains; visual rival asset collapses silently per DATA PENDING behavior.`
-
-### Non-blocking partner asset hold
-`Wingstop annual master HQ and RETURN 02 photography remain pending`
-
-Impact:
-`Partner and hero slots remain modular/replacement-safe.`
+### Non-blocking asset holds
+- `NFL-MIN-LOGO-01 SVG materialization`
+- `Wingstop HQ master-format asset`
+- `Wingstop Condesa photo RETURN 02`
 
 ## NEXT ACTION
 
-`MATERIALIZE PMX HORIZONTAL V1.1 EXACT ASSET`
-
-Then:
-`RUN FINAL 390×844 + 1440×900 VISUAL/FUNCTIONAL QA`
-
-Verify:
-`REGISTRO · MAPS · CALENDAR · SOCIAL · GOPACKGO · UTM PRESERVATION · GA4 EVENTS · CONSOLE`
-
-Do not declare final technical PASS until mobile and desktop reference QA are closed.
+1. `Materialize PMX Horizontal V1.1 exact asset and replace text fallback.`
+2. `Verify/correct forms.app wording.`
+3. `Run final 390×844 + 1440×900 real-browser QA.`
+4. `Verify final click events in GA4, classifying QA traffic separately.`
+5. `If all P0 checks PASS → handoff to 05.`
 
 ## LAST RELEVANT CHANGE
 
-`feat: activate PMX social and GoPackGo links`
-
-Commit:
-`5f1d71da7592c6e4891a60ea2d7cb98a8ee43b4c`
+`64dbe6e0f66f16bcf4764bd47c4ae60a251d75d9 · fix: collapse pending visual slot and clean public brand fallback`
