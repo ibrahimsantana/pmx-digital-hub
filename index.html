@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Hub de PACKERS MÉXICO para la experiencia en Wingstop Condesa.">
+    <title>PMX Digital Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/config.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header" aria-label="Identidad del Hub">
+      <div class="brand-placeholder" role="img" aria-label="Placeholder técnico del logotipo Horizontal V1.1 de Packers México">
+        <span class="brand-placeholder__label">PACKERS MÉXICO</span>
+        <small>Placeholder técnico · Horizontal V1.1 pendiente</small>
+      </div>
+      <p class="venue-lock">Casa Oficial de Packers en CDMX</p>
+    </header>
+
+    <main id="contenido">
+      <section class="hero" aria-labelledby="game-heading">
+        <div class="hero__content">
+          <p class="eyebrow">PRÓXIMO JUEGO</p>
+          <p id="game-week" class="game-week"></p>
+          <h1 id="game-heading">Cargando próximo juego…</h1>
+          <dl class="game-details">
+            <div>
+              <dt>Fecha</dt>
+              <dd id="game-date"></dd>
+            </div>
+            <div>
+              <dt>Hora</dt>
+              <dd id="game-time"></dd>
+            </div>
+            <div>
+              <dt>Sede</dt>
+              <dd id="game-venue"></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero__actions" aria-label="Acciones principales">
+          <a id="registration-link" class="button button--primary" href="#">CONFIRMA TU ASISTENCIA</a>
+          <a id="maps-link" class="button button--secondary" href="#">CÓMO LLEGAR</a>
+        </div>
+      </section>
+
+      <section id="promo-section" class="promo" aria-labelledby="promo-title" hidden>
+        <p class="eyebrow">PROMOCIÓN VIGENTE</p>
+        <h2 id="promo-title"></h2>
+        <p id="promo-description"></p>
+        <a id="promo-link" class="text-link" href="#">VER PROMOCIÓN</a>
+      </section>
+
+      <nav class="secondary-actions" aria-label="Más opciones">
+        <h2>Sigue la experiencia</h2>
+        <div class="link-list">
+          <a id="calendar-link" class="text-link" href="#">CALENDARIO</a>
+          <a id="gopackgo-link" class="text-link" href="#">GOPACKGO MX</a>
+        </div>
+      </nav>
+
+      <section class="social" aria-labelledby="social-title">
+        <h2 id="social-title">PACKERS MÉXICO EN REDES</h2>
+        <ul id="social-links" class="social-list"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>PACKERS MÉXICO es una comunidad editorial independiente.</p>
+      <p>No somos una organización oficial de Green Bay Packers ni de la NFL.</p>
+      <p class="partner-placeholder">Wingstop · placeholder técnico de marca</p>
+    </footer>
+
+    <noscript>Este Hub necesita JavaScript para cargar la configuración semanal.</noscript>
+  </body>
+</html>
+
