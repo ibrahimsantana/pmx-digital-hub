@@ -1,310 +1,154 @@
 import React from 'react';
-import {
-  AbsoluteFill,
-  Img,
-  Sequence,
-  Easing,
-  interpolate,
-  staticFile,
-  useCurrentFrame,
-  useVideoConfig,
-} from 'remotion';
+import {AbsoluteFill, Img, Easing, interpolate, staticFile, useCurrentFrame} from 'remotion';
 import {Video} from '@remotion/media';
 import '@fontsource/bebas-neue';
-import '@fontsource/montserrat/500.css';
 import '@fontsource/montserrat/600.css';
 import '@fontsource/montserrat/700.css';
 import '@fontsource/montserrat/800.css';
 
-const C = {
-  field: '#081D13',
-  green: '#123B31',
-  gold: '#FFC62F',
-  cream: '#F2E8CF',
-  white: '#FFFDF7',
-};
+const C = {field:'#081D13',green:'#123B31',gold:'#FFC62F',cream:'#F2E8CF',white:'#FFFDF7'};
+const FPS = 30;
+const secToFrame = (sec:number) => Math.round(sec * FPS);
 
-const safe = {left: 72, right: 72, top: 82, bottom: 190};
-const PMX = staticFile('pmx_logo_v11.png');
-
-const GoldRule: React.FC<{width?: number}> = ({width = 180}) => (
-  <div style={{width, height: 8, background: C.gold, borderRadius: 99}} />
-);
-
-const OrganizerHeader: React.FC<{compact?: boolean}> = ({compact = false}) => (
-  <div
-    style={{
-      position: 'absolute',
-      top: safe.top,
-      left: safe.left,
-      right: safe.right,
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      zIndex: 50,
-    }}
-  >
-    <div style={{display: 'flex', alignItems: 'center', gap: compact ? 14 : 18}}>
-      <Img
-        src={staticFile('colectivo_logo.webp')}
-        style={{width: compact ? 92 : 118, height: compact ? 92 : 118, objectFit: 'contain'}}
-      />
-      <div>
-        <div style={{fontFamily: 'Montserrat', fontWeight: 800, fontSize: compact ? 18 : 22, color: C.gold, letterSpacing: 1.4}}>
-          ORGANIZA
-        </div>
-        <div style={{fontFamily: 'Montserrat', fontWeight: 700, fontSize: compact ? 20 : 25, color: C.cream, marginTop: 4}}>
-          COLECTIVO PACKERS MÉXICO
-        </div>
-      </div>
-    </div>
-    <Img src={PMX} style={{width: compact ? 270 : 340, height: compact ? 68 : 85, objectFit: 'contain'}} />
-  </div>
-);
-
-const Opening: React.FC = () => {
-  const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const opacity = interpolate(frame, [0, 0.35 * fps], [0, 1], {
-    extrapolateRight: 'clamp',
-    easing: Easing.bezier(0.16, 1, 0.3, 1),
-  });
-  const y = interpolate(frame, [0, 0.55 * fps], [34, 0], {
-    extrapolateRight: 'clamp',
-    easing: Easing.bezier(0.16, 1, 0.3, 1),
-  });
-
-  return (
-    <AbsoluteFill style={{background: C.field, overflow: 'hidden'}}>
-      <AbsoluteFill
-        style={{
-          background:
-            'radial-gradient(circle at 84% 20%, rgba(255,198,47,.17), transparent 28%), linear-gradient(180deg, #123B31 0%, #081D13 74%)',
-        }}
-      />
-      <div style={{position: 'absolute', right: -140, top: 250, width: 780, height: 780, borderRadius: '50%', border: '2px solid rgba(255,198,47,.14)'}} />
-      <OrganizerHeader />
-
-      <div style={{position: 'absolute', left: safe.left, right: safe.right, top: 390, opacity, transform: `translateY(${y}px)`}}>
-        <GoldRule width={235} />
-        <div style={{fontFamily: 'Bebas Neue', fontSize: 166, lineHeight: 0.86, color: C.cream, marginTop: 30}}>FOTO OFICIAL</div>
-        <div style={{fontFamily: 'Bebas Neue', fontSize: 124, lineHeight: 0.9, color: C.gold, marginTop: 14}}>DE LA AFICIÓN PACKER</div>
-
-        <div style={{display: 'grid', gridTemplateColumns: '1.35fr .75fr', gap: 32, marginTop: 64}}>
-          <div>
-            <div style={{fontFamily: 'Bebas Neue', fontSize: 92, lineHeight: 0.9, color: C.white}}>DOM 13 SEP</div>
-            <div style={{fontFamily: 'Montserrat', fontWeight: 700, fontSize: 34, color: C.cream, marginTop: 18}}>BELLAS ARTES · CDMX</div>
-          </div>
-          <div style={{borderLeft: '2px solid rgba(242,232,207,.24)', paddingLeft: 30}}>
-            <div style={{fontFamily: 'Bebas Neue', fontSize: 104, lineHeight: 0.9, color: C.gold}}>12:00 H</div>
-          </div>
-        </div>
-      </div>
-    </AbsoluteFill>
-  );
-};
-
-type CaptionCue = {startMs: number; endMs: number; text: string};
-
-const captions: CaptionCue[] = [
-  {startMs: 594, endMs: 3276, text: 'Atención, afición de Green Bay\nen México.'},
-  {startMs: 3629, endMs: 8045, text: 'Llegó el momento de reunirnos, pasarla bien\ny armar la convivencia.'},
-  {startMs: 8222, endMs: 10663, text: 'Y pintar Bellas Artes\nde verde y oro.'},
-  {startMs: 11755, endMs: 15915, text: 'La cita para nuestra foto anual\nes este domingo 13 de septiembre,'},
-  {startMs: 16011, endMs: 19817, text: 'a las 12 del mediodía.\nTrae tu jersey, tu gorra,'},
-  {startMs: 19865, endMs: 23816, text: 'tu familia y la mejor actitud\npara representar a la mejor afición.'},
-  {startMs: 24346, endMs: 26643, text: 'No te quedes fuera\nde la foto de este año.'},
-  {startMs: 26787, endMs: 29164, text: 'Síguenos para más detalles.\n¡Go Pack Go!'},
+const captions = [
+  {start:0.594,end:3.276,lines:['Atención, afición de Green Bay','en México.']},
+  {start:3.629,end:8.045,lines:['Llegó el momento de reunirnos, pasarla bien','y armar la convivencia.']},
+  {start:8.222,end:10.663,lines:['Y pintar Bellas Artes','de verde y oro.']},
+  {start:11.755,end:15.915,lines:['La cita para nuestra foto anual','es este domingo 13 de septiembre,']},
+  {start:16.011,end:19.817,lines:['a las 12 del mediodía.','Trae tu jersey, tu gorra,']},
+  {start:19.865,end:23.816,lines:['tu familia y la mejor actitud','para representar a la mejor afición.']},
+  {start:24.346,end:26.643,lines:['No te quedes fuera','de la foto de este año.']},
+  {start:26.787,end:29.164,lines:['Síguenos para más detalles.','¡Go Pack Go!']},
 ];
 
 const CaptionLayer: React.FC = () => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const ms = (frame / fps) * 1000;
-  const cue = captions.find((c) => ms >= c.startMs && ms <= c.endMs);
-  if (!cue) return null;
-
-  const local = ms - cue.startMs;
-  const remaining = cue.endMs - ms;
-  const opacity = Math.min(1, local / 130, remaining / 130);
-
-  return (
-    <div
-      style={{
-        position: 'absolute',
-        left: 86,
-        right: 86,
-        bottom: 205,
-        zIndex: 70,
-        opacity,
-        textAlign: 'center',
-      }}
-    >
-      <div
-        style={{
-          display: 'inline-block',
-          fontFamily: 'Montserrat',
-          fontWeight: 800,
-          fontSize: 46,
-          lineHeight: 1.12,
-          color: C.white,
-          whiteSpace: 'pre-line',
-          textShadow: '0 4px 22px rgba(0,0,0,.95), 0 1px 4px rgba(0,0,0,1)',
-          maxWidth: 900,
-        }}
-      >
-        {cue.text}
-      </div>
+  const active = captions.find(c => frame >= secToFrame(c.start) && frame <= secToFrame(c.end));
+  if (!active) return null;
+  return <div style={{position:'absolute',left:72,right:72,bottom:214,zIndex:100,display:'flex',justifyContent:'center'}}>
+    <div style={{maxWidth:900,padding:'18px 24px 16px',background:'rgba(8,29,19,.88)',borderTop:`4px solid ${C.gold}`,boxShadow:'0 14px 40px rgba(0,0,0,.36)',fontFamily:'Montserrat',fontWeight:800,fontSize:48,lineHeight:1.12,textAlign:'center',color:C.white}}>
+      {active.lines.map((line,i)=><div key={i}>{line}</div>)}
     </div>
-  );
+  </div>;
 };
 
-const DataPunch: React.FC<{startMs: number; endMs: number; label: string; sub: string}> = ({startMs, endMs, label, sub}) => {
-  const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const ms = (frame / fps) * 1000;
-  if (ms < startMs || ms > endMs) return null;
-
-  const local = ms - startMs;
-  const remaining = endMs - ms;
-  const opacity = Math.min(1, local / 220, remaining / 280);
-  const y = interpolate(local, [0, 320], [20, 0], {extrapolateRight: 'clamp', easing: Easing.bezier(0.16, 1, 0.3, 1)});
-
-  return (
-    <div
-      style={{
-        position: 'absolute',
-        left: 68,
-        right: 78,
-        top: 320,
-        zIndex: 60,
-        opacity,
-        transform: `translateY(${y}px)`,
-        filter: 'drop-shadow(0 5px 26px rgba(0,0,0,.46))',
-      }}
-    >
-      <div style={{display: 'inline-block', background: C.gold, color: C.field, padding: '12px 20px 10px', fontFamily: 'Montserrat', fontWeight: 800, fontSize: 27, letterSpacing: 1.1}}>
-        EN SIMPLE
-      </div>
-      <div style={{fontFamily: 'Bebas Neue', fontSize: 104, lineHeight: 0.92, color: C.cream, marginTop: 18}}>{label}</div>
-      <div style={{fontFamily: 'Montserrat', fontWeight: 800, fontSize: 35, lineHeight: 1.12, color: C.white, marginTop: 14, maxWidth: 890}}>{sub}</div>
+const OrganizerStrip: React.FC = () => <div style={{position:'absolute',top:68,left:60,right:60,zIndex:72,display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+  <div style={{display:'flex',alignItems:'center',gap:16}}>
+    <Img src={staticFile('colectivo_logo.webp')} style={{width:86,height:86,objectFit:'contain'}} />
+    <div>
+      <div style={{fontFamily:'Montserrat',fontWeight:800,fontSize:18,letterSpacing:1.3,color:C.gold}}>ORGANIZA</div>
+      <div style={{fontFamily:'Montserrat',fontWeight:800,fontSize:22,color:C.white,marginTop:3}}>COLECTIVO PACKERS MÉXICO</div>
     </div>
-  );
+  </div>
+  <Img src={staticFile('pmx_logo_v11.png')} style={{width:294,height:74,objectFit:'contain'}} />
+</div>;
+
+const OverlayCard: React.FC<{from:number;to:number;children:React.ReactNode}> = ({from,to,children}) => {
+  const frame = useCurrentFrame();
+  if (frame < from || frame > to) return null;
+  const opacity = interpolate(frame,[from,from+8,to-10,to],[0,1,1,0],{extrapolateLeft:'clamp',extrapolateRight:'clamp'});
+  const y = interpolate(frame,[from,from+12],[22,0],{extrapolateLeft:'clamp',extrapolateRight:'clamp',easing:Easing.bezier(0.16,1,0.3,1)});
+  return <div style={{position:'absolute',left:72,right:72,top:210,zIndex:60,opacity,transform:`translateY(${y}px)`}}>
+    <div style={{background:'rgba(8,29,19,.88)',borderLeft:`8px solid ${C.gold}`,padding:'24px 28px 22px',boxShadow:'0 16px 44px rgba(0,0,0,.34)'}}>{children}</div>
+  </div>;
 };
 
-const Speaker: React.FC = () => {
+const Opening: React.FC = () => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const fade = interpolate(frame, [0, 0.22 * fps], [0, 1], {extrapolateRight: 'clamp'});
-
-  return (
-    <AbsoluteFill style={{background: C.field}}>
-      <Video
-        src={staticFile('jen_master_hq.mp4')}
-        style={{width: '100%', height: '100%', objectFit: 'cover', filter: 'contrast(1.025) saturate(1.04) brightness(1.01)'}}
-      />
-      <AbsoluteFill
-        style={{
-          background: 'linear-gradient(180deg, rgba(8,29,19,.38) 0%, rgba(8,29,19,.03) 25%, rgba(8,29,19,.04) 58%, rgba(8,29,19,.72) 100%)',
-          opacity: fade,
-        }}
-      />
-
-      <div style={{position: 'absolute', top: 74, left: 64, zIndex: 75, display: 'flex', alignItems: 'center', gap: 16, filter: 'drop-shadow(0 5px 18px rgba(0,0,0,.35))'}}>
-        <Img src={staticFile('colectivo_logo.webp')} style={{width: 92, height: 92, objectFit: 'contain'}} />
-        <div>
-          <div style={{fontFamily: 'Montserrat', fontWeight: 800, fontSize: 19, color: C.gold, letterSpacing: 1.3}}>ORGANIZA</div>
-          <div style={{fontFamily: 'Montserrat', fontWeight: 700, fontSize: 22, color: C.white, marginTop: 3}}>COLECTIVO PACKERS MÉXICO</div>
-        </div>
-      </div>
-      <Img src={PMX} style={{position: 'absolute', top: 86, right: 64, width: 250, height: 63, objectFit: 'contain', zIndex: 75, filter: 'drop-shadow(0 4px 14px rgba(0,0,0,.3))'}} />
-
-      <DataPunch startMs={3100} endMs={8500} label="DOM 13 SEP" sub="Palacio de Bellas Artes · CDMX" />
-      <DataPunch startMs={11100} endMs={16600} label="12:00 H" sub="Llega 30 min antes" />
-      <DataPunch startMs={19100} endMs={25600} label="PUNTO DE ENCUENTRO" sub="Costado izquierdo del Palacio · pasillo" />
-      <DataPunch startMs={26700} endMs={32300} label="VEN EN FAMILIA" sub="Jersey y/o cheesehead" />
-
-      <CaptionLayer />
-    </AbsoluteFill>
-  );
+  if (frame > 90) return null;
+  const opacity = interpolate(frame,[0,10,80,90],[0,1,1,0],{extrapolateRight:'clamp'});
+  return <AbsoluteFill style={{background:C.field,zIndex:80,opacity}}>
+    <AbsoluteFill style={{background:'radial-gradient(circle at 84% 18%, rgba(255,198,47,.16), transparent 29%), linear-gradient(180deg, #123B31 0%, #081D13 76%)'}} />
+    <div style={{position:'absolute',left:72,right:72,top:310}}>
+      <div style={{width:220,height:8,background:C.gold,borderRadius:99}} />
+      <div style={{fontFamily:'Bebas Neue',fontSize:168,lineHeight:.84,color:C.cream,marginTop:30}}>FOTO OFICIAL</div>
+      <div style={{fontFamily:'Bebas Neue',fontSize:124,lineHeight:.9,color:C.gold,marginTop:16}}>DE LA AFICIÓN PACKER</div>
+      <div style={{fontFamily:'Montserrat',fontWeight:800,fontSize:48,color:C.white,marginTop:62}}>CDMX · 13 SEP</div>
+    </div>
+  </AbsoluteFill>;
 };
 
 const Closing: React.FC = () => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const opacity = interpolate(frame, [0, 0.28 * fps], [0, 1], {extrapolateRight: 'clamp'});
-  const y = interpolate(frame, [0, 0.5 * fps], [24, 0], {extrapolateRight: 'clamp', easing: Easing.bezier(0.16, 1, 0.3, 1)});
-
-  return (
-    <AbsoluteFill style={{background: C.field, padding: `${safe.top}px ${safe.right}px ${safe.bottom}px ${safe.left}px`}}>
-      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-        <div style={{display: 'flex', alignItems: 'center', gap: 18}}>
-          <Img src={staticFile('colectivo_logo.webp')} style={{width: 132, height: 132, objectFit: 'contain'}} />
-          <div>
-            <div style={{fontFamily: 'Montserrat', fontWeight: 800, fontSize: 21, color: C.gold, letterSpacing: 1.3}}>ORGANIZA</div>
-            <div style={{fontFamily: 'Montserrat', fontWeight: 700, fontSize: 24, color: C.cream, marginTop: 4}}>COLECTIVO PACKERS MÉXICO</div>
-          </div>
-        </div>
-        <Img src={PMX} style={{width: 320, height: 80, objectFit: 'contain'}} />
+  const start = secToFrame(29.164);
+  if (frame < start) return null;
+  const local = frame - start;
+  const opacity = interpolate(local,[0,10],[0,1],{extrapolateRight:'clamp'});
+  return <AbsoluteFill style={{background:C.field,zIndex:82,opacity}}>
+    <AbsoluteFill style={{background:'radial-gradient(circle at 82% 18%, rgba(255,198,47,.14), transparent 30%), linear-gradient(180deg, #123B31 0%, #081D13 82%)'}} />
+    <div style={{position:'absolute',top:86,left:72,right:72,display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+      <div style={{display:'flex',alignItems:'center',gap:16}}>
+        <Img src={staticFile('colectivo_logo.webp')} style={{width:108,height:108,objectFit:'contain'}} />
+        <div><div style={{fontFamily:'Montserrat',fontWeight:800,fontSize:18,color:C.gold,letterSpacing:1.3}}>ORGANIZA</div><div style={{fontFamily:'Montserrat',fontWeight:800,fontSize:22,color:C.cream,marginTop:4}}>COLECTIVO PACKERS MÉXICO</div></div>
       </div>
-
-      <div style={{marginTop: 250, opacity, transform: `translateY(${y}px)`}}>
-        <GoldRule width={260} />
-        <div style={{fontFamily: 'Bebas Neue', fontSize: 164, lineHeight: 0.88, color: C.cream, marginTop: 28}}>NOS VEMOS EN</div>
-        <div style={{fontFamily: 'Bebas Neue', fontSize: 170, lineHeight: 0.88, color: C.gold}}>BELLAS ARTES</div>
-        <div style={{fontFamily: 'Montserrat', fontWeight: 800, fontSize: 48, color: C.white, marginTop: 52}}>DOM 13 SEP · 12:00 H</div>
-        <div style={{fontFamily: 'Montserrat', fontWeight: 800, fontSize: 38, color: C.gold, marginTop: 20}}>LLEGA 30 MIN ANTES</div>
-      </div>
-
-      <div style={{marginTop: 'auto', borderTop: '2px solid rgba(242,232,207,.26)', paddingTop: 34}}>
-        <div style={{fontFamily: 'Montserrat', fontWeight: 700, fontSize: 28, color: C.cream}}>ORGANIZA · COLECTIVO PACKERS MÉXICO</div>
-        <div style={{fontFamily: 'Montserrat', fontWeight: 600, fontSize: 25, lineHeight: 1.25, color: C.cream, marginTop: 14, maxWidth: 870}}>
-          PACKERS MÉXICO comparte la convocatoria con su comunidad.
-        </div>
-      </div>
-    </AbsoluteFill>
-  );
+      <Img src={staticFile('pmx_logo_v11.png')} style={{width:300,height:76,objectFit:'contain'}} />
+    </div>
+    <div style={{position:'absolute',left:72,right:72,top:365}}>
+      <div style={{fontFamily:'Bebas Neue',fontSize:104,color:C.gold,lineHeight:.9}}>¿TE SUMAS? 📸🧀</div>
+      <div style={{fontFamily:'Bebas Neue',fontSize:166,color:C.cream,lineHeight:.86,marginTop:30}}>NOS VEMOS EN</div>
+      <div style={{fontFamily:'Bebas Neue',fontSize:174,color:C.gold,lineHeight:.86}}>BELLAS ARTES</div>
+      <div style={{fontFamily:'Montserrat',fontWeight:800,fontSize:50,color:C.white,marginTop:58}}>DOM 13 SEP · 12:00 H</div>
+    </div>
+    <div style={{position:'absolute',left:72,right:72,bottom:164,borderTop:'2px solid rgba(242,232,207,.24)',paddingTop:26,fontFamily:'Montserrat',fontWeight:700,fontSize:27,lineHeight:1.2,color:C.cream}}>PACKERS MÉXICO comparte esta invitación con su comunidad.</div>
+  </AbsoluteFill>;
 };
 
-export const BellasArtesReel: React.FC = () => (
-  <AbsoluteFill style={{background: C.field}}>
-    <Sequence from={0} durationInFrames={78}>
-      <Opening />
-    </Sequence>
-    <Sequence from={78} durationInFrames={985}>
-      <Speaker />
-    </Sequence>
-    <Sequence from={1063} durationInFrames={135}>
-      <Closing />
-    </Sequence>
-  </AbsoluteFill>
-);
+const VisualMoments: React.FC = () => <>
+  <OverlayCard from={102} to={237}>
+    <div style={{fontFamily:'Bebas Neue',fontSize:88,lineHeight:.92,color:C.gold}}>LA AFICIÓN PACKER</div>
+    <div style={{fontFamily:'Bebas Neue',fontSize:82,lineHeight:.92,color:C.cream}}>SE REÚNE EN BELLAS ARTES</div>
+    <div style={{fontFamily:'Montserrat',fontWeight:700,fontSize:34,lineHeight:1.16,color:C.white,marginTop:14}}>Ven a formar parte de la foto de la comunidad. 📸🧀</div>
+  </OverlayCard>
+  <OverlayCard from={246} to={383}>
+    <div style={{fontFamily:'Bebas Neue',fontSize:90,color:C.gold,lineHeight:.92}}>DOMINGO 13 SEP</div>
+    <div style={{fontFamily:'Bebas Neue',fontSize:112,color:C.cream,lineHeight:.9,marginTop:8}}>12:00 H</div>
+    <div style={{fontFamily:'Montserrat',fontWeight:700,fontSize:34,color:C.white,marginTop:12}}>Palacio de Bellas Artes · CDMX</div>
+  </OverlayCard>
+  <OverlayCard from={384} to={522}>
+    <div style={{fontFamily:'Bebas Neue',fontSize:78,color:C.gold,lineHeight:.94}}>TE RECOMENDAMOS LLEGAR</div>
+    <div style={{fontFamily:'Bebas Neue',fontSize:112,color:C.cream,lineHeight:.9,marginTop:8}}>30 MINUTOS ANTES</div>
+    <div style={{fontFamily:'Montserrat',fontWeight:700,fontSize:31,lineHeight:1.16,color:C.white,marginTop:14}}>Así tendremos tiempo para reunirnos y seguir las indicaciones de los organizadores.</div>
+  </OverlayCard>
+  <OverlayCard from={523} to={665}>
+    <div style={{fontFamily:'Bebas Neue',fontSize:88,color:C.gold,lineHeight:.92}}>¿DÓNDE NOS VEMOS?</div>
+    <div style={{fontFamily:'Montserrat',fontWeight:800,fontSize:40,lineHeight:1.15,color:C.cream,marginTop:14}}>Costado izquierdo del<br />Palacio de Bellas Artes</div>
+    <div style={{fontFamily:'Montserrat',fontWeight:800,fontSize:36,color:C.white,marginTop:12}}>En el pasillo.</div>
+  </OverlayCard>
+  <OverlayCard from={666} to={792}>
+    <div style={{fontFamily:'Bebas Neue',fontSize:70,color:C.gold,lineHeight:.94}}>VEN CON LOS COLORES DE GREEN BAY 💚💛</div>
+    <div style={{fontFamily:'Montserrat',fontWeight:700,fontSize:31,color:C.white,marginTop:12}}>Puedes traer:</div>
+    <div style={{fontFamily:'Bebas Neue',fontSize:88,color:C.cream,marginTop:6}}>JERSEY · CHEESEHEAD</div>
+    <div style={{fontFamily:'Montserrat',fontWeight:700,fontSize:32,color:C.white,marginTop:4}}>Y venir con tu familia.</div>
+  </OverlayCard>
+  <OverlayCard from={793} to={874}>
+    <div style={{fontFamily:'Bebas Neue',fontSize:78,color:C.gold,lineHeight:.94}}>SIGUE LAS INDICACIONES</div>
+    <div style={{fontFamily:'Bebas Neue',fontSize:76,color:C.cream,lineHeight:.94}}>DE LOS ORGANIZADORES</div>
+    <div style={{fontFamily:'Montserrat',fontWeight:700,fontSize:32,lineHeight:1.16,color:C.white,marginTop:14}}>Ellos coordinarán cómo se forma la fotografía.</div>
+  </OverlayCard>
+</>;
 
-export const BellasArtesCover: React.FC = () => (
-  <AbsoluteFill style={{background: C.field, overflow: 'hidden'}}>
-    <AbsoluteFill style={{background: 'radial-gradient(circle at 82% 17%, rgba(255,198,47,.18), transparent 26%), linear-gradient(180deg, #123B31 0%, #081D13 76%)'}} />
-    <div style={{position: 'absolute', right: -130, top: 245, width: 760, height: 760, borderRadius: '50%', border: '2px solid rgba(255,198,47,.14)'}} />
+export const BellasArtesReel: React.FC = () => {
+  const frame = useCurrentFrame();
+  return <AbsoluteFill style={{background:C.field}}>
+    <Video src={staticFile('jen_master_hq.mp4')} style={{width:'100%',height:'100%',objectFit:'cover',filter:'contrast(1.03) saturate(1.05) brightness(1.01)'}} />
+    <AbsoluteFill style={{background:'linear-gradient(180deg, rgba(8,29,19,.22) 0%, rgba(8,29,19,0) 34%, rgba(8,29,19,.12) 58%, rgba(8,29,19,.58) 100%)'}} />
+    {frame >= 92 && frame < secToFrame(29.164) ? <OrganizerStrip /> : null}
+    {frame >= 92 && frame < secToFrame(29.164) ? <VisualMoments /> : null}
+    <CaptionLayer />
+    <Opening />
+    <Closing />
+  </AbsoluteFill>;
+};
 
-    <Img src={PMX} style={{position: 'absolute', top: 92, right: 72, width: 320, height: 80, objectFit: 'contain'}} />
-
-    <div style={{position: 'absolute', left: 72, right: 72, top: 330}}>
-      <GoldRule width={230} />
-      <div style={{fontFamily: 'Bebas Neue', fontSize: 166, lineHeight: 0.86, color: C.cream, marginTop: 30}}>FOTO OFICIAL</div>
-      <div style={{fontFamily: 'Bebas Neue', fontSize: 122, lineHeight: 0.9, color: C.gold, marginTop: 14}}>DE LA AFICIÓN PACKER</div>
-
-      <div style={{marginTop: 88, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 28}}>
-        <div>
-          <div style={{fontFamily: 'Bebas Neue', fontSize: 94, lineHeight: 0.9, color: C.white}}>DOM 13 SEP</div>
-        </div>
-        <div style={{borderLeft: '2px solid rgba(242,232,207,.24)', paddingLeft: 30}}>
-          <div style={{fontFamily: 'Bebas Neue', fontSize: 108, lineHeight: 0.9, color: C.gold}}>12:00 H</div>
-        </div>
-      </div>
-
-      <div style={{fontFamily: 'Montserrat', fontWeight: 800, fontSize: 40, lineHeight: 1.18, color: C.cream, marginTop: 66, maxWidth: 820}}>
-        PALACIO DE BELLAS ARTES · CDMX
-      </div>
-      <div style={{fontFamily: 'Montserrat', fontWeight: 800, fontSize: 38, color: C.gold, marginTop: 28}}>LLEGA 30 MIN ANTES</div>
+export const BellasArtesCover: React.FC = () => <AbsoluteFill style={{background:C.field,overflow:'hidden'}}>
+  <AbsoluteFill style={{background:'radial-gradient(circle at 86% 18%, rgba(255,198,47,.15), transparent 29%), linear-gradient(180deg, #123B31 0%, #081D13 78%)'}} />
+  <div style={{position:'absolute',left:72,right:72,top:280}}>
+    <div style={{width:230,height:8,background:C.gold,borderRadius:99}} />
+    <div style={{fontFamily:'Bebas Neue',fontSize:166,lineHeight:.86,color:C.cream,marginTop:30}}>FOTO OFICIAL</div>
+    <div style={{fontFamily:'Bebas Neue',fontSize:122,lineHeight:.9,color:C.gold,marginTop:16}}>DE LA AFICIÓN PACKER</div>
+    <div style={{marginTop:94,borderTop:'2px solid rgba(242,232,207,.24)',paddingTop:46}}>
+      <div style={{fontFamily:'Bebas Neue',fontSize:108,lineHeight:.9,color:C.white}}>DOM 13 SEP · 12:00 H</div>
+      <div style={{fontFamily:'Montserrat',fontWeight:800,fontSize:42,lineHeight:1.18,color:C.cream,marginTop:30}}>PALACIO DE BELLAS ARTES · CDMX</div>
     </div>
-  </AbsoluteFill>
-);
+  </div>
+</AbsoluteFill>;
