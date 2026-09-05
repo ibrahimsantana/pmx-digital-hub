@@ -16,7 +16,7 @@ Public Hub: `https://packersmexico.github.io/`
 
 ## STATUS
 
-`ORG MIGRATION PASS · PAGES ACTIVE · WEEK 1 CONFIGURED · FINAL IDENTITY / EXTERNAL COPY / EXACT QA HOLDS ONLY`
+`ORG MIGRATION PASS · PAGES ACTIVE · WEEK 1 CONFIGURED · FINAL REPO ASSET / EXTERNAL COPY / EXACT QA HOLDS ONLY`
 
 ## INFRASTRUCTURE
 
@@ -24,7 +24,7 @@ Public Hub: `https://packersmexico.github.io/`
 - Organization: `packersmexico`
 - Default branch: `main`
 - Architecture: `STATIC HTML + CSS + JAVASCRIPT · NO BUILD SYSTEM`
-- Latest verified Pages deploy: `64dbe6e0f66f16bcf4764bd47c4ae60a251d75d9 · SUCCESS`
+- Latest verified code deploy: `64dbe6e0f66f16bcf4764bd47c4ae60a251d75d9 · SUCCESS`
 
 ## WEEK 1
 
@@ -58,16 +58,24 @@ State: `PASS · CONFIGURED AND DEPLOYED`
 Authoritative PMX logo:
 `PMX_LOGO_HISTORICO_HORIZONTAL_CANVA_MASTER_V1.1.svg`
 
-Authoritative Figma component located:
+Authoritative Drive asset:
+`fileId 1oF6Fkw7f32j3DGd7ftpU_0uI7Bm50tLI · image/svg+xml`
+
+Authoritative Figma component:
 `fileKey z30v1pEwZPp7F4sV7JaExJ · node 75:4098 · PMX/Logo/Current/Horizontal/V1.1`
 
-Figma verification:
-`CURRENT V1.1 COMPONENT FOUND · 800×200 PREVIEW VERIFIED · SVG EXPORT AVAILABLE`
+Exact SVG materialization:
+`PASS · ORIGINAL DRIVE BYTES RECOVERED IN PROJECT RUNTIME`
 
-Repository materialization:
-`HOLD · CURRENT RUNTIME CANNOT RETRIEVE THE SHORT-LIVED FIGMA EXPORT BYTES`
+Verification:
+- `size = 682121 bytes`
+- `SHA-256 = 8407762a98552a7e7056aa687a1b259cc386fd2fc8fed5c6833dab5a937eff6f`
+- `MD5 = df6e08b10194bda73d07003dcc0d2a8a`
 
-Public safe fallback while held:
+Repository commit:
+`HOLD · GitHub connector has no binary/local-file upload action for repository contents`
+
+Public safe fallback until repo upload:
 `TEXT BRAND FALLBACK ONLY · NO FAKE LOGO · NO INTERNAL "ASSET PENDING" LABEL`
 
 NFL-MIN-LOGO-01:
@@ -101,6 +109,9 @@ Events preserved:
 Integrity:
 `CLICK_REGISTRO ≠ REGISTRO_CONFIRMADO ≠ ASISTENCIA_MEDIDA`
 
+Analytics Sheet:
+`HUB_MASTER_URL migrated to https://packersmexico.github.io/ · tracking destinations synchronized with live Hub`
+
 ## PUBLIC QA
 
 - Org migration: `PASS`
@@ -114,19 +125,26 @@ Integrity:
 - Special OFF: `PASS · ZERO RESERVED GAP`
 - Internal implementation labels exposed publicly: `FIXED`
 - Pending visual green slot in DATA PENDING: `FIXED · COLLAPSES SILENTLY`
+- Canonical / OG / X metadata: `IMPLEMENTED`
 - Exact final `390×844` browser QA: `PENDING AFTER LATEST DEPLOY`
 - Exact final `1440×900` browser QA: `PENDING AFTER LATEST DEPLOY`
 
 ## REMAINING HOLDS
 
-### P0 · PMX logo physical materialization
-The authoritative asset and Figma component are identified. Do not reconstruct. Replace the text fallback only when the exact V1.1 bytes are available.
+### P0 · Commit exact PMX logo to repo
+Original authoritative bytes are now materialized and checksum-verified. Remaining step is repository upload only; do not re-export or reconstruct.
 
 ### P0 · External forms.app wording
 Verify/correct the external form to use the locked public wording:
 `Casa Oficial de Packers en CDMX`
 
 If the form still says a broader/official-sounding phrase, publication remains on HOLD until corrected.
+
+### P0 · GA4 stream metadata housekeeping
+Update the GA4 Web Stream site URL from the previous personal GitHub Pages address to:
+`https://packersmexico.github.io/`
+
+Measurement and event collection remain active because the Measurement ID is unchanged.
 
 ### Non-blocking asset holds
 - `NFL-MIN-LOGO-01 SVG materialization`
@@ -135,12 +153,13 @@ If the form still says a broader/official-sounding phrase, publication remains o
 
 ## NEXT ACTION
 
-1. `Materialize PMX Horizontal V1.1 exact asset and replace text fallback.`
+1. `Upload exact PMX Horizontal V1.1 SVG bytes to assets/ in GitHub and replace text fallback.`
 2. `Verify/correct forms.app wording.`
-3. `Run final 390×844 + 1440×900 real-browser QA.`
-4. `Verify final click events in GA4, classifying QA traffic separately.`
-5. `If all P0 checks PASS → handoff to 05.`
+3. `Update GA4 Web Stream URL metadata to https://packersmexico.github.io/.`
+4. `Run final 390×844 + 1440×900 real-browser QA.`
+5. `Verify final click events in GA4, classifying QA traffic separately.`
+6. `If all P0 checks PASS → handoff to 05.`
 
 ## LAST RELEVANT CHANGE
 
-`64dbe6e0f66f16bcf4764bd47c4ae60a251d75d9 · fix: collapse pending visual slot and clean public brand fallback`
+`8d5224b2f7c71830f9ee0dfe43a1b4b3f80cf54f · feat: add canonical and social metadata for PMX Hub`
