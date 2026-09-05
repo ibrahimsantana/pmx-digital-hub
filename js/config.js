@@ -23,17 +23,17 @@ window.PMX_CONFIG = Object.freeze({
   specialTitle: "",
   specialDescription: "",
   calendarUrl: "https://calendar.google.com/calendar/u/0?cid=ZTNjMzY1NjdlMTRlNjcwZTczYWMzMWI4ZTMyNDA3NWU5Y2M4NThmOTE2YjExNGQ4ZGZkNThkMDI0NTQyNDY5MkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t",
-  gopackgoUrl: "",
+  gopackgoUrl: "https://www.youtube.com/@gopackgomx6092",
   analytics: Object.freeze({
     GA4_MEASUREMENT_ID: "G-QEN5F5YY14",
     hubVersion: "p0",
     eventVersion: "1.0"
   }),
   socialUrls: Object.freeze({
-    facebook: "",
-    instagram: "",
-    x: "",
-    tiktok: "",
-    youtube: ""
+    facebook: "https://www.facebook.com/gopackgomx/",
+    instagram: "https://www.instagram.com/packers_mx/",
+    x: "https://x.com/Packers_Mx",
+    tiktok: "https://www.tiktok.com/@packers_mx",
+    youtube: "https://www.youtube.com/@gopackgomx6092"
   })
 });
