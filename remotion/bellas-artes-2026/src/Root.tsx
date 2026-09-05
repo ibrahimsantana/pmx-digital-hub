@@ -8,7 +8,7 @@ export const Root: React.FC = () => {
       <Composition
         id="PMX-BellasArtes-Reel-Master"
         component={BellasArtesReel}
-        durationInFrames={1210}
+        durationInFrames={1198}
         fps={30}
         width={1080}
         height={1920}
