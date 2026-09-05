@@ -41,7 +41,7 @@ Referencias:
 - Tipografía: `Bebas Neue + Montserrat`
 - Colores: `Field Dark / Lambeau Green / Gold / Cream`
 
-Los módulos `PROMO` y `SPECIAL` colapsan completamente cuando están OFF.
+Los módulos `PROMO` y `SPECIAL` colapsan completamente cuando están OFF. En estado `DATA PENDING`, el visual pendiente también colapsa silenciosamente: no se reserva un bloque verde vacío ni se muestra un warning público.
 
 ## Week 1
 
@@ -88,7 +88,7 @@ Registro:
 
 Edita únicamente `window.PMX_CONFIG` en `js/config.js`.
 
-No introducir datos no confirmados. Si un asset visual aún no está disponible, usar el comportamiento `DATA PENDING` y conservar el slot reemplazable sin fabricar logos o fotografías.
+No introducir datos no confirmados. Si un asset visual aún no está disponible, usar el comportamiento `DATA PENDING` sin fabricar logos o fotografías.
 
 ## Analytics GA4
 
@@ -127,21 +127,33 @@ Formal QA cutoff:
 
 Todo tráfico anterior o igual al cutoff es `TEST / SETUP · EXCLUDE FROM CAMPAIGN PERFORMANCE`.
 
+## Identidad · hold P0
+
+Único logo autorizado:
+
+`PMX_LOGO_HISTORICO_HORIZONTAL_CANVA_MASTER_V1.1.svg`
+
+El componente vigente ya fue localizado y verificado en el Brand Book V5.1 de Figma:
+
+`fileKey z30v1pEwZPp7F4sV7JaExJ · node 75:4098 · PMX/Logo/Current/Horizontal/V1.1`
+
+Mientras los bytes exactos no estén materializados en el repositorio, el Hub muestra únicamente un fallback tipográfico `PACKERS MÉXICO`. No se reconstruye ni imita el logo.
+
 ## Assets pendientes no bloqueantes
 
-- `PMX Horizontal V1.1` exacto todavía no está materializado en el repo.
 - `NFL-MIN-LOGO-01` tiene PASS documental pero sigue pendiente de materialización.
 - Wingstop mantiene `MASTER FORMAT HOLD` para su master anual HQ.
 - RETURN 02 fotográfico de Wingstop Condesa sigue pendiente.
 
-Nunca reconstruir, vectorizar o improvisar estos assets para cerrar un placeholder.
+Nunca reconstruir, vectorizar o improvisar estos assets.
 
-## QA pendiente
+## QA / cierre pendiente
 
 Antes de declarar PASS final:
 
-- QA formal `390×844`
-- QA formal `1440×900`
-- click QA de redes + GoPackGo
-- validación final de UTM/GA4/console
-- sustitución del placeholder PMX por Horizontal V1.1 exacto
+- materializar `PMX Horizontal V1.1` exacto y sustituir el fallback tipográfico;
+- verificar/corregir el wording del formulario externo a `Casa Oficial de Packers en CDMX`;
+- QA formal `390×844`;
+- QA formal `1440×900`;
+- click QA de redes + GoPackGo;
+- validación final de UTM/GA4/console.
