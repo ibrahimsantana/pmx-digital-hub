@@ -13,11 +13,11 @@ Repository target:
 
 ## CURRENT PHASE
 
-`FASE 1 · STATIC FUNCTIONAL MVP`
+`FASE 2A · GA4 ANALYTICS INSTRUMENTATION`
 
 ## STATUS
 
-`PASS · Local MVP and GitHub remote synchronized · GitHub Pages not configured`
+`PASS · GA4 instrumentation implemented · Local QA passed · Measurement ID pending`
 
 ## GIT
 
@@ -103,7 +103,7 @@ Wingstop family:
 `PMX · COMMUNITY GAME DAY · WINGSTOP CONDESA · 2026–27`
 
 Figma:
-`FAMILY BUILD RUNNING SEPARATELY · NOT INTEGRATED`
+`NOT INTEGRATED · SEPARATE PHASE`
 
 Approved venue wording:
 `Casa Oficial de Packers en CDMX`
@@ -135,10 +135,25 @@ UTM support:
 `PASS · SOURCE PARAMETERS READ AND PRESERVED FOR CONFIGURED DESTINATIONS`
 
 GitHub Pages measurement spec:
-`PENDING HANDOFF FROM ANALYTICS`
+`PASS · SPEC V0.1 RECEIVED`
 
 Final instrumentation:
-`NOT IMPLEMENTED · INTENTIONALLY DEFERRED`
+`IMPLEMENTED · LOCAL QA PASS · MEASUREMENT ID PENDING`
+
+GA4 provider:
+`GOOGLE ANALYTICS 4 STANDARD · gtag.js`
+
+GA4 Measurement ID:
+`PENDING · GA4_MEASUREMENT_ID=""`
+
+Event helper:
+`PASS · pmxTrack(eventName, extraParams) · SINGLE SEND POINT`
+
+Events implemented:
+`HUB_VIEW · CLICK_REGISTRO · CLICK_MAPS · CLICK_PROMO · CLICK_CALENDAR · CLICK_GOPACKGO · CLICK_SOCIAL · QR_OPEN`
+
+REGISTRO_CONFIRMADO:
+`HOLD · DO NOT FIRE P0`
 
 External data transmission:
 `NONE`
@@ -146,7 +161,7 @@ External data transmission:
 ## BUILD
 
 Application files:
-`CREATED · index.html · css/styles.css · js/config.js · js/app.js`
+`CREATED · index.html · css/styles.css · js/config.js · js/analytics.js · js/app.js`
 
 Documentation:
 `CREATED · README.md · assets/README.md`
@@ -204,6 +219,21 @@ UTM:
 External links:
 `PASS · noopener noreferrer`
 
+Analytics test cases:
+`PASS · 8/8 MEASUREMENT SPEC V0.1 SCENARIOS`
+
+GA4 disabled behavior:
+`PASS · NO gtag.js LOAD · NO EXTERNAL SEND · CTA FUNCTIONAL`
+
+Attribution persistence:
+`PASS · SESSION STORAGE · INSTAGRAM STORY TO DIRECT NAVIGATION VERIFIED`
+
+Event uniqueness:
+`PASS · SINGLE HUB_VIEW PER LOAD · SINGLE QR_OPEN FOR onsite/qr`
+
+Privacy:
+`PASS · NO PII PARAMETERS`
+
 Console:
 `PASS · NO ERRORS OR WARNINGS`
 
@@ -225,8 +255,8 @@ FINAL REMOTE HEAD:
 
 ### Later-phase dependencies
 
-For final analytics implementation:
-`ANALYTICS MEASUREMENT SPEC PENDING`
+For GA4 activation:
+`APPROVED GA4 MEASUREMENT ID REQUIRED`
 
 For final visual parity:
 `APPROVED FIGMA HANDOFF / AUTHORITATIVE ASSETS REQUIRED`
@@ -236,10 +266,10 @@ For public URL:
 
 ## NEXT ACTION
 
-After explicit instruction:
-`FASE 2 · ANALYTICS INSTRUMENTATION + VISUAL HANDOFF INTEGRATION`
+After an approved Measurement ID is supplied:
+`ACTIVATE GA4 · VALIDATE REAL EVENTS IN DEBUGVIEW`
 
-Do not configure GitHub Pages or begin FASE 2 automatically.
+Do not configure GitHub Pages, integrate Figma or begin another phase automatically.
 
 ## LAST RELEVANT COMMIT
 
@@ -251,3 +281,6 @@ Current FASE 1 commit message:
 
 Remote-creation closure commit message:
 `chore: close GitHub remote creation hold`
+
+Current FASE 2A commit message:
+`feat: implement PMX Hub GA4 instrumentation`

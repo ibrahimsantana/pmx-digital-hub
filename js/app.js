@@ -54,6 +54,17 @@
     link.rel = "noopener noreferrer";
   }
 
+  function attachTracking(link, eventName, eventParameters) {
+    if (!link.hasAttribute("href")) return;
+    link.addEventListener("click", function () {
+      window.pmxTrack(eventName, Object.assign({
+        cta_id: link.id,
+        destination_type: eventParameters.destination_type,
+        destination_url: link.href
+      }, eventParameters));
+    });
+  }
+
   function renderSocialLinks(attribution) {
     var list = document.getElementById("social-links");
     var labels = {
@@ -76,6 +87,14 @@
         link.href = destination;
         link.target = "_blank";
         link.rel = "noopener noreferrer";
+        link.addEventListener("click", function () {
+          window.pmxTrack("CLICK_SOCIAL", {
+            cta_id: "social-" + network,
+            destination_type: "social",
+            destination_url: link.href,
+            social_network: network
+          });
+        });
       } else {
         link.setAttribute("aria-disabled", "true");
         link.setAttribute("title", "URL social pendiente de validación");
@@ -90,17 +109,22 @@
     var section = document.getElementById("promo-section");
     if (!config.promoEnabled) {
       section.hidden = true;
+      section.replaceChildren();
       return;
     }
 
     setText("promo-title", config.promoTitle || "PROMOCIÓN PENDIENTE");
     setText("promo-description", config.promoDescription || "Contenido pendiente de validación.");
     configureLink("promo-link", config.promoUrl, attribution, "URL de promoción pendiente de validación");
+    attachTracking(document.getElementById("promo-link"), "CLICK_PROMO", {
+      destination_type: "promotion",
+      promo_id: config.promoId || config.gameId + "_promo"
+    });
     section.hidden = false;
   }
 
   function render() {
-    var attribution = readAttribution(window.location.search);
+    var attribution = window.PMX_ANALYTICS.getAttribution();
     var opponentPrefix = config.homeAway === "AWAY" ? "EN " : config.homeAway === "HOME" ? "VS " : "";
 
     window.PMX_ATTRIBUTION = Object.freeze(Object.assign({}, attribution));
@@ -116,8 +140,17 @@
     configureLink("maps-link", config.mapsUrl, attribution, "URL de Maps pendiente de validación");
     configureLink("calendar-link", config.calendarUrl, attribution, "URL de calendario pendiente de validación");
     configureLink("gopackgo-link", config.gopackgoUrl, attribution, "URL de GoPackGo MX pendiente de validación");
+    attachTracking(document.getElementById("registration-link"), "CLICK_REGISTRO", { destination_type: "registration" });
+    attachTracking(document.getElementById("maps-link"), "CLICK_MAPS", { destination_type: "maps" });
+    attachTracking(document.getElementById("calendar-link"), "CLICK_CALENDAR", { destination_type: "calendar" });
+    attachTracking(document.getElementById("gopackgo-link"), "CLICK_GOPACKGO", { destination_type: "gopackgo" });
     renderPromo(attribution);
     renderSocialLinks(attribution);
+
+    window.PMX_ANALYTICS.trackOnce("HUB_VIEW", {}, "hub-view");
+    if (attribution.utm_source === "onsite" && attribution.utm_medium === "qr") {
+      window.PMX_ANALYTICS.trackOnce("QR_OPEN", {}, "qr-open");
+    }
   }
 
   window.PMX_HUB = Object.freeze({
@@ -127,4 +160,3 @@
 
   render();
 })();
-
