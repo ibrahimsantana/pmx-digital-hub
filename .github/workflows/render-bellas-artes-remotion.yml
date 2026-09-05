@@ -15,7 +15,7 @@ permissions:
 jobs:
   render:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     defaults:
       run:
         working-directory: remotion/bellas-artes-2026
@@ -38,6 +38,14 @@ jobs:
           test -f public/pmx_logo.webp || (echo 'Missing public/pmx_logo.webp' && exit 2)
           test -f public/colectivo_logo.webp || (echo 'Missing public/colectivo_logo.webp' && exit 2)
 
+      - name: Prepare higher-quality Jen source
+        run: |
+          ffmpeg -y -i public/jen_master.mp4 \
+            -vf "scale=1080:1920:flags=lanczos,eq=contrast=1.025:saturation=1.045:brightness=0.005,unsharp=5:5:0.30:5:5:0.0" \
+            -c:v libx264 -preset slow -crf 15 -pix_fmt yuv420p \
+            -c:a aac -b:a 192k \
+            public/jen_master_hq.mp4
+
       - name: Render Reel
         run: npm run render
 
@@ -47,7 +55,7 @@ jobs:
       - name: Upload render artifact
         uses: actions/upload-artifact@v4
         with:
-          name: PMX-Bellas-Artes-Remotion-Render
+          name: PMX-Bellas-Artes-Remotion-Render-V2
           path: |
             remotion/bellas-artes-2026/out/pmx-bellas-artes-reel.mp4
             remotion/bellas-artes-2026/out/pmx-bellas-artes-cover.png
