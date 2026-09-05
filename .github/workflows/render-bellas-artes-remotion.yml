@@ -35,8 +35,8 @@ jobs:
       - name: Verify required media
         run: |
           test -f public/jen_master.mp4 || (echo 'Missing public/jen_master.mp4' && exit 2)
-          test -f public/pmx_logo.png || (echo 'Missing public/pmx_logo.png' && exit 2)
-          test -f public/colectivo_logo.png || (echo 'Missing public/colectivo_logo.png' && exit 2)
+          test -f public/pmx_logo.webp || (echo 'Missing public/pmx_logo.webp' && exit 2)
+          test -f public/colectivo_logo.webp || (echo 'Missing public/colectivo_logo.webp' && exit 2)
 
       - name: Render Reel
         run: npm run render
