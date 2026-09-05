@@ -6,7 +6,7 @@ export const Root: React.FC = () => {
   return (
     <>
       <Composition
-        id="PMX_BellasArtes_Reel_Master"
+        id="PMX-BellasArtes-Reel-Master"
         component={BellasArtesReel}
         durationInFrames={810}
         fps={30}
@@ -14,7 +14,7 @@ export const Root: React.FC = () => {
         height={1920}
       />
       <Composition
-        id="PMX_BellasArtes_Cover"
+        id="PMX-BellasArtes-Cover"
         component={BellasArtesCover}
         durationInFrames={150}
         fps={30}
