@@ -8,8 +8,9 @@
     "still": "remotion still src/index.ts PMX_BellasArtes_Cover out/pmx-bellas-artes-cover.png --frame=120"
   },
   "dependencies": {
+    "@fontsource/bebas-neue": "5.2.6",
+    "@fontsource/montserrat": "5.2.6",
     "@remotion/cli": "4.0.506",
-    "@remotion/google-fonts": "4.0.506",
     "@remotion/media": "4.0.506",
     "remotion": "4.0.506",
     "react": "19.1.1",
