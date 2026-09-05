@@ -8,282 +8,218 @@ Project:
 Partnership ID:
 `PMX-PART-2026-WINGSTOP-COND-001`
 
-Repository target:
-`pmx-digital-hub`
+Repository:
+`ibrahimsantana/pmx-digital-hub`
 
 ## CURRENT PHASE
 
-`FASE 2A · GA4 ANALYTICS INSTRUMENTATION`
+`FASE 2B · FIGMA VISUAL HANDOFF IMPLEMENTATION`
 
 ## STATUS
 
-`PASS · GA4 instrumentation active · Local QA passed · Live QA pending`
-
-## GIT
-
-Local repository:
-`INITIALIZED`
-
-Current branch:
-`main`
-
-Initial documentation commit:
-`00053af8df1e27c8033cc90a9f9693fbc0426045`
-
-Governance-lock commit:
-`27d8b1a8deba4e69944c36ff85a0fb5ca9d0b738`
-
-Remote GitHub:
-`PASS`
-
-GitHub repository:
-`https://github.com/ibrahimsantana/pmx-digital-hub`
-
-Origin:
-`CONFIGURED · https://github.com/ibrahimsantana/pmx-digital-hub.git`
-
-Remote branch:
-`main`
-
-Push:
-`PASS · main → origin/main`
-
-Initial remote HEAD:
-`fbf5d4fe98c7569fa0112ecd27f16607e39ca560`
-
-Remote history:
-`PASS · EXISTING LOCAL HISTORY PRESERVED · NO PARALLEL HISTORY`
+`FIGMA HANDOFF IMPLEMENTED · PUBLIC REDEPLOY / REAL-BROWSER QA PENDING`
 
 ## INFRASTRUCTURE
 
 P0 hosting:
-`GitHub Pages`
-
-Cost target:
-`$0`
-
-GitHub Student:
-`APPROVED · BENEFITS AWAITING ACTIVATION`
-
-Student benefits:
-`NOT A BUILD BLOCKER`
-
-GitHub Pages:
-`ACTIVE · AUTOMATIC REDEPLOY EXPECTED AFTER PUSH`
+`GitHub Pages · ACTIVE`
 
 Public Hub URL:
 `https://ibrahimsantana.github.io/pmx-digital-hub/`
 
-Custom domain:
-`FUTURE / OPTIONAL`
+Architecture:
+`STATIC HTML + CSS + JAVASCRIPT · NO BUILD SYSTEM · NO NEW DEPENDENCIES`
 
-Beacons:
-`FALLBACK`
+## FIGMA HANDOFF
 
-Metricool SmartLinks:
-`FUTURE UPGRADE · BUDGET DEPENDENT`
+Visual source of truth:
+`FIGMA → CODEX · PMX DIGITAL HUB VISUAL HANDOFF V0.1`
 
-## REGISTRATION
+Mobile reference:
+`390×844 · NORMAL · PROMO OFF · PROMO ON · SPECIAL ON · DATA PENDING`
 
-CTA:
-`Confirma tu asistencia`
+Desktop reference:
+`1440×900 · 61.8 / 38.2`
 
-Destination:
+Implementation rules preserved:
+- `Field Dark #081D13`
+- `Lambeau Green #123B31`
+- `Gold #FFC62F`
+- `Cream #F2E8CF`
+- `Bebas Neue + Montserrat`
+- responsive margins `21 / 34 / 89`
+- primary CTA `CONFIRMA TU ASISTENCIA`
+- secondary CTA `CÓMO LLEGAR`
+- `Casa Oficial de Packers en CDMX`
+- Promo OFF and Special OFF collapse with no dead space
+- no generic card/pill/dashboard treatment
+- keyboard focus uses `2px Gold` with `4px` offset
+
+## CONTENT / WEEK 1
+
+Game ID:
+`PMX-WS-2026-W01`
+
+Week 1:
+`Packers @ Minnesota Vikings · DOM 13 SEP · 14:25 CDMX`
+
+Venue:
+`Wingstop Condesa · CDMX`
+
+Registration:
+`PASS · USER-CONFIRMED CURRENT`
+
+Registration URL:
 `https://share.forms.app/form/6a96032ee64cd5f15d1688aa`
 
-Status:
-`PASS · USER-CONFIRMED CURRENT · LINK VERIFIED IN LOCAL MVP`
+Maps:
+`PASS · WINGSTOP CONDESA PLACE ID VERIFIED · GOOGLE MAPS SEARCH URL CONFIGURED`
 
-Important:
-`CLICK_REGISTRO ≠ REGISTRO COMPLETADO`
+Promo:
+`OFF`
 
-## CONTENT / DESIGN
+Special:
+`OFF`
 
-Wingstop family:
-`PMX · COMMUNITY GAME DAY · WINGSTOP CONDESA · 2026–27`
+## ASSETS
 
-Figma:
-`NOT INTEGRATED · SEPARATE PHASE`
+PMX Horizontal V1.1:
+`HOLD · EXACT ASSET NOT YET MATERIALIZED IN REPOSITORY`
 
-Approved venue wording:
-`Casa Oficial de Packers en CDMX`
+Safe behavior:
+`TECHNICAL PLACEHOLDER ONLY · NO RECONSTRUCTION`
 
-Wingstop definitive brand master:
-`PARTIAL PASS / AUTHORITATIVE MASTER ASSETS PENDING`
+NFL-MIN-LOGO-01:
+`PASS DOCUMENTAL · MATERIALIZATION HOLD ONLY · NON-BLOCKING`
 
-PMX logo:
-`HORIZONTAL V1.1 ASSET PENDING · TEXTUAL TECHNICAL PLACEHOLDER IN USE`
+WS-LOGO-01.jpg:
+`MATERIALIZED IN PROJECT CONTEXT · SOURCE-VERIFIED TECHNICAL ASSET · MASTER FORMAT HOLD`
 
-Wingstop asset:
-`AUTHORITATIVE ASSET PENDING · TEXTUAL TECHNICAL PLACEHOLDER IN USE`
+Wingstop Condesa photography:
+`RETURN 02 PENDING · NON-BLOCKING`
 
-Historical Ari flyers:
-`REFERENCE ONLY`
+Hero photo behavior while pending:
+`LAMBEAU GREEN REPLACEABLE SLOT · NO WRONG PHOTO`
 
 ## ANALYTICS
 
-Master:
-`PMX-WINGSTOP-2026-27 · Analytics & Attribution · Juego por Juego`
+GA4:
+`ACTIVE · LIVE CORE QA PASS · CUSTOM DIMENSIONS PASS`
 
-Tracking map:
-`STRUCTURE READY`
+Measurement ID:
+`G-QEN5F5YY14`
 
-UTM taxonomy:
-`LOCKED`
+Custom dimensions:
+`8/8 · EVENT SCOPE`
 
-UTM support:
-`PASS · SOURCE PARAMETERS READ AND PRESERVED FOR CONFIGURED DESTINATIONS`
+Formal QA cutoff:
+`2026-09-05T11:55:39-06:00`
 
-GitHub Pages measurement spec:
-`PASS · SPEC V0.1 RECEIVED`
+Baseline rule:
+`≤ 11:55:39 = TEST / SETUP · EXCLUDE FROM CAMPAIGN PERFORMANCE`
+`> 11:55:39 = ELIGIBLE FOR LIVE CAMPAIGN PERFORMANCE`
 
-Final instrumentation:
-`ACTIVE · LIVE QA PENDING`
-
-GA4 provider:
-`GOOGLE ANALYTICS 4 STANDARD · gtag.js`
-
-GA4 Measurement ID:
-`PASS · G-QEN5F5YY14`
-
-Event helper:
-`PASS · pmxTrack(eventName, extraParams) · SINGLE SEND POINT`
-
-Events implemented:
+Events preserved:
 `HUB_VIEW · CLICK_REGISTRO · CLICK_MAPS · CLICK_PROMO · CLICK_CALENDAR · CLICK_GOPACKGO · CLICK_SOCIAL · QR_OPEN`
 
 REGISTRO_CONFIRMADO:
 `HOLD · DO NOT FIRE P0`
 
-External data transmission:
-`GA4 EVENT DATA ONLY · NO PII`
+Integrity:
+`CLICK_REGISTRO ≠ REGISTRO_CONFIRMADO ≠ ASISTENCIA_MEDIDA`
 
-## BUILD
+## IMPLEMENTATION
 
-Application files:
-`CREATED · index.html · css/styles.css · js/config.js · js/analytics.js · js/app.js`
+Files updated:
+- `index.html`
+- `css/styles.css`
+- `js/config.js`
+- `js/app.js`
+- `STATUS.md`
+- `assets/README.md`
 
-Documentation:
-`CREATED · README.md · assets/README.md`
+Analytics implementation:
+`UNCHANGED`
 
-Dependencies:
-`NONE`
+Taxonomy:
+`UNCHANGED`
 
-Architecture:
-`STATIC HTML + CSS + JAVASCRIPT`
+Conditional modules:
+`PROMO ON/OFF · SPECIAL ON/OFF READY`
 
-Weekly configuration:
-`PASS · SINGLE SOURCE IN js/config.js`
-
-UI:
-`PASS · FUNCTIONAL MOBILE-FIRST MVP · NOT FINAL FIGMA MASTER`
-
-Promotion:
-`PASS · DEFAULT OFF · ON/OFF BEHAVIOR VERIFIED`
-
-Unconfirmed operational values:
-`EXPLICIT TECHNICAL PLACEHOLDERS`
-
-Deployment:
-`GITHUB PAGES ACTIVE · REDEPLOY EXPECTED AFTER PUSH`
+Responsive:
+`≤767 one column / 21px margin`
+`768–1099 one column wide / 34px margin`
+`≥1100 61.8/38.2 / 89px margin / 1262px max width`
 
 ## QA
 
 JavaScript syntax:
 `PASS · node --check`
 
-Mobile viewport:
-`PASS · 390 × 844 · NO HORIZONTAL OVERFLOW`
+Figma contract translation:
+`PASS · HTML/CSS/JS IMPLEMENTED`
 
-Desktop viewport:
-`PASS · 1440 × 900 · RESPONSIVE TWO-COLUMN HERO`
+Real GitHub Pages redeploy:
+`PENDING`
 
-Keyboard:
-`PASS · SKIP LINK AND PRIMARY CTA RECEIVE FOCUS`
+Real browser:
+`PENDING`
+
+Mobile 390×844:
+`PENDING REAL DEPLOY QA`
+
+Desktop 1440×900:
+`PENDING REAL DEPLOY QA`
 
 Primary CTA:
-`PASS · CORRECT FORMS.APP DESTINATION`
+`CONFIGURED · FORMS.APP CURRENT`
 
 Maps:
-`PASS · CONFIGURABLE · DISABLED WHILE URL IS UNVERIFIED`
+`PASS · VERIFIED WINGSTOP CONDESA DESTINATION CONFIGURED`
 
-Promotion:
-`PASS · OFF HIDDEN · TEMPORARY ON CONFIGURATION RENDERED · OFF RESTORED`
+Promo OFF:
+`IMPLEMENTED · ZERO RESERVED GAP`
 
-Weekly configuration:
-`PASS · TEMPORARY DATA CHANGE RENDERED · APPROVED PLACEHOLDERS RESTORED`
+Special OFF:
+`IMPLEMENTED · ZERO RESERVED GAP`
 
-UTM:
-`PASS · utm_source · utm_medium · utm_campaign · utm_content PRESERVED`
-
-External links:
-`PASS · noopener noreferrer`
-
-Analytics test cases:
-`PASS · 8/8 MEASUREMENT SPEC V0.1 SCENARIOS`
-
-GA4 disabled behavior:
-`PASS · NO gtag.js LOAD · NO EXTERNAL SEND · CTA FUNCTIONAL`
-
-GA4 active behavior:
-`PASS · LOCAL PROVIDER LOAD · HUB_VIEW AND CLICK_REGISTRO SENT ONCE`
-
-Attribution persistence:
-`PASS · SESSION STORAGE · INSTAGRAM STORY TO DIRECT NAVIGATION VERIFIED`
-
-Event uniqueness:
-`PASS · SINGLE HUB_VIEW PER LOAD · SINGLE QR_OPEN FOR onsite/qr`
-
-Privacy:
-`PASS · NO PII PARAMETERS`
-
-Console:
-`PASS · NO ERRORS OR WARNINGS`
-
-Clipping / overflow:
-`PASS · NO HORIZONTAL OVERFLOW DETECTED`
+Keyboard focus:
+`IMPLEMENTED · GOLD 2PX / 4PX OFFSET`
 
 ## BLOCKERS
 
-### CLOSED · REMOTE CREATION
+### Non-blocking identity asset hold
+`PMX Horizontal V1.1 exact repo asset not materialized`
 
-CLOSED BY:
-`HTTPS origin configured and authenticated push completed.`
+Impact:
+`Public implementation continues with a clearly labeled technical placeholder; logo is not fabricated.`
 
-REMOTE CONTENT:
-`PASS · ALL EXPECTED PROJECT FILES VERIFIED ON origin/main`
+### Non-blocking rival asset hold
+`NFL-MIN-LOGO-01 exact SVG materialization pending`
 
-FINAL REMOTE HEAD:
-`THIS STATUS CLOSURE COMMIT · VERIFY WITH git rev-parse origin/main`
+Impact:
+`Text data remains; visual rival asset collapses silently per DATA PENDING behavior.`
 
-### Later-phase dependencies
+### Operational URL hold
+`Calendar / GoPackGo / social destinations are still unverified or blank in config.`
 
-For GA4 activation:
-`CLOSED · APPROVED MEASUREMENT ID G-QEN5F5YY14 CONFIGURED`
-
-For final visual parity:
-`APPROVED FIGMA HANDOFF / AUTHORITATIVE ASSETS REQUIRED`
-
-For public URL:
-`REAL GITHUB PAGES DEPLOYMENT REQUIRED`
+Impact:
+`Those controls remain disabled until authoritative URLs are supplied. Maps is configured and enabled.`
 
 ## NEXT ACTION
 
-After automatic Pages redeploy:
-`VALIDATE REAL EVENTS IN GA4 DEBUGVIEW`
+After GitHub Pages redeploy:
+`RUN REAL-BROWSER VISUAL + FUNCTIONAL QA ON 390×844 AND 1440×900`
 
-Do not configure GitHub Pages, integrate Figma or begin another phase automatically.
+Then:
+`VERIFY PRIMARY CTA · MAPS · UTM PRESERVATION · GA4 EVENTS · CONDITIONAL STATES · CONSOLE`
 
-## LAST RELEVANT COMMIT
+Do not declare technical PASS until public deployed result is inspected.
 
-`27d8b1a8deba4e69944c36ff85a0fb5ca9d0b738`
-`chore: lock PMX Digital Hub project instructions`
+## LAST RELEVANT CHANGE
 
-Current FASE 1 commit message:
-`feat: build PMX Digital Hub functional MVP`
+`feat: integrate Figma visual handoff V0.1`
 
-Remote-creation closure commit message:
-`chore: close GitHub remote creation hold`
-
-Current FASE 2A commit message:
-`feat: implement PMX Hub GA4 instrumentation`
+Previous GA4 activation commit:
+`4256d1a79c07d13fab83215f472866aedfc71846`
