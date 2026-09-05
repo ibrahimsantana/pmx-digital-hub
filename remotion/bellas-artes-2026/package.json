@@ -1,0 +1,23 @@
+{
+  "name": "pmx-bellas-artes-remotion",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts PMX_BellasArtes_Reel_Master out/pmx-bellas-artes-reel.mp4 --codec=h264 --crf=18 --pixel-format=yuv420p",
+    "still": "remotion still src/index.ts PMX_BellasArtes_Cover out/pmx-bellas-artes-cover.png --frame=120"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.506",
+    "@remotion/google-fonts": "4.0.506",
+    "@remotion/media": "4.0.506",
+    "remotion": "4.0.506",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.10",
+    "@types/react-dom": "19.1.7",
+    "typescript": "5.9.2"
+  }
+}
