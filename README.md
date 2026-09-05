@@ -1,43 +1,110 @@
-# PMX DIGITAL HUB
+# PACKERS MÉXICO · DIGITAL HUB
 
-MVP estático y mobile-first para `PACKERS MÉXICO × WINGSTOP CONDESA · 2026–27`.
+Hub público, estático y mobile-first para `PACKERS MÉXICO × WINGSTOP CONDESA · 2026–27`.
+
+## URL pública
+
+`https://packersmexico.github.io/`
+
+Repository:
+
+`packersmexico/packersmexico.github.io`
 
 ## Propósito
 
-Presentar el próximo juego y concentrar las acciones operativas aprobadas del Hub. Esta fase valida estructura, funcionamiento y jerarquía; no representa el master visual final.
+Concentrar la experiencia operativa de Game Day de PACKERS MÉXICO: próximo juego, confirmación de asistencia, ubicación, calendario, GoPackGo MX y redes sociales, con atribución UTM y medición GA4.
+
+PACKERS MÉXICO opera como comunidad/editorial independiente y no como organización oficial de Green Bay Packers ni de la NFL.
 
 ## Estructura
 
 - `index.html`: estructura semántica de la interfaz.
-- `css/styles.css`: presentación responsive.
+- `css/styles.css`: presentación responsive basada en el handoff visual aprobado de Figma.
 - `js/config.js`: fuente única de contenido semanal y destinos.
-- `js/analytics.js`: atribución de sesión, helper de eventos y carga condicional de GA4.
+- `js/analytics.js`: atribución de sesión, helper de eventos y carga de GA4.
 - `js/app.js`: render, comportamiento y conservación modular de UTM.
-- `assets/README.md`: dependencias de identidad pendientes.
+- `assets/README.md`: dependencias de identidad y assets.
+- `STATUS.md`: estado operativo vigente.
 
-## Visualización local
+## Implementación visual
 
-Abre `index.html` directamente en un navegador moderno. No requiere instalación, servidor, framework ni proceso de build.
+Fuente de verdad visual:
+
+`FIGMA → CODEX · PMX DIGITAL HUB VISUAL HANDOFF V0.1`
+
+Referencias:
+
+- Mobile: `390×844`
+- Desktop: `1440×900`
+- Desktop principal: proporción `61.8 / 38.2`
+- Márgenes responsive: `21 / 34 / 89`
+- Tipografía: `Bebas Neue + Montserrat`
+- Colores: `Field Dark / Lambeau Green / Gold / Cream`
+
+Los módulos `PROMO` y `SPECIAL` colapsan completamente cuando están OFF.
+
+## Week 1
+
+Game ID:
+
+`PMX-WS-2026-W01`
+
+Juego:
+
+`Packers @ Minnesota Vikings · DOM 13 SEP · 14:25 CDMX`
+
+Llegada comunidad:
+
+`14:00 CDMX`
+
+Sede:
+
+`Wingstop Condesa · CDMX`
+
+Wording aprobado:
+
+`Casa Oficial de Packers en CDMX`
+
+CTA principal:
+
+`CONFIRMA TU ASISTENCIA`
+
+Registro:
+
+`https://share.forms.app/form/6a96032ee64cd5f15d1688aa`
+
+## Destinos activos
+
+- Maps · Wingstop Condesa
+- Calendario público · `PACKERS MÉXICO · Game Days 2026–27`
+- GoPackGo MX · YouTube
+- Facebook · `https://www.facebook.com/gopackgomx/`
+- Instagram · `https://www.instagram.com/packers_mx/`
+- X · `https://x.com/Packers_Mx`
+- TikTok · `https://www.tiktok.com/@packers_mx`
+- YouTube · `https://www.youtube.com/@gopackgomx6092`
 
 ## Actualizar el próximo juego
 
-Edita únicamente `window.PMX_CONFIG` en `js/config.js`. Rival, fecha y horario conservan placeholders técnicos hasta que existan datos confirmados.
+Edita únicamente `window.PMX_CONFIG` en `js/config.js`.
 
-Las URLs todavía no validadas permanecen vacías y sus acciones se muestran como no disponibles. `promoEnabled` controla completamente la visibilidad de la promoción.
+No introducir datos no confirmados. Si un asset visual aún no está disponible, usar el comportamiento `DATA PENDING` y conservar el slot reemplazable sin fabricar logos o fotografías.
 
 ## Analytics GA4
 
-La única configuración del proveedor está en `js/config.js`:
+Measurement ID activo:
 
-```js
-GA4_MEASUREMENT_ID: ""
+```text
+G-QEN5F5YY14
 ```
 
-Para activar GA4, reemplaza el valor vacío por el Measurement ID real aprobado. Mientras permanece vacío, no se carga `gtag.js`, no se envían datos y el Hub conserva toda su funcionalidad.
+Estado:
 
-El helper global `pmxTrack(eventName, extraParams)` es el único punto de envío. Incorpora automáticamente ID de juego, versiones, ubicación de página y la atribución UTM persistida durante la sesión. La configuración de GA4 usa `send_page_view: false`; `HUB_VIEW` se controla con una llave única por carga para evitar duplicación.
+`GA4 ACTIVE · LIVE CORE QA PASS · CUSTOM DIMENSIONS PASS`
 
-Eventos P0 soportados:
+El helper global `pmxTrack(eventName, extraParams)` es el único punto de envío y conserva atribución UTM de sesión.
+
+Eventos P0:
 
 - `HUB_VIEW`
 - `CLICK_REGISTRO`
@@ -46,19 +113,35 @@ Eventos P0 soportados:
 - `CLICK_CALENDAR`
 - `CLICK_GOPACKGO`
 - `CLICK_SOCIAL`
-- `QR_OPEN`, exclusivamente con `utm_source=onsite` y `utm_medium=qr`
+- `QR_OPEN`
 
-Todos incluyen `id_juego`, los cuatro parámetros `pmx_utm_*`, `hub_version`, `event_version` y `page_location`. Los clicks agregan `cta_id`, `destination_type` y `destination_url`; Social agrega `social_network` y Promo agrega `promo_id`. No se envía PII.
+`REGISTRO_CONFIRMADO` permanece deshabilitado en P0.
 
-`REGISTRO_CONFIRMADO` no existe como evento activo en P0. Un `CLICK_REGISTRO` no demuestra registro completado ni asistencia.
+Regla de integridad:
 
-### QA local sin transmisión
+`CLICK_REGISTRO ≠ REGISTRO_CONFIRMADO ≠ ASISTENCIA_MEDIDA`
 
-Abre el Hub desde `localhost` o `127.0.0.1` con `pmx_debug=1`. Los intentos y parámetros construidos quedan disponibles solamente en memoria en `window.PMX_ANALYTICS.debugAttempts` y en el atributo temporal `data-pmx-analytics-debug` del elemento `<html>`, con `sent: false` mientras el Measurement ID esté vacío. Este modo no se activa fuera de localhost y no transmite datos.
+Formal QA cutoff:
 
-## Pendiente para fases posteriores
+`2026-09-05T11:55:39-06:00`
 
-- Integración del handoff visual aprobado de Figma y activos definitivos.
-- Incorporación del Measurement ID real aprobado y validación de envío en GA4 DebugView.
-- Configuración y validación de GitHub Pages.
-- Sustitución de placeholders por información y URLs confirmadas.
+Todo tráfico anterior o igual al cutoff es `TEST / SETUP · EXCLUDE FROM CAMPAIGN PERFORMANCE`.
+
+## Assets pendientes no bloqueantes
+
+- `PMX Horizontal V1.1` exacto todavía no está materializado en el repo.
+- `NFL-MIN-LOGO-01` tiene PASS documental pero sigue pendiente de materialización.
+- Wingstop mantiene `MASTER FORMAT HOLD` para su master anual HQ.
+- RETURN 02 fotográfico de Wingstop Condesa sigue pendiente.
+
+Nunca reconstruir, vectorizar o improvisar estos assets para cerrar un placeholder.
+
+## QA pendiente
+
+Antes de declarar PASS final:
+
+- QA formal `390×844`
+- QA formal `1440×900`
+- click QA de redes + GoPackGo
+- validación final de UTM/GA4/console
+- sustitución del placeholder PMX por Horizontal V1.1 exacto
