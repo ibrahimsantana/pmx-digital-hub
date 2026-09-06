@@ -16,7 +16,7 @@ Public Hub: `https://packersmexico.github.io/`
 
 ## STATUS
 
-`ORG MIGRATION PASS · PAGES ACTIVE · WEEK 1 CONFIGURED · PMX/WINGSTOP ASSETS INTEGRATED · SOURCE/PARITY QA PASS · SCREENSHOT PERCEPTUAL QA PASS · EXTERNAL FORM / EXACT BROWSER QA HOLDS ONLY`
+`ORG MIGRATION PASS · PAGES ACTIVE · WEEK 1 CONFIGURED · PMX/WINGSTOP ASSETS INTEGRATED · SOURCE/PARITY QA PASS · SCREENSHOT PERCEPTUAL QA PASS · GA4 STREAM METADATA PASS · EXTERNAL FORM DEPENDENCY / EXACT BROWSER QA HOLDS ONLY`
 
 ## INFRASTRUCTURE
 
@@ -83,9 +83,15 @@ Wingstop Condesa photography:
 
 ## ANALYTICS
 
-GA4: `ACTIVE · LIVE CORE QA PASS · CUSTOM DIMENSIONS PASS`
+GA4: `ACTIVE · LIVE CORE QA PASS · CUSTOM DIMENSIONS PASS · STREAM METADATA PASS`
 
 Measurement ID: `G-QEN5F5YY14`
+
+Web Stream:
+- Name: `PMX Digital Hub`
+- URL: `https://packersmexico.github.io`
+- Metadata update: `PASS · USER SCREENSHOT VERIFIED 2026-09-05`
+- Data collection: `ACTIVE`
 
 Custom dimensions: `8/8 · EVENT SCOPE`
 
@@ -163,14 +169,15 @@ Important limitation:
 `957×925 is not an exact required QA viewport; exact 390×844 and 1440×900 browser validation remains open.`
 
 External forms.app result:
-`FAIL · P0 COPY / POSITIONING HOLD CONFIRMED`
+`FAIL · P0 COPY / POSITIONING HOLD CONFIRMED · EXTERNAL DEPENDENCY`
 
 Screenshot confirms the external form currently contains:
 - broader official-sounding wording referring to `la casa oficial de los Green Bay Packers en México`
 - only `Hora: 14:00 hrs`, without distinguishing community arrival from `14:25 CDMX` kickoff
 - reservation-like language including `aparta tu lugar` / `reserva`
 
-Required correction remains external to the Hub code.
+Ownership/access note:
+`PMX does not control or have edit access to this forms.app form. Correction must be requested from the external form owner / partnership contact; do not treat this as a Hub-code task.`
 
 ## PUBLIC QA
 
@@ -190,6 +197,7 @@ Required correction remains external to the Hub code.
 - Canonical / OG / X metadata: `IMPLEMENTED`
 - Figma implementation contract source parity: `PASS · 25/25`
 - User screenshot perceptual QA: `PASS · 957×925 · NON-EXACT VIEWPORT`
+- GA4 Web Stream URL metadata: `PASS · https://packersmexico.github.io`
 - Exact final `390×844` browser QA: `PENDING`
 - Exact final `1440×900` browser QA: `PENDING`
 
@@ -198,25 +206,17 @@ QA environment note:
 
 ## REMAINING HOLDS
 
-### P0 · External forms.app wording · CONFIRMED FAIL
-Correct the external form to use the locked public wording:
-`Casa Oficial de Packers en CDMX`
+### P0 · External forms.app wording · EXTERNAL DEPENDENCY
+The external registration form is not owned/editable by PMX.
 
-Remove/replace broader official-sounding wording such as:
-`La casa oficial de los Green Bay Packers en México`
+Required request to external owner / partnership contact:
+- use `Casa Oficial de Packers en CDMX`
+- remove broader official-sounding wording such as `La casa oficial de los Green Bay Packers en México`
+- distinguish `Llegada comunidad: 14:00 CDMX` from `Kickoff: 14:25 CDMX`
+- avoid implying a guaranteed table reservation
 
-Distinguish clearly:
-- `Llegada comunidad: 14:00 CDMX`
-- `Kickoff: 14:25 CDMX`
-
-Avoid implying a guaranteed table reservation. PMX registration wording remains:
+PMX-controlled CTA remains:
 `CONFIRMA TU ASISTENCIA`
-
-### P0 · GA4 stream metadata housekeeping
-Update the GA4 Web Stream site URL from the previous personal GitHub Pages address to:
-`https://packersmexico.github.io/`
-
-Measurement and event collection remain active because the Measurement ID is unchanged.
 
 ### P0 · Exact final browser QA
 Run real-browser inspection at:
@@ -232,12 +232,12 @@ Validate logo sizing, partner hierarchy, mobile readability, overflow/clipping, 
 
 ## NEXT ACTION
 
-1. `Correct forms.app wording and 14:00 arrival / 14:25 kickoff distinction; remove reservation implication.`
-2. `Update GA4 Web Stream URL metadata to https://packersmexico.github.io/.`
-3. `Run final 390×844 + 1440×900 real-browser QA on the public Hub.`
-4. `Verify final click events in GA4, classifying QA traffic separately.`
-5. `If all P0 checks PASS → handoff to 05.`
+1. `Run final 390×844 + 1440×900 real-browser QA on the public Hub.`
+2. `Verify final click events in GA4, classifying QA traffic separately.`
+3. `Request external forms.app correction from the form owner / partnership contact; no PMX edit access.`
+4. `If exact browser QA + click-event QA PASS, return technical implementation PASS; external form wording remains separately escalated.`
+5. `00/05 decide publication gate treatment for the unresolved external-form dependency.`
 
 ## LAST RELEVANT CHANGE
 
-`User screenshot QA recorded: Hub perceptual PASS at provided viewport; forms.app P0 wording/timing/reservation hold confirmed.`
+`GA4 Web Stream metadata updated to https://packersmexico.github.io and verified by user screenshot; Measurement ID unchanged; forms.app reclassified as external dependency without PMX edit access.`
