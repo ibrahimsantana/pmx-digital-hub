@@ -11,7 +11,7 @@ window.PMX_SEASON_2026 = Object.freeze({
   title: "Calendario Packers 2026",
   timezoneLabel: "CDMX",
   sourceLabel: "Green Bay Packers · calendario oficial 2026",
-  sourceUrl: "https://www.packers.com/schedule/2026/",
+  sourceUrl: "https://www.packers.com/news/packers-announce-2026-schedule",
   publicCalendarUrl: "https://calendar.google.com/calendar/u/0?cid=ZTNjMzY1NjdlMTRlNjcwZTczYWMzMWI4ZTMyNDA3NWU5Y2M4NThmOTE2YjExNGQ4ZGZkNThkMDI0NTQyNDY5MkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t",
   hubUrl: "https://packersmexico.github.io/",
   flexNote: "Horarios convertidos a CDMX. La NFL puede modificar juegos mediante flex scheduling. Week 18 será sábado 9 o domingo 10 de enero de 2027; día, hora y TV se confirmarán después de Week 17.",
