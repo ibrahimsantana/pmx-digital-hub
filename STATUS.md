@@ -12,11 +12,11 @@ Public Hub: `https://packersmexico.github.io/`
 
 ## CURRENT PHASE
 
-`FASE 2B · PUBLIC QA + ASSET CLOSEOUT`
+`FASE 2B · PUBLIC QA + EXTERNAL COPY CLOSEOUT`
 
 ## STATUS
 
-`ORG MIGRATION PASS · PAGES ACTIVE · WEEK 1 CONFIGURED · FINAL REPO ASSET / EXTERNAL COPY / EXACT QA HOLDS ONLY`
+`ORG MIGRATION PASS · PAGES ACTIVE · WEEK 1 CONFIGURED · PMX/WINGSTOP ASSETS INTEGRATED · EXTERNAL COPY / EXACT QA HOLDS ONLY`
 
 ## INFRASTRUCTURE
 
@@ -24,7 +24,7 @@ Public Hub: `https://packersmexico.github.io/`
 - Organization: `packersmexico`
 - Default branch: `main`
 - Architecture: `STATIC HTML + CSS + JAVASCRIPT · NO BUILD SYSTEM`
-- Latest verified code deploy: `64dbe6e0f66f16bcf4764bd47c4ae60a251d75d9 · SUCCESS`
+- Root URL: `https://packersmexico.github.io/`
 
 ## WEEK 1
 
@@ -55,34 +55,28 @@ State: `PASS · CONFIGURED AND DEPLOYED`
 
 ## IDENTITY / ASSETS
 
-Authoritative PMX logo:
-`PMX_LOGO_HISTORICO_HORIZONTAL_CANVA_MASTER_V1.1.svg`
+PMX Horizontal V1.1:
+`✅ PASS · AUTHORITATIVE SVG COMMITTED AND ACTIVE IN HEADER`
 
-Authoritative Drive asset:
-`fileId 1oF6Fkw7f32j3DGd7ftpU_0uI7Bm50tLI · image/svg+xml`
-
-Authoritative Figma component:
-`fileKey z30v1pEwZPp7F4sV7JaExJ · node 75:4098 · PMX/Logo/Current/Horizontal/V1.1`
-
-Exact SVG materialization:
-`PASS · ORIGINAL DRIVE BYTES RECOVERED IN PROJECT RUNTIME`
+Repository path:
+`assets/PMX_LOGO_HISTORICO_HORIZONTAL_CANVA_MASTER_V1.1.svg`
 
 Verification:
 - `size = 682121 bytes`
 - `SHA-256 = 8407762a98552a7e7056aa687a1b259cc386fd2fc8fed5c6833dab5a937eff6f`
 - `MD5 = df6e08b10194bda73d07003dcc0d2a8a`
 
-Repository commit:
-`HOLD · GitHub connector has no binary/local-file upload action for repository contents`
+Wingstop partner logo:
+`✅ PASS PROVISIONAL · SOURCE-VERIFIED JPG COMMITTED AND ACTIVE IN PARTNER SLOT`
 
-Public safe fallback until repo upload:
-`TEXT BRAND FALLBACK ONLY · NO FAKE LOGO · NO INTERNAL "ASSET PENDING" LABEL`
+Repository path:
+`assets/WS-LOGO-01.jpg`
+
+Constraint:
+`MASTER FORMAT HOLD · replace only when official HQ SVG/PNG transparent arrives; do not reconstruct/vectorize/recolor.`
 
 NFL-MIN-LOGO-01:
 `PASS DOCUMENTAL · MATERIALIZATION HOLD ONLY · NON-BLOCKING`
-
-WS-LOGO-01:
-`SOURCE-VERIFIED TECHNICAL ASSET · MASTER FORMAT HOLD`
 
 Wingstop Condesa photography:
 `RETURN 02 PENDING · NON-BLOCKING`
@@ -116,6 +110,8 @@ Analytics Sheet:
 
 - Org migration: `PASS`
 - Root URL: `PASS`
+- PMX V1.1 header identity: `IMPLEMENTED`
+- Wingstop partner identity: `IMPLEMENTED · PROVISIONAL ASSET`
 - Registration destination: `PASS`
 - Maps destination: `PASS`
 - Calendar destination: `PASS`
@@ -126,25 +122,33 @@ Analytics Sheet:
 - Internal implementation labels exposed publicly: `FIXED`
 - Pending visual green slot in DATA PENDING: `FIXED · COLLAPSES SILENTLY`
 - Canonical / OG / X metadata: `IMPLEMENTED`
-- Exact final `390×844` browser QA: `PENDING AFTER LATEST DEPLOY`
-- Exact final `1440×900` browser QA: `PENDING AFTER LATEST DEPLOY`
+- Exact final `390×844` browser QA: `PENDING AFTER LATEST ASSET DEPLOY`
+- Exact final `1440×900` browser QA: `PENDING AFTER LATEST ASSET DEPLOY`
 
 ## REMAINING HOLDS
-
-### P0 · Commit exact PMX logo to repo
-Original authoritative bytes are now materialized and checksum-verified. Remaining step is repository upload only; do not re-export or reconstruct.
 
 ### P0 · External forms.app wording
 Verify/correct the external form to use the locked public wording:
 `Casa Oficial de Packers en CDMX`
 
-If the form still says a broader/official-sounding phrase, publication remains on HOLD until corrected.
+If the form still says `La casa oficial de los Green Bay Packers en México` or equivalent broader official-sounding wording, publication remains on HOLD until corrected.
+
+Also distinguish clearly:
+- `Llegada comunidad: 14:00`
+- `Kickoff: 14:25 CDMX`
 
 ### P0 · GA4 stream metadata housekeeping
 Update the GA4 Web Stream site URL from the previous personal GitHub Pages address to:
 `https://packersmexico.github.io/`
 
 Measurement and event collection remain active because the Measurement ID is unchanged.
+
+### P0 · Exact final browser QA
+Run real-browser inspection at:
+- `390×844`
+- `1440×900`
+
+Validate logo sizing, partner hierarchy, mobile readability, overflow/clipping, links and final click events.
 
 ### Non-blocking asset holds
 - `NFL-MIN-LOGO-01 SVG materialization`
@@ -153,8 +157,8 @@ Measurement and event collection remain active because the Measurement ID is unc
 
 ## NEXT ACTION
 
-1. `Upload exact PMX Horizontal V1.1 SVG bytes to assets/ in GitHub and replace text fallback.`
-2. `Verify/correct forms.app wording.`
+1. `Wait for latest GitHub Pages deployment and inspect public result.`
+2. `Correct forms.app wording/time distinction.`
 3. `Update GA4 Web Stream URL metadata to https://packersmexico.github.io/.`
 4. `Run final 390×844 + 1440×900 real-browser QA.`
 5. `Verify final click events in GA4, classifying QA traffic separately.`
@@ -162,4 +166,4 @@ Measurement and event collection remain active because the Measurement ID is unc
 
 ## LAST RELEVANT CHANGE
 
-`8d5224b2f7c71830f9ee0dfe43a1b4b3f80cf54f · feat: add canonical and social metadata for PMX Hub`
+`PMX + Wingstop identity assets integrated into live Hub architecture.`
