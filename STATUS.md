@@ -16,7 +16,7 @@ Public Hub: `https://packersmexico.github.io/`
 
 ## STATUS
 
-`ORG MIGRATION PASS · PAGES ACTIVE · WEEK 1 CONFIGURED · PMX/WINGSTOP ASSETS INTEGRATED · EXTERNAL COPY / EXACT QA HOLDS ONLY`
+`ORG MIGRATION PASS · PAGES ACTIVE · WEEK 1 CONFIGURED · PMX/WINGSTOP ASSETS INTEGRATED · SOURCE/PARITY QA PASS · EXTERNAL COPY / EXACT BROWSER QA HOLDS ONLY`
 
 ## INFRASTRUCTURE
 
@@ -106,6 +106,39 @@ Integrity:
 Analytics Sheet:
 `HUB_MASTER_URL migrated to https://packersmexico.github.io/ · tracking destinations synchronized with live Hub`
 
+## IMPLEMENTATION / FIGMA PARITY QA
+
+Automated source-level verification run after final Figma handoff and asset integration:
+
+`PASS · 25/25 CONTRACT CHECKS`
+
+Verified in implementation source:
+- `Field Dark #081D13`
+- `Lambeau Green #123B31`
+- `Gold #FFC62F`
+- `Cream #F2E8CF`
+- responsive margins `21 / 34 / 89`
+- max content width `1262`
+- PMX logo geometry `240×60 mobile / 320×80 desktop`
+- desktop hero geometry `780 + 34 + 448 = 1262`
+- mobile visual slot reference `112 px`
+- desktop visual slot reference `448×540`
+- `focus-visible = 2 px Gold / 4 px offset`
+- conditional modules use `display:none` when OFF and reserve zero gap
+- DATA PENDING collapses unavailable visual asset silently
+- CTA hierarchy `CONFIRMA TU ASISTENCIA → CÓMO LLEGAR`
+- locked venue wording present
+- Week 1 configuration present
+- kickoff `14:25`
+- Promo `OFF`
+- Special `OFF`
+
+JavaScript syntax / local source checks:
+`PASS`
+
+Note:
+`This is implementation-source/parity QA, not a substitute for the required final public browser inspection at exact viewports.`
+
 ## PUBLIC QA
 
 - Org migration: `PASS`
@@ -122,8 +155,12 @@ Analytics Sheet:
 - Internal implementation labels exposed publicly: `FIXED`
 - Pending visual green slot in DATA PENDING: `FIXED · COLLAPSES SILENTLY`
 - Canonical / OG / X metadata: `IMPLEMENTED`
-- Exact final `390×844` browser QA: `PENDING AFTER LATEST ASSET DEPLOY`
-- Exact final `1440×900` browser QA: `PENDING AFTER LATEST ASSET DEPLOY`
+- Figma implementation contract source parity: `PASS · 25/25`
+- Exact final `390×844` browser QA: `PENDING`
+- Exact final `1440×900` browser QA: `PENDING`
+
+QA environment note:
+`The current execution runtime blocks browser navigation, including localhost/file rendering, so an exact browser PASS was not fabricated. Final visual browser inspection remains required.`
 
 ## REMAINING HOLDS
 
@@ -157,13 +194,12 @@ Validate logo sizing, partner hierarchy, mobile readability, overflow/clipping, 
 
 ## NEXT ACTION
 
-1. `Wait for latest GitHub Pages deployment and inspect public result.`
-2. `Correct forms.app wording/time distinction.`
-3. `Update GA4 Web Stream URL metadata to https://packersmexico.github.io/.`
-4. `Run final 390×844 + 1440×900 real-browser QA.`
-5. `Verify final click events in GA4, classifying QA traffic separately.`
-6. `If all P0 checks PASS → handoff to 05.`
+1. `Verify/correct forms.app wording and 14:00 arrival / 14:25 kickoff distinction.`
+2. `Update GA4 Web Stream URL metadata to https://packersmexico.github.io/.`
+3. `Run final 390×844 + 1440×900 real-browser QA on the public Hub.`
+4. `Verify final click events in GA4, classifying QA traffic separately.`
+5. `If all P0 checks PASS → handoff to 05.`
 
 ## LAST RELEVANT CHANGE
 
-`PMX + Wingstop identity assets integrated into live Hub architecture.`
+`Source/Figma parity QA completed: 25/25 contract checks PASS; exact public browser QA remains intentionally open.`
