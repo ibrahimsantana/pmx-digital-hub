@@ -10,15 +10,17 @@ Repository: `packersmexico/packersmexico.github.io`
 
 Public Hub: `https://packersmexico.github.io/`
 
+Season Calendar route: `https://packersmexico.github.io/calendario/`
+
 ## CURRENT PHASE
 
-`FASE 2B · TECHNICAL CLOSEOUT / EXTERNAL DEPENDENCY ESCALATION`
+`FASE 2C · HUB EXPANSION · SEASON CALENDAR 2026`
 
 ## STATUS
 
-`ORG MIGRATION PASS · PAGES ACTIVE · WEEK 1 CONFIGURED · PMX/WINGSTOP ASSETS INTEGRATED · FIGMA PARITY PASS · GA4 PASS · EXACT BROWSER QA PASS · EXTERNAL FORM DEPENDENCY ONLY`
+`CORE HUB TECHNICAL PASS · GA4 PASS · CALENDAR 2026 IMPLEMENTED IN SOURCE · CALENDAR PUBLIC BROWSER QA PENDING · FIGMA CALENDAR VISUAL FAMILY CONNECTOR HOLD · EXTERNAL FORM DEPENDENCY`
 
-## WEEK 1
+## CORE HUB · WEEK 1
 
 - Game ID: `PMX-WS-2026-W01`
 - Matchup: `Packers @ Minnesota Vikings`
@@ -31,33 +33,138 @@ Public Hub: `https://packersmexico.github.io/`
 - Promo: `OFF`
 - Special: `OFF`
 
+Core Hub exact browser QA already completed:
+- `390×844 = PASS`
+- `1440×900 = PASS`
+
+These prior PASS results apply to the core Hub before the Season Calendar route was added and are not downgraded by the new extension.
+
+## SEASON CALENDAR 2026 EXTENSION
+
+Implementation state:
+`SOURCE IMPLEMENTED · PUBLIC BROWSER QA PENDING`
+
+Route:
+`/calendario/`
+
+Source of truth:
+`Green Bay Packers · Packers announce 2026 schedule`
+
+Official-source facts represented:
+- `17` regular-season games
+- `9` home
+- `8` road
+- `6` primetime, subject to flex scheduling
+- `Week 11 = BYE`
+- `Week 18 vs Detroit = Saturday Jan 9 or Sunday Jan 10, 2027 · day/time/network TBD after Week 17`
+- displayed kickoff times converted to `America/Mexico_City / CDMX`
+
+Calendar capabilities:
+- next-game detection using CDMX date
+- full Week 1–18 list
+- `TODOS / CASA / VISITA / PRIMETIME` filters
+- mobile-first responsive layout
+- share control using Web Share API with clipboard/prompt fallbacks
+- public Google Calendar CTA
+- return-to-Hub CTA
+- canonical / OG / X metadata
+- `sitemap.xml`
+- `robots.txt`
+- explicit independent-brand disclaimer
+- no opponent NFL logos used; avoids unvalidated/unmaterialized asset substitutions
+
+Hub integration:
+- root Hub navigation now labels and routes `CALENDARIO 2026` to `/calendario/`
+- same permanent root Hub URL remains unchanged
+
+## CALENDAR ANALYTICS
+
+Existing taxonomy preserved. No new event name introduced.
+
+Calendar page configuration:
+- `gameId = PMX-SEASON-2026`
+- `hubVersion = calendar-v1`
+- Measurement ID: `G-QEN5F5YY14`
+
+Existing event usage:
+- page load → `HUB_VIEW`
+- Google Calendar CTA → `CLICK_CALENDAR`
+
+Share URL carries:
+- `utm_source=calendar`
+- `utm_medium=share`
+- `utm_campaign=pmx_2026_schedule`
+- `utm_content=season_calendar`
+
+No `REGISTRO_CONFIRMADO` event is fired.
+
+## SOURCE / CODE QA · CALENDAR
+
+Result:
+`PASS · SOURCE STRUCTURE REVIEW`
+
+Verified:
+- HTML loads shared PMX styles + calendar styles
+- authoritative PMX Horizontal V1.1 SVG is reused from repository asset
+- Brand Book colors and Bebas Neue / Montserrat hierarchy are inherited/applied
+- JavaScript references only IDs present in calendar markup
+- current-date logic uses `America/Mexico_City`
+- BYE is excluded from next-game selection
+- Week 18 remains unresolved instead of inventing a kickoff
+- filters operate from explicit HOME/AWAY/PRIME state
+- tracking preserves existing event taxonomy
+- conditional share fallbacks exist
+- internal links preserve incoming UTM attribution
+
+Limitation:
+`This is source-level QA, not a public-browser PASS for the newly created /calendario/ route.`
+
+## FIGMA · SEASON CALENDAR VISUAL FAMILY
+
+Planned family:
+`PMX · SEASON CALENDAR 2026 · VISUAL FAMILY V1.0`
+
+Scope:
+- Feed `1080×1350`
+- Story `1080×1920`
+- CTA to Season Calendar route
+- no opponent logos until exact 03.5-approved assets exist
+
+Design-system discovery completed:
+- authoritative Brand Book V5.1 library available in target file
+- PMX Horizontal V1.1 component resolved
+- Field Dark / Lambeau Green / Cheese Gold / Cream variables resolved
+- Bebas Neue + Montserrat PMX text styles resolved
+
+Write state:
+`HOLD · FIGMA MCP NETWORK CONNECTION FAILED`
+
+This is a connector/network failure, not a permissions failure. Figma account was confirmed with Full seat on `Ibrahim · Design Lab`. No Figma canvas PASS is claimed and no fake completion is recorded.
+
 ## IDENTITY / ASSETS
 
 PMX Horizontal V1.1:
-`PASS · AUTHORITATIVE SVG COMMITTED AND ACTIVE IN HEADER`
+`PASS · AUTHORITATIVE SVG COMMITTED AND ACTIVE`
 
 Repository path:
 `assets/PMX_LOGO_HISTORICO_HORIZONTAL_CANVA_MASTER_V1.1.svg`
 
 Wingstop partner logo:
-`PASS PROVISIONAL · SOURCE-VERIFIED JPG COMMITTED AND ACTIVE IN REPLACEABLE PARTNER SLOT`
+`PASS PROVISIONAL · SOURCE-VERIFIED JPG`
 
 Repository path:
 `assets/WS-LOGO-01.jpg`
 
-Constraint:
-`MASTER FORMAT HOLD · replace only when official HQ SVG/PNG transparent arrives; do not reconstruct/vectorize/recolor.`
+Calendar opponent identities:
+`NOT USED · NO PSEUDO-LOGOS / NO UNVALIDATED NFL ASSET SUBSTITUTION`
 
-Non-blocking asset holds:
-- `NFL-MIN-LOGO-01 SVG materialization`
-- `Wingstop HQ master-format asset`
-- `Wingstop Condesa photo RETURN 02`
+## ANALYTICS CORE
 
-## ANALYTICS
+GA4:
+`ACTIVE · LIVE CORE QA PASS · CUSTOM DIMENSIONS PASS · STREAM METADATA PASS`
 
-GA4: `ACTIVE · LIVE CORE QA PASS · CUSTOM DIMENSIONS PASS · STREAM METADATA PASS`
-
-Measurement ID: `G-QEN5F5YY14`
+Measurement ID:
+`G-QEN5F5YY14`
 
 Web Stream:
 - Name: `PMX Digital Hub`
@@ -72,126 +179,43 @@ Formal QA cutoff:
 
 Baseline rule:
 - `≤ 11:55:39 = TEST / SETUP · EXCLUDE FROM CAMPAIGN PERFORMANCE`
-- `> 11:55:39 = ELIGIBLE FOR LIVE CAMPAIGN PERFORMANCE`
+- `> 11:55:39 = ELIGIBLE FOR LIVE CAMPAIGN PERFORMANCE` only when traffic is not internal QA
 
 Events preserved:
 `HUB_VIEW · CLICK_REGISTRO · CLICK_MAPS · CLICK_PROMO · CLICK_CALENDAR · CLICK_GOPACKGO · CLICK_SOCIAL · QR_OPEN`
 
-`REGISTRO_CONFIRMADO = HOLD · DO NOT FIRE P0`
-
 Integrity:
 `CLICK_REGISTRO ≠ REGISTRO_CONFIRMADO ≠ ASISTENCIA_MEDIDA`
-
-## FIGMA / IMPLEMENTATION PARITY
-
-Source-level contract QA:
-`PASS · 25/25`
-
-Verified:
-- Field Dark `#081D13`
-- Lambeau Green `#123B31`
-- Gold `#FFC62F`
-- Cream `#F2E8CF`
-- responsive margins `21 / 34 / 89`
-- max content width `1262`
-- PMX logo geometry `240×60 mobile / 320×80 desktop`
-- desktop hero geometry `780 + 34 + 448 = 1262`
-- `focus-visible = 2 px Gold / 4 px offset`
-- conditional OFF modules reserve zero gap
-- DATA PENDING collapses missing visual silently
-- CTA hierarchy `CONFIRMA TU ASISTENCIA → CÓMO LLEGAR`
-- locked venue wording present
-- Week 1 configuration present
-- kickoff `14:25`
-- Promo `OFF`
-- Special `OFF`
-
-## EXACT BROWSER QA · USER-PROVIDED DEVTOOLS EVIDENCE
-
-### Mobile
-Viewport configured in Chrome DevTools:
-`390×844`
-
-Result:
-`PASS`
-
-Observed:
-- PMX horizontal identity readable and correctly prioritized
-- Week 1 hierarchy readable without zoom
-- matchup/date/kickoff/sede visible
-- primary CTA dominates over Maps
-- secondary resources remain readable
-- social links and affiliation disclaimer visible
-- Wingstop partner slot remains visually separate
-- no visible clipping, collision, overflow or dead conditional-module gap
-- console screenshot shows `No issues`
-
-### Desktop
-Viewport configured in Chrome DevTools:
-`1440×900`
-
-Result:
-`PASS`
-
-Evidence note:
-Chrome DevTools was set to `Fit to window`, so the simulated 1440×900 viewport is visually scaled down inside the available browser workspace. This scaling is a DevTools preview behavior, not a CSS/layout defect.
-
-Observed:
-- full page remains contained
-- desktop responsive state triggers correctly
-- no visible overflow, clipping or collision
-- PMX / Wingstop hierarchy remains separated
-- console screenshot shows `No issues`
-
-## PUBLIC QA RESULT
-
-- Root URL: `PASS`
-- PMX V1.1 identity: `PASS`
-- Wingstop provisional identity: `PASS`
-- Registration destination: `PASS`
-- Maps destination: `PASS`
-- Calendar destination: `PASS`
-- Social destinations: `PASS`
-- GoPackGo destination: `PASS`
-- Promo OFF: `PASS · ZERO RESERVED GAP`
-- Special OFF: `PASS · ZERO RESERVED GAP`
-- Internal implementation labels exposed publicly: `FIXED`
-- DATA PENDING missing visual behavior: `PASS`
-- Canonical / OG / X metadata: `PASS`
-- Figma implementation parity: `PASS · 25/25`
-- Exact mobile `390×844`: `PASS`
-- Exact desktop `1440×900`: `PASS`
-- GA4 Web Stream metadata: `PASS`
-
-Technical implementation result:
-`PASS · READY FOR 05 SUBJECT TO GOVERNANCE TREATMENT OF EXTERNAL FORM DEPENDENCY`
 
 ## EXTERNAL FORMS.APP DEPENDENCY
 
 The external registration form is not owned or editable by PMX.
 
-Current screenshot confirms external copy that conflicts with PMX locks:
-- broader official-sounding wording equivalent to `La casa oficial de los Green Bay Packers en México`
-- only `Hora: 14:00 hrs`, without distinguishing community arrival from `14:25 CDMX` kickoff
-- reservation-like wording such as `aparta tu lugar` / `reserva`
+State:
+`EXTERNAL DEPENDENCY · NO PMX EDIT ACCESS`
 
-PMX-controlled surfaces remain compliant:
+Known conflicts on external surface:
+- broader official-sounding wording
+- 14:00 shown without clear 14:25 kickoff distinction
+- reservation-like wording
+
+PMX-controlled surfaces remain locked to:
 `Casa Oficial de Packers en CDMX`
 
 PMX-controlled CTA remains:
 `CONFIRMA TU ASISTENCIA`
 
-Required governance treatment:
-`EXTERNAL DEPENDENCY · NO PMX EDIT ACCESS · ESCALATE TO 00 FOR PUBLICATION-GATE DECISION / PARTNERSHIP REQUEST`
+Governance treatment remains with `00` / partnership contact.
 
 ## NEXT ACTION
 
-1. `Return technical implementation PASS to 00 / 05.`
-2. `00 decides publication gate treatment for the external forms.app copy dependency.`
-3. `If Direction allows publication with documented external dependency, 05 may proceed.`
-4. `If Direction requires correction first, request it from the external form owner / partnership contact.`
-5. `Continue to classify any additional QA traffic separately from campaign performance.`
+1. `Wait for GitHub Pages deployment of /calendario/.`
+2. `Run exact public-browser QA on /calendario/ at 390×844 and 1440×900.`
+3. `Verify calendar HUB_VIEW + CLICK_CALENDAR in GA4 while classifying QA traffic separately.`
+4. `Resume Figma Feed + Story build when Figma connector is reachable.`
+5. `After calendar browser QA PASS, use /calendario/ as a shareable acquisition destination.`
+6. `Monitor official NFL/Packers flex-schedule changes and update one source file when changes occur.`
 
 ## LAST RELEVANT CHANGE
 
-`Exact Chrome DevTools QA completed at 390×844 and 1440×900: PASS. GA4 stream metadata PASS. Technical Hub implementation is ready for 05; only external forms.app governance dependency remains.`
+`Season Calendar 2026 source implementation completed and linked from the Hub. Official 2026 schedule facts and CDMX conversions are represented without opponent logos. Public browser QA for the new calendar route and Figma visual-family production remain open.`
