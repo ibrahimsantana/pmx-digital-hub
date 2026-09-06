@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Img, Easing, interpolate, staticFile, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Img, Easing, interpolate, staticFile, useCurrentFrame, Sequence} from 'remotion';
 import {Video} from '@remotion/media';
 import '@fontsource/bebas-neue';
 import '@fontsource/montserrat/600.css';
@@ -8,6 +8,9 @@ import '@fontsource/montserrat/800.css';
 
 const C = {field:'#081D13',green:'#123B31',gold:'#FFC62F',cream:'#F2E8CF',white:'#FFFDF7'};
 const FPS = 30;
+const INTRO_FRAMES = 90;
+const CONTENT_FRAMES = 985;
+const OUTRO_FRAMES = 105;
 const secToFrame = (sec:number) => Math.round(sec * FPS);
 
 const captions = [
@@ -53,46 +56,6 @@ const OverlayCard: React.FC<{from:number;to:number;children:React.ReactNode}> = 
   </div>;
 };
 
-const Opening: React.FC = () => {
-  const frame = useCurrentFrame();
-  if (frame > 90) return null;
-  const opacity = interpolate(frame,[0,10,80,90],[0,1,1,0],{extrapolateRight:'clamp'});
-  return <AbsoluteFill style={{background:C.field,zIndex:80,opacity}}>
-    <AbsoluteFill style={{background:'radial-gradient(circle at 84% 18%, rgba(255,198,47,.16), transparent 29%), linear-gradient(180deg, #123B31 0%, #081D13 76%)'}} />
-    <div style={{position:'absolute',left:72,right:72,top:310}}>
-      <div style={{width:220,height:8,background:C.gold,borderRadius:99}} />
-      <div style={{fontFamily:'Bebas Neue',fontSize:168,lineHeight:.84,color:C.cream,marginTop:30}}>FOTO OFICIAL</div>
-      <div style={{fontFamily:'Bebas Neue',fontSize:124,lineHeight:.9,color:C.gold,marginTop:16}}>DE LA AFICIÓN PACKER</div>
-      <div style={{fontFamily:'Montserrat',fontWeight:800,fontSize:48,color:C.white,marginTop:62}}>CDMX · 13 SEP</div>
-    </div>
-  </AbsoluteFill>;
-};
-
-const Closing: React.FC = () => {
-  const frame = useCurrentFrame();
-  const start = secToFrame(29.164);
-  if (frame < start) return null;
-  const local = frame - start;
-  const opacity = interpolate(local,[0,10],[0,1],{extrapolateRight:'clamp'});
-  return <AbsoluteFill style={{background:C.field,zIndex:82,opacity}}>
-    <AbsoluteFill style={{background:'radial-gradient(circle at 82% 18%, rgba(255,198,47,.14), transparent 30%), linear-gradient(180deg, #123B31 0%, #081D13 82%)'}} />
-    <div style={{position:'absolute',top:86,left:72,right:72,display:'flex',alignItems:'center',justifyContent:'space-between'}}>
-      <div style={{display:'flex',alignItems:'center',gap:16}}>
-        <Img src={staticFile('colectivo_logo.webp')} style={{width:108,height:108,objectFit:'contain'}} />
-        <div><div style={{fontFamily:'Montserrat',fontWeight:800,fontSize:18,color:C.gold,letterSpacing:1.3}}>ORGANIZA</div><div style={{fontFamily:'Montserrat',fontWeight:800,fontSize:22,color:C.cream,marginTop:4}}>COLECTIVO PACKERS MÉXICO</div></div>
-      </div>
-      <Img src={staticFile('pmx_logo_v11.png')} style={{width:300,height:76,objectFit:'contain'}} />
-    </div>
-    <div style={{position:'absolute',left:72,right:72,top:365}}>
-      <div style={{fontFamily:'Bebas Neue',fontSize:104,color:C.gold,lineHeight:.9}}>¿TE SUMAS? 📸🧀</div>
-      <div style={{fontFamily:'Bebas Neue',fontSize:166,color:C.cream,lineHeight:.86,marginTop:30}}>NOS VEMOS EN</div>
-      <div style={{fontFamily:'Bebas Neue',fontSize:174,color:C.gold,lineHeight:.86}}>BELLAS ARTES</div>
-      <div style={{fontFamily:'Montserrat',fontWeight:800,fontSize:50,color:C.white,marginTop:58}}>DOM 13 SEP · 12:00 H</div>
-    </div>
-    <div style={{position:'absolute',left:72,right:72,bottom:164,borderTop:'2px solid rgba(242,232,207,.24)',paddingTop:26,fontFamily:'Montserrat',fontWeight:700,fontSize:27,lineHeight:1.2,color:C.cream}}>PACKERS MÉXICO comparte esta invitación con su comunidad.</div>
-  </AbsoluteFill>;
-};
-
 const VisualMoments: React.FC = () => <>
   <OverlayCard from={102} to={237}>
     <div style={{fontFamily:'Bebas Neue',fontSize:88,lineHeight:.92,color:C.gold}}>LA AFICIÓN PACKER</div>
@@ -125,30 +88,85 @@ const VisualMoments: React.FC = () => <>
     <div style={{fontFamily:'Bebas Neue',fontSize:76,color:C.cream,lineHeight:.94}}>DE LOS ORGANIZADORES</div>
     <div style={{fontFamily:'Montserrat',fontWeight:700,fontSize:32,lineHeight:1.16,color:C.white,marginTop:14}}>Ellos coordinarán cómo se forma la fotografía.</div>
   </OverlayCard>
+  <OverlayCard from={875} to={975}>
+    <div style={{display:'flex',alignItems:'center',gap:20}}>
+      <Img src={staticFile('colectivo_logo.webp')} style={{width:110,height:110,objectFit:'contain'}} />
+      <div>
+        <div style={{fontFamily:'Bebas Neue',fontSize:68,color:C.gold,lineHeight:.94}}>ORGANIZA</div>
+        <div style={{fontFamily:'Montserrat',fontWeight:800,fontSize:34,color:C.cream,marginTop:4}}>COLECTIVO PACKERS MÉXICO</div>
+        <div style={{fontFamily:'Montserrat',fontWeight:700,fontSize:27,lineHeight:1.18,color:C.white,marginTop:12}}>PACKERS MÉXICO comparte esta invitación con su comunidad.</div>
+      </div>
+    </div>
+  </OverlayCard>
 </>;
 
-export const BellasArtesReel: React.FC = () => {
+const GeneratedBackdrop: React.FC<{src:string;focus?:string}> = ({src,focus='center 68%'}) => <>
+  <AbsoluteFill style={{overflow:'hidden',background:C.field}}>
+    <Img src={staticFile(src)} style={{width:'100%',height:'100%',objectFit:'cover',objectPosition:focus,transform:'scale(1.12)',filter:'saturate(.88) contrast(1.06) brightness(.72)'}} />
+  </AbsoluteFill>
+  <AbsoluteFill style={{background:'linear-gradient(180deg, rgba(8,29,19,.94) 0%, rgba(8,29,19,.74) 30%, rgba(8,29,19,.36) 57%, rgba(8,29,19,.88) 100%)'}} />
+</>;
+
+const CoverFrame: React.FC = () => {
   const frame = useCurrentFrame();
-  return <AbsoluteFill style={{background:C.field}}>
-    <Video src={staticFile('jen_master_hq.mp4')} style={{width:'100%',height:'100%',objectFit:'cover',filter:'contrast(1.03) saturate(1.05) brightness(1.01)'}} />
-    <AbsoluteFill style={{background:'linear-gradient(180deg, rgba(8,29,19,.22) 0%, rgba(8,29,19,0) 34%, rgba(8,29,19,.12) 58%, rgba(8,29,19,.58) 100%)'}} />
-    {frame >= 92 && frame < secToFrame(29.164) ? <OrganizerStrip /> : null}
-    {frame >= 92 && frame < secToFrame(29.164) ? <VisualMoments /> : null}
-    <CaptionLayer />
-    <Opening />
-    <Closing />
+  const opacity = interpolate(frame,[0,10,78,89],[0,1,1,0],{extrapolateLeft:'clamp',extrapolateRight:'clamp'});
+  const y = interpolate(frame,[0,18],[34,0],{extrapolateRight:'clamp',easing:Easing.bezier(.16,1,.3,1)});
+  return <AbsoluteFill style={{background:C.field,opacity}}>
+    <GeneratedBackdrop src="cover_generated.png" focus="center 73%" />
+    <div style={{position:'absolute',top:80,left:72,right:72,display:'flex',justifyContent:'flex-end'}}>
+      <Img src={staticFile('pmx_logo_v11.png')} style={{width:330,height:82,objectFit:'contain'}} />
+    </div>
+    <div style={{position:'absolute',left:72,right:72,top:360,transform:`translateY(${y}px)`}}>
+      <div style={{width:220,height:8,background:C.gold,borderRadius:99}} />
+      <div style={{fontFamily:'Bebas Neue',fontSize:170,lineHeight:.84,color:C.cream,marginTop:28,textShadow:'0 8px 28px rgba(0,0,0,.35)'}}>FOTO OFICIAL</div>
+      <div style={{fontFamily:'Bebas Neue',fontSize:124,lineHeight:.9,color:C.gold,marginTop:14,textShadow:'0 8px 28px rgba(0,0,0,.35)'}}>DE LA AFICIÓN PACKER</div>
+      <div style={{fontFamily:'Montserrat',fontWeight:800,fontSize:48,color:C.white,marginTop:58}}>DOM 13 SEP · 12:00 H</div>
+      <div style={{fontFamily:'Montserrat',fontWeight:800,fontSize:38,lineHeight:1.18,color:C.cream,marginTop:18}}>PALACIO DE BELLAS ARTES · CDMX</div>
+    </div>
   </AbsoluteFill>;
 };
 
-export const BellasArtesCover: React.FC = () => <AbsoluteFill style={{background:C.field,overflow:'hidden'}}>
-  <AbsoluteFill style={{background:'radial-gradient(circle at 86% 18%, rgba(255,198,47,.15), transparent 29%), linear-gradient(180deg, #123B31 0%, #081D13 78%)'}} />
-  <div style={{position:'absolute',left:72,right:72,top:280}}>
-    <div style={{width:230,height:8,background:C.gold,borderRadius:99}} />
-    <div style={{fontFamily:'Bebas Neue',fontSize:166,lineHeight:.86,color:C.cream,marginTop:30}}>FOTO OFICIAL</div>
-    <div style={{fontFamily:'Bebas Neue',fontSize:122,lineHeight:.9,color:C.gold,marginTop:16}}>DE LA AFICIÓN PACKER</div>
-    <div style={{marginTop:94,borderTop:'2px solid rgba(242,232,207,.24)',paddingTop:46}}>
-      <div style={{fontFamily:'Bebas Neue',fontSize:108,lineHeight:.9,color:C.white}}>DOM 13 SEP · 12:00 H</div>
-      <div style={{fontFamily:'Montserrat',fontWeight:800,fontSize:42,lineHeight:1.18,color:C.cream,marginTop:30}}>PALACIO DE BELLAS ARTES · CDMX</div>
+const Content: React.FC = () => {
+  const frame = useCurrentFrame();
+  return <AbsoluteFill style={{background:C.field,overflow:'hidden'}}>
+    <div style={{position:'absolute',inset:-38,overflow:'hidden'}}>
+      <Video src={staticFile('jen_master_hq.mp4')} style={{width:'100%',height:'100%',objectFit:'cover',objectPosition:'center 54%',transform:'scale(1.04)',filter:'contrast(1.03) saturate(1.05) brightness(1.01)'}} />
     </div>
-  </div>
+    <AbsoluteFill style={{background:'linear-gradient(180deg, rgba(8,29,19,.22) 0%, rgba(8,29,19,0) 34%, rgba(8,29,19,.12) 58%, rgba(8,29,19,.58) 100%)'}} />
+    {frame >= 12 && frame < 875 ? <OrganizerStrip /> : null}
+    <VisualMoments />
+    <CaptionLayer />
+  </AbsoluteFill>;
+};
+
+const CtaFrame: React.FC = () => {
+  const frame = useCurrentFrame();
+  const opacity = interpolate(frame,[0,10],[0,1],{extrapolateRight:'clamp'});
+  const scale = interpolate(frame,[0,24],[.97,1],{extrapolateRight:'clamp',easing:Easing.bezier(.16,1,.3,1)});
+  return <AbsoluteFill style={{background:C.field,opacity}}>
+    <GeneratedBackdrop src="cta_generated.png" focus="center 72%" />
+    <div style={{position:'absolute',top:72,left:72,right:72,display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+      <div style={{display:'flex',alignItems:'center',gap:18}}>
+        <Img src={staticFile('colectivo_logo.webp')} style={{width:112,height:112,objectFit:'contain'}} />
+        <div><div style={{fontFamily:'Montserrat',fontWeight:800,fontSize:19,color:C.gold,letterSpacing:1.2}}>ORGANIZA</div><div style={{fontFamily:'Montserrat',fontWeight:800,fontSize:24,color:C.cream,marginTop:4}}>COLECTIVO PACKERS MÉXICO</div></div>
+      </div>
+      <Img src={staticFile('pmx_logo_v11.png')} style={{width:310,height:76,objectFit:'contain'}} />
+    </div>
+    <div style={{position:'absolute',left:72,right:72,top:400,transform:`scale(${scale})`,transformOrigin:'left center'}}>
+      <div style={{fontFamily:'Bebas Neue',fontSize:108,lineHeight:.9,color:C.gold}}>¿TE SUMAS? 📸🧀</div>
+      <div style={{fontFamily:'Bebas Neue',fontSize:166,lineHeight:.86,color:C.cream,marginTop:28,textShadow:'0 8px 28px rgba(0,0,0,.35)'}}>NOS VEMOS EN</div>
+      <div style={{fontFamily:'Bebas Neue',fontSize:174,lineHeight:.86,color:C.gold,textShadow:'0 8px 28px rgba(0,0,0,.35)'}}>BELLAS ARTES</div>
+      <div style={{fontFamily:'Montserrat',fontWeight:800,fontSize:52,color:C.white,marginTop:52}}>DOM 13 SEP · 12:00 H</div>
+      <div style={{marginTop:54,display:'inline-block',background:C.gold,color:C.field,padding:'18px 30px 16px',fontFamily:'Montserrat',fontWeight:800,fontSize:30}}>GUARDA Y COMPARTE</div>
+    </div>
+    <div style={{position:'absolute',left:72,right:72,bottom:145,borderTop:'2px solid rgba(242,232,207,.32)',paddingTop:26,fontFamily:'Montserrat',fontWeight:700,fontSize:27,lineHeight:1.2,color:C.cream}}>PACKERS MÉXICO comparte esta invitación con su comunidad.</div>
+  </AbsoluteFill>;
+};
+
+export const BellasArtesReel: React.FC = () => <AbsoluteFill style={{background:C.field}}>
+  <Sequence from={0} durationInFrames={INTRO_FRAMES}><CoverFrame /></Sequence>
+  <Sequence from={INTRO_FRAMES} durationInFrames={CONTENT_FRAMES}><Content /></Sequence>
+  <Sequence from={INTRO_FRAMES + CONTENT_FRAMES} durationInFrames={OUTRO_FRAMES}><CtaFrame /></Sequence>
 </AbsoluteFill>;
+
+export const BellasArtesCover: React.FC = () => <CoverFrame />;
