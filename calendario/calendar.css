@@ -1,0 +1,91 @@
+.calendar-shell,.calendar-footer { width: min(calc(100% - (var(--mobile-margin) * 2)), var(--content-max)); margin-inline: auto; }
+
+.calendar-header { width: min(calc(100% - (var(--mobile-margin) * 2)), var(--content-max)); margin-inline: auto; min-height: 95px; padding-top: 18px; border-bottom: 2px solid var(--gold); }
+.calendar-header__inner { display:flex; min-height:62px; align-items:flex-start; justify-content:space-between; gap:13px; }
+.calendar-header .brand-logo { width:240px; height:60px; }
+.hub-back { margin-top:21px; color:var(--cream); font-size:14px; font-weight:600; text-decoration:none; white-space:nowrap; }
+
+.calendar-shell { padding-top:21px; }
+.calendar-kicker { margin:0; color:var(--gold); font-size:16px; font-weight:700; }
+.calendar-title { margin:5px 0 0; font-family:"Bebas Neue", Impact, sans-serif; font-size:66px; font-weight:400; line-height:.9; color:var(--cream); text-transform:uppercase; }
+.calendar-deck { max-width:720px; margin:13px 0 0; color:var(--cream); font-size:17px; line-height:1.45; }
+.calendar-stats { display:flex; flex-wrap:wrap; gap:8px 13px; margin:21px 0 0; color:var(--muted); font-size:13px; font-weight:600; }
+.calendar-stats span + span::before { content:"·"; margin-right:13px; color:var(--gold); }
+
+.next-game { margin-top:34px; padding:21px 0; border-top:2px solid var(--gold); border-bottom:2px solid var(--gold); }
+.next-game__eyebrow { margin:0; color:var(--gold); font-size:14px; font-weight:700; }
+.next-game__grid { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:13px 21px; align-items:end; margin-top:8px; }
+.next-game__opponent { margin:0; font-family:"Bebas Neue", Impact, sans-serif; font-size:46px; line-height:.95; font-weight:400; color:var(--cream); text-transform:uppercase; }
+.next-game__meta { margin:8px 0 0; color:var(--cream); font-size:16px; font-weight:600; }
+.next-game__time { align-self:start; color:var(--gold); font-family:"Bebas Neue", Impact, sans-serif; font-size:38px; line-height:1; text-align:right; }
+.next-game__actions { display:flex; flex-wrap:wrap; gap:13px 21px; margin-top:21px; }
+.calendar-action { display:inline-flex; align-items:center; gap:8px; min-height:44px; color:var(--cream); font-weight:700; text-decoration:none; border-bottom:2px solid var(--muted-rule); }
+.calendar-action--primary { color:var(--gold); border-color:var(--gold); }
+button.calendar-action { padding:0; background:none; border-width:0 0 2px; border-style:solid; font:inherit; cursor:pointer; }
+.calendar-action:hover,.calendar-action:focus-visible,.hub-back:hover { color:var(--gold); }
+.share-status { width:100%; margin:0; color:var(--muted); font-size:12px; }
+
+.schedule-toolbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:13px 21px; margin-top:34px; }
+.schedule-heading { margin:0; font-family:"Bebas Neue", Impact, sans-serif; font-size:36px; font-weight:400; line-height:1; }
+.schedule-filters { display:flex; flex-wrap:wrap; gap:8px 13px; }
+.filter-button { min-height:40px; padding:0 0 4px; border:0; border-bottom:2px solid transparent; background:none; color:var(--muted); font:600 13px "Montserrat", sans-serif; cursor:pointer; }
+.filter-button[aria-pressed="true"] { color:var(--gold); border-color:var(--gold); }
+.filter-button:hover { color:var(--cream); }
+
+.schedule-list { margin-top:13px; border-top:1px solid rgb(183 191 178 / 45%); }
+.game-row { display:grid; grid-template-columns:48px minmax(0,1fr) auto; gap:13px; align-items:center; min-height:84px; padding:13px 0; border-bottom:1px solid rgb(183 191 178 / 30%); }
+.game-row[hidden] { display:none; }
+.game-row--next { border-bottom-color:var(--gold); }
+.game-row--bye { opacity:.68; }
+.game-week { align-self:start; padding-top:2px; color:var(--muted); font-size:12px; font-weight:700; line-height:1.25; }
+.game-row--next .game-week { color:var(--gold); }
+.game-opponent { min-width:0; }
+.game-opponent__name { margin:0; font-family:"Bebas Neue", Impact, sans-serif; font-size:27px; font-weight:400; line-height:1; color:var(--cream); text-transform:uppercase; }
+.game-opponent__meta { display:flex; flex-wrap:wrap; gap:4px 10px; margin-top:6px; color:var(--muted); font-size:12px; font-weight:600; }
+.game-opponent__meta .accent { color:var(--gold); }
+.game-time { min-width:58px; text-align:right; }
+.game-time__clock { margin:0; color:var(--cream); font-size:17px; font-weight:700; }
+.game-time__zone { margin:3px 0 0; color:var(--muted); font-size:10px; font-weight:600; }
+.game-row--next .game-time__clock { color:var(--gold); }
+
+.calendar-note { margin:21px 0 0; padding-top:13px; border-top:1px solid rgb(183 191 178 / 35%); color:var(--muted); font-size:12px; line-height:1.5; }
+.calendar-note a { color:var(--cream); text-underline-offset:3px; }
+
+.calendar-footer { margin-top:34px; padding:21px 0 34px; border-top:2px solid var(--gold); }
+.calendar-footer__inner { display:flex; flex-direction:column; gap:13px; }
+.calendar-footer__brand { margin:0; font-size:16px; font-weight:700; }
+.calendar-footer__links { display:flex; flex-wrap:wrap; gap:8px 13px; }
+.calendar-footer__links a { color:var(--cream); font-size:13px; text-decoration:none; }
+.calendar-footer__links a:hover { color:var(--gold); }
+.calendar-footer__legal { margin:0; color:var(--muted); font-size:11px; }
+
+@media (min-width:768px) and (max-width:1099px) {
+  .calendar-header,.calendar-shell,.calendar-footer { width:min(calc(100% - (var(--tablet-margin) * 2)), var(--content-max)); }
+  .calendar-title { font-size:82px; }
+  .next-game__opponent { font-size:58px; }
+  .game-row { grid-template-columns:70px minmax(0,1fr) 110px; min-height:94px; }
+  .game-opponent__name { font-size:32px; }
+}
+
+@media (min-width:1100px) {
+  .calendar-header,.calendar-shell,.calendar-footer { width:min(calc(100% - (var(--desktop-margin) * 2)), var(--content-max)); }
+  .calendar-header { min-height:132px; padding-top:28px; }
+  .calendar-header__inner { min-height:82px; }
+  .calendar-header .brand-logo { width:320px; height:80px; }
+  .hub-back { margin-top:31px; font-size:14px; }
+  .calendar-shell { padding-top:34px; }
+  .calendar-title { font-size:104px; }
+  .calendar-deck { font-size:20px; }
+  .next-game { display:grid; grid-template-columns:minmax(0,780px) minmax(0,448px); column-gap:34px; padding:34px 0; }
+  .next-game__eyebrow,.next-game__grid,.next-game__actions,.share-status { grid-column:1; }
+  .next-game__opponent { font-size:72px; }
+  .next-game__time { font-size:52px; }
+  .schedule-toolbar { margin-top:55px; }
+  .schedule-heading { font-size:46px; }
+  .schedule-list { display:grid; grid-template-columns:1fr 1fr; column-gap:34px; border-top:0; }
+  .game-row { grid-template-columns:64px minmax(0,1fr) 86px; min-height:102px; border-top:1px solid rgb(183 191 178 / 30%); }
+  .game-opponent__name { font-size:31px; }
+  .calendar-footer { margin-top:55px; }
+  .calendar-footer__inner { flex-direction:row; align-items:flex-end; justify-content:space-between; gap:34px; }
+  .calendar-footer__legal { max-width:560px; text-align:right; }
+}
