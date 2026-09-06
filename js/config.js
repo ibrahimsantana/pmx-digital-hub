@@ -1,6 +1,7 @@
 window.PMX_CONFIG = Object.freeze({
   gameId: "PMX-WS-2026-W01",
-  kickerMobile: "PRÓXIMO JUEGO",
+  gameLabel: "SEASON OPENER",
+  kickerMobile: "SEASON OPENER",
   kickerDesktop: "SEASON OPENER",
   week: "WEEK 1",
   opponent: "VIKINGS",
