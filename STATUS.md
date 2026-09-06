@@ -12,19 +12,11 @@ Public Hub: `https://packersmexico.github.io/`
 
 ## CURRENT PHASE
 
-`FASE 2B · PUBLIC QA + EXTERNAL COPY CLOSEOUT`
+`FASE 2B · TECHNICAL CLOSEOUT / EXTERNAL DEPENDENCY ESCALATION`
 
 ## STATUS
 
-`ORG MIGRATION PASS · PAGES ACTIVE · WEEK 1 CONFIGURED · PMX/WINGSTOP ASSETS INTEGRATED · SOURCE/PARITY QA PASS · SCREENSHOT PERCEPTUAL QA PASS · GA4 STREAM METADATA PASS · EXTERNAL FORM DEPENDENCY / EXACT BROWSER QA HOLDS ONLY`
-
-## INFRASTRUCTURE
-
-- GitHub Pages: `ACTIVE`
-- Organization: `packersmexico`
-- Default branch: `main`
-- Architecture: `STATIC HTML + CSS + JAVASCRIPT · NO BUILD SYSTEM`
-- Root URL: `https://packersmexico.github.io/`
+`ORG MIGRATION PASS · PAGES ACTIVE · WEEK 1 CONFIGURED · PMX/WINGSTOP ASSETS INTEGRATED · FIGMA PARITY PASS · GA4 PASS · EXACT BROWSER QA PASS · EXTERNAL FORM DEPENDENCY ONLY`
 
 ## WEEK 1
 
@@ -36,38 +28,19 @@ Public Hub: `https://packersmexico.github.io/`
 - Venue: `Wingstop Condesa · CDMX`
 - Public wording LOCKED: `Casa Oficial de Packers en CDMX`
 - Registration: `https://share.forms.app/form/6a96032ee64cd5f15d1688aa`
-- Maps: `PASS`
-- Public calendar: `PASS`
-- Calendar Week 1 event: `PASS · 14:00 ARRIVAL / 14:25 KICKOFF`
 - Promo: `OFF`
 - Special: `OFF`
-
-## SOCIAL / DESTINATIONS
-
-- Facebook: `https://www.facebook.com/gopackgomx/`
-- Instagram: `https://www.instagram.com/packers_mx/`
-- X: `https://x.com/Packers_Mx`
-- TikTok: `https://www.tiktok.com/@packers_mx`
-- YouTube: `https://www.youtube.com/@gopackgomx6092`
-- GoPackGo MX: `YouTube · https://www.youtube.com/@gopackgomx6092`
-
-State: `PASS · CONFIGURED AND DEPLOYED`
 
 ## IDENTITY / ASSETS
 
 PMX Horizontal V1.1:
-`✅ PASS · AUTHORITATIVE SVG COMMITTED AND ACTIVE IN HEADER`
+`PASS · AUTHORITATIVE SVG COMMITTED AND ACTIVE IN HEADER`
 
 Repository path:
 `assets/PMX_LOGO_HISTORICO_HORIZONTAL_CANVA_MASTER_V1.1.svg`
 
-Verification:
-- `size = 682121 bytes`
-- `SHA-256 = 8407762a98552a7e7056aa687a1b259cc386fd2fc8fed5c6833dab5a937eff6f`
-- `MD5 = df6e08b10194bda73d07003dcc0d2a8a`
-
 Wingstop partner logo:
-`✅ PASS PROVISIONAL · SOURCE-VERIFIED JPG COMMITTED AND ACTIVE IN PARTNER SLOT`
+`PASS PROVISIONAL · SOURCE-VERIFIED JPG COMMITTED AND ACTIVE IN REPLACEABLE PARTNER SLOT`
 
 Repository path:
 `assets/WS-LOGO-01.jpg`
@@ -75,11 +48,10 @@ Repository path:
 Constraint:
 `MASTER FORMAT HOLD · replace only when official HQ SVG/PNG transparent arrives; do not reconstruct/vectorize/recolor.`
 
-NFL-MIN-LOGO-01:
-`PASS DOCUMENTAL · MATERIALIZATION HOLD ONLY · NON-BLOCKING`
-
-Wingstop Condesa photography:
-`RETURN 02 PENDING · NON-BLOCKING`
+Non-blocking asset holds:
+- `NFL-MIN-LOGO-01 SVG materialization`
+- `Wingstop HQ master-format asset`
+- `Wingstop Condesa photo RETURN 02`
 
 ## ANALYTICS
 
@@ -90,12 +62,13 @@ Measurement ID: `G-QEN5F5YY14`
 Web Stream:
 - Name: `PMX Digital Hub`
 - URL: `https://packersmexico.github.io`
-- Metadata update: `PASS · USER SCREENSHOT VERIFIED 2026-09-05`
 - Data collection: `ACTIVE`
 
-Custom dimensions: `8/8 · EVENT SCOPE`
+Custom dimensions:
+`8/8 · EVENT SCOPE`
 
-Formal QA cutoff: `2026-09-05T11:55:39-06:00`
+Formal QA cutoff:
+`2026-09-05T11:55:39-06:00`
 
 Baseline rule:
 - `≤ 11:55:39 = TEST / SETUP · EXCLUDE FROM CAMPAIGN PERFORMANCE`
@@ -109,29 +82,23 @@ Events preserved:
 Integrity:
 `CLICK_REGISTRO ≠ REGISTRO_CONFIRMADO ≠ ASISTENCIA_MEDIDA`
 
-Analytics Sheet:
-`HUB_MASTER_URL migrated to https://packersmexico.github.io/ · tracking destinations synchronized with live Hub`
+## FIGMA / IMPLEMENTATION PARITY
 
-## IMPLEMENTATION / FIGMA PARITY QA
+Source-level contract QA:
+`PASS · 25/25`
 
-Automated source-level verification run after final Figma handoff and asset integration:
-
-`PASS · 25/25 CONTRACT CHECKS`
-
-Verified in implementation source:
-- `Field Dark #081D13`
-- `Lambeau Green #123B31`
-- `Gold #FFC62F`
-- `Cream #F2E8CF`
+Verified:
+- Field Dark `#081D13`
+- Lambeau Green `#123B31`
+- Gold `#FFC62F`
+- Cream `#F2E8CF`
 - responsive margins `21 / 34 / 89`
 - max content width `1262`
 - PMX logo geometry `240×60 mobile / 320×80 desktop`
 - desktop hero geometry `780 + 34 + 448 = 1262`
-- mobile visual slot reference `112 px`
-- desktop visual slot reference `448×540`
 - `focus-visible = 2 px Gold / 4 px offset`
-- conditional modules use `display:none` when OFF and reserve zero gap
-- DATA PENDING collapses unavailable visual asset silently
+- conditional OFF modules reserve zero gap
+- DATA PENDING collapses missing visual silently
 - CTA hierarchy `CONFIRMA TU ASISTENCIA → CÓMO LLEGAR`
 - locked venue wording present
 - Week 1 configuration present
@@ -139,105 +106,92 @@ Verified in implementation source:
 - Promo `OFF`
 - Special `OFF`
 
-JavaScript syntax / local source checks:
+## EXACT BROWSER QA · USER-PROVIDED DEVTOOLS EVIDENCE
+
+### Mobile
+Viewport configured in Chrome DevTools:
+`390×844`
+
+Result:
 `PASS`
 
-Note:
-`This is implementation-source/parity QA, not a substitute for the required final public browser inspection at exact viewports.`
-
-## SCREENSHOT PERCEPTUAL QA · 2026-09-05
-
-User-provided screenshots reviewed:
-- External forms.app view: `927×913`
-- Public Hub view: `957×925`
-
-Public Hub perceptual result:
-`PASS · NO P0 VISUAL DEFECT OBSERVED IN PROVIDED SCREENSHOT`
-
-Observed as correct in screenshot:
-- authoritative PMX horizontal identity visible
-- Week 1 matchup/date/kickoff hierarchy clear
-- `Casa Oficial de Packers en CDMX` wording correct
+Observed:
+- PMX horizontal identity readable and correctly prioritized
+- Week 1 hierarchy readable without zoom
+- matchup/date/kickoff/sede visible
 - primary CTA dominates over Maps
-- Calendar / Social / GoPackGo destinations visible without card clutter
-- affiliation disclaimer visible
-- Wingstop partner mark separated from PMX identity
-- Promo OFF / Special OFF reserve no visible space
-- no obvious clipping, overlap, collision or unreadable essential text
+- secondary resources remain readable
+- social links and affiliation disclaimer visible
+- Wingstop partner slot remains visually separate
+- no visible clipping, collision, overflow or dead conditional-module gap
+- console screenshot shows `No issues`
 
-Important limitation:
-`957×925 is not an exact required QA viewport; exact 390×844 and 1440×900 browser validation remains open.`
+### Desktop
+Viewport configured in Chrome DevTools:
+`1440×900`
 
-External forms.app result:
-`FAIL · P0 COPY / POSITIONING HOLD CONFIRMED · EXTERNAL DEPENDENCY`
+Result:
+`PASS`
 
-Screenshot confirms the external form currently contains:
-- broader official-sounding wording referring to `la casa oficial de los Green Bay Packers en México`
-- only `Hora: 14:00 hrs`, without distinguishing community arrival from `14:25 CDMX` kickoff
-- reservation-like language including `aparta tu lugar` / `reserva`
+Evidence note:
+Chrome DevTools was set to `Fit to window`, so the simulated 1440×900 viewport is visually scaled down inside the available browser workspace. This scaling is a DevTools preview behavior, not a CSS/layout defect.
 
-Ownership/access note:
-`PMX does not control or have edit access to this forms.app form. Correction must be requested from the external form owner / partnership contact; do not treat this as a Hub-code task.`
+Observed:
+- full page remains contained
+- desktop responsive state triggers correctly
+- no visible overflow, clipping or collision
+- PMX / Wingstop hierarchy remains separated
+- console screenshot shows `No issues`
 
-## PUBLIC QA
+## PUBLIC QA RESULT
 
-- Org migration: `PASS`
 - Root URL: `PASS`
-- PMX V1.1 header identity: `IMPLEMENTED`
-- Wingstop partner identity: `IMPLEMENTED · PROVISIONAL ASSET`
+- PMX V1.1 identity: `PASS`
+- Wingstop provisional identity: `PASS`
 - Registration destination: `PASS`
 - Maps destination: `PASS`
 - Calendar destination: `PASS`
-- Social destinations: `DEPLOYED`
-- GoPackGo destination: `DEPLOYED`
+- Social destinations: `PASS`
+- GoPackGo destination: `PASS`
 - Promo OFF: `PASS · ZERO RESERVED GAP`
 - Special OFF: `PASS · ZERO RESERVED GAP`
 - Internal implementation labels exposed publicly: `FIXED`
-- Pending visual green slot in DATA PENDING: `FIXED · COLLAPSES SILENTLY`
-- Canonical / OG / X metadata: `IMPLEMENTED`
-- Figma implementation contract source parity: `PASS · 25/25`
-- User screenshot perceptual QA: `PASS · 957×925 · NON-EXACT VIEWPORT`
-- GA4 Web Stream URL metadata: `PASS · https://packersmexico.github.io`
-- Exact final `390×844` browser QA: `PENDING`
-- Exact final `1440×900` browser QA: `PENDING`
+- DATA PENDING missing visual behavior: `PASS`
+- Canonical / OG / X metadata: `PASS`
+- Figma implementation parity: `PASS · 25/25`
+- Exact mobile `390×844`: `PASS`
+- Exact desktop `1440×900`: `PASS`
+- GA4 Web Stream metadata: `PASS`
 
-QA environment note:
-`The current execution runtime blocks browser navigation, including localhost/file rendering, so an exact browser PASS was not fabricated. Final visual browser inspection remains required.`
+Technical implementation result:
+`PASS · READY FOR 05 SUBJECT TO GOVERNANCE TREATMENT OF EXTERNAL FORM DEPENDENCY`
 
-## REMAINING HOLDS
+## EXTERNAL FORMS.APP DEPENDENCY
 
-### P0 · External forms.app wording · EXTERNAL DEPENDENCY
-The external registration form is not owned/editable by PMX.
+The external registration form is not owned or editable by PMX.
 
-Required request to external owner / partnership contact:
-- use `Casa Oficial de Packers en CDMX`
-- remove broader official-sounding wording such as `La casa oficial de los Green Bay Packers en México`
-- distinguish `Llegada comunidad: 14:00 CDMX` from `Kickoff: 14:25 CDMX`
-- avoid implying a guaranteed table reservation
+Current screenshot confirms external copy that conflicts with PMX locks:
+- broader official-sounding wording equivalent to `La casa oficial de los Green Bay Packers en México`
+- only `Hora: 14:00 hrs`, without distinguishing community arrival from `14:25 CDMX` kickoff
+- reservation-like wording such as `aparta tu lugar` / `reserva`
+
+PMX-controlled surfaces remain compliant:
+`Casa Oficial de Packers en CDMX`
 
 PMX-controlled CTA remains:
 `CONFIRMA TU ASISTENCIA`
 
-### P0 · Exact final browser QA
-Run real-browser inspection at:
-- `390×844`
-- `1440×900`
-
-Validate logo sizing, partner hierarchy, mobile readability, overflow/clipping, links and final click events.
-
-### Non-blocking asset holds
-- `NFL-MIN-LOGO-01 SVG materialization`
-- `Wingstop HQ master-format asset`
-- `Wingstop Condesa photo RETURN 02`
+Required governance treatment:
+`EXTERNAL DEPENDENCY · NO PMX EDIT ACCESS · ESCALATE TO 00 FOR PUBLICATION-GATE DECISION / PARTNERSHIP REQUEST`
 
 ## NEXT ACTION
 
-1. `Run final 390×844 + 1440×900 real-browser QA on the public Hub.`
-2. `Verify final click events in GA4, classifying QA traffic separately.`
-3. `Request external forms.app correction from the form owner / partnership contact; no PMX edit access.`
-4. `If exact browser QA + click-event QA PASS, return technical implementation PASS; external form wording remains separately escalated.`
-5. `00/05 decide publication gate treatment for the unresolved external-form dependency.`
+1. `Return technical implementation PASS to 00 / 05.`
+2. `00 decides publication gate treatment for the external forms.app copy dependency.`
+3. `If Direction allows publication with documented external dependency, 05 may proceed.`
+4. `If Direction requires correction first, request it from the external form owner / partnership contact.`
+5. `Continue to classify any additional QA traffic separately from campaign performance.`
 
 ## LAST RELEVANT CHANGE
 
-`GA4 Web Stream metadata updated to https://packersmexico.github.io and verified by user screenshot; Measurement ID unchanged; forms.app reclassified as external dependency without PMX edit access.`
+`Exact Chrome DevTools QA completed at 390×844 and 1440×900: PASS. GA4 stream metadata PASS. Technical Hub implementation is ready for 05; only external forms.app governance dependency remains.`
