@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - remotion/bellas-artes-2026
+      - remotion/bellas-artes-cover-cta
     paths:
       - 'remotion/bellas-artes-2026/**'
       - '.github/workflows/render-bellas-artes-remotion.yml'
@@ -32,11 +33,18 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Download generated cover and CTA art
+        run: |
+          curl -L --fail 'https://media.canva.com/v2/image-resize/format:PNG/height:200/quality:100/uri:ifs%3A%2F%2FM%2Fc582711b-96e3-4e37-b594-45e505fa4b2a/watermark:F/width:112?csig=AAAAAAAAAAAAAAAAAAAAAGKt0hdnBPlN_6OcRplE0RKruaMbPnPAwoHrkfJ0Lzns&exp=1788669099&osig=AAAAAAAAAAAAAAAAAAAAAKc_dNdQWIAH5J-Pym7jUXghO0PGuUuR8gnm5N7rELnA&signer=media-rpc&x-canva-quality=thumbnail' -o public/cover_generated.png
+          curl -L --fail 'https://media.canva.com/v2/image-resize/format:PNG/height:200/quality:100/uri:ifs%3A%2F%2FM%2F52ccd17f-d53a-47e2-8770-2293bc61370f/watermark:F/width:112?csig=AAAAAAAAAAAAAAAAAAAAAB0tPd45TBXiQJ0XJyrJswxoej_9J05fFHFlRzJSEi9I&exp=1788668196&osig=AAAAAAAAAAAAAAAAAAAAAI-ESdOgypV6jeRS6ECBCjdTP202Kq2REHlcfkj6rNzH&signer=media-rpc&x-canva-quality=thumbnail' -o public/cta_generated.png
+
       - name: Verify required media
         run: |
           test -f public/jen_master.mp4 || (echo 'Missing public/jen_master.mp4' && exit 2)
           test -f public/pmx_logo_v11.png || (echo 'Missing public/pmx_logo_v11.png' && exit 2)
           test -f public/colectivo_logo.webp || (echo 'Missing public/colectivo_logo.webp' && exit 2)
+          test -f public/cover_generated.png || (echo 'Missing cover_generated.png' && exit 2)
+          test -f public/cta_generated.png || (echo 'Missing cta_generated.png' && exit 2)
 
       - name: Install ffmpeg
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
@@ -58,7 +66,7 @@ jobs:
       - name: Upload render artifact
         uses: actions/upload-artifact@v4
         with:
-          name: PMX-Bellas-Artes-Remotion-Render-V3
+          name: PMX-Bellas-Artes-Remotion-Render-V5-CoverCTA
           path: |
             remotion/bellas-artes-2026/out/pmx-bellas-artes-reel.mp4
             remotion/bellas-artes-2026/out/pmx-bellas-artes-cover.png
