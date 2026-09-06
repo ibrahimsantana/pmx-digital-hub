@@ -30,8 +30,7 @@ a { color: inherit; }
 .site-header,.hub-shell,.site-footer { width: min(calc(100% - (var(--mobile-margin) * 2)), var(--content-max)); margin-inline: auto; }
 .site-header { min-height: 95px; padding-top: 18px; border-bottom: 2px solid var(--gold); }
 .header-inner { display: flex; min-height: 62px; align-items: flex-start; justify-content: space-between; }
-.brand-fallback { display: flex; width: 240px; height: 60px; align-items: center; }
-.brand-fallback__name { font-family: "Bebas Neue", Impact, sans-serif; color: var(--cream); font-size: 28px; line-height: 1; letter-spacing: .03em; }
+.brand-logo { display: block; width: 240px; height: 60px; object-fit: contain; object-position: left center; }
 .mobile-menu-link,.nav-link,.resource-link { font-weight: 600; text-decoration: none; }
 .mobile-menu-link { margin-top: 21px; color: var(--cream); font-size: 16px; }
 .desktop-nav { display: none; }
@@ -88,8 +87,7 @@ body.state-data-pending .hero__visual { display: none; }
   .site-header,.hub-shell,.site-footer { width: min(calc(100% - (var(--desktop-margin) * 2)), var(--content-max)); }
   .site-header { min-height: 132px; padding-top: 28px; border-bottom: 2px solid var(--gold); }
   .header-inner { min-height: 82px; align-items: flex-start; }
-  .brand-fallback { width: 320px; height: 80px; }
-  .brand-fallback__name { font-size: 36px; }
+  .brand-logo { width: 320px; height: 80px; }
   .mobile-menu-link { display: none; }
   .desktop-nav { display: flex; align-items: center; gap: 21px; padding-top: 31px; }
   .nav-link { color: var(--cream); font-size: 14px; white-space: nowrap; }
