@@ -18,12 +18,13 @@ Season Calendar route: `https://packersmexico.github.io/calendario/`
 
 ## STATUS
 
-`CORE HUB TECHNICAL PASS · GA4 PASS · CALENDAR 2026 IMPLEMENTED IN SOURCE · PUBLIC GOOGLE CALENDAR COMPLETE · SOCIAL FOOTER 5/5 · SPECIAL THEMES/UNIFORMS MAPPED · CALENDAR PUBLIC BROWSER QA PENDING · FIGMA CALENDAR VISUAL FAMILY CONNECTOR HOLD · 03.5 ASSET PACKAGE PENDING · EXTERNAL FORM DEPENDENCY`
+`CORE HUB PATCH DEPLOYED · GA4 PASS · CALENDAR 2026 IMPLEMENTED · PUBLIC GOOGLE CALENDAR COMPLETE · SOCIAL 5/5 · SPECIAL THEMES/UNIFORMS MAPPED · 03.5 PROVENANCE PASS / MATERIALIZATION + FAMILY AUTHORIZATION HOLD · CALENDAR PUBLIC BROWSER QA PENDING · FIGMA CALENDAR FAMILY HOLD · EXTERNAL FORM DEPENDENCY`
 
 ## CORE HUB · WEEK 1
 
 - Game ID: `PMX-WS-2026-W01`
-- Matchup: `Packers @ Minnesota Vikings`
+- Matchup: `PACKERS @ VIKINGS`
+- Weekly label: `WEEK 1 · SEASON OPENER`
 - Date: `DOM 13 SEP 2026`
 - Community arrival: `14:00 CDMX`
 - Kickoff: `14:25 CDMX`
@@ -33,11 +34,22 @@ Season Calendar route: `https://packersmexico.github.io/calendario/`
 - Promo: `OFF`
 - Special: `OFF`
 
-Core Hub exact browser QA already completed:
+Latest Hub UI patch:
+- removed `AT`; away matchup now uses `@`
+- home matchup remains `VS`
+- Week/game-label language aligned with Calendar style (`WEEK 1 · SEASON OPENER`, future `HOME OPENER`, themes, etc.)
+- removed redundant `REDES` navigation because social destinations already live in footer
+- removed Wingstop partner logo/footer block
+- venue relationship remains in hero only
+- retained `CONFIRMA TU ASISTENCIA` + `CÓMO LLEGAR`
+- retained `CALENDARIO 2026` + `GOPACKGO MX`
+- social footer remains 5/5: Instagram, X, Facebook, TikTok, YouTube
+
+Prior core Hub browser QA:
 - `390×844 = PASS`
 - `1440×900 = PASS`
 
-These prior PASS results apply to the core Hub before the Season Calendar route was added and are not downgraded by the new extension.
+Because the Hub UI was patched after those captures, a short visual recheck is required before treating the new layout as final browser PASS.
 
 ## SEASON CALENDAR 2026 EXTENSION
 
@@ -64,14 +76,12 @@ Calendar capabilities:
 - full Week 1–18 list
 - `TODOS / CASA / VISITA / PRIMETIME` filters
 - mobile-first responsive layout
-- share control using Web Share API with clipboard/prompt fallbacks
+- share control
 - public Google Calendar CTA
 - return-to-Hub CTA
 - canonical / OG / X metadata
-- `sitemap.xml`
-- `robots.txt`
-- explicit independent-brand disclaimer
-- no opponent NFL logos used; avoids unvalidated/unmaterialized asset substitutions
+- sitemap / robots
+- independent-brand disclaimer
 
 Social footer:
 `PASS · 5/5 DESTINATIONS`
@@ -83,10 +93,6 @@ Social footer:
 
 Social click tracking:
 `CLICK_SOCIAL · PRESERVED TAXONOMY`
-
-Hub integration:
-- root Hub navigation now labels and routes `CALENDARIO 2026` to `/calendario/`
-- same permanent root Hub URL remains unchanged
 
 ## SPECIAL THEMES / UNIFORM METADATA
 
@@ -103,9 +109,6 @@ Mapped in calendar source:
 - W17 · NFL Play 60
 - W18 · Fan Appreciation · day/time TBD
 
-Visual-asset rule:
-`METADATA MAY DISPLAY · TEAM/UNIFORM VISUALS REQUIRE 03.5 RETURN BEFORE PRODUCTION USE`
-
 ## PUBLIC GOOGLE CALENDAR
 
 Calendar:
@@ -118,35 +121,31 @@ State:
 `PASS · COMPLETE SEASON AGENDA CREATED`
 
 Coverage:
-- Week 1 existing Game Day event retained
+- Week 1 retained
 - Weeks 2–10 created
 - Week 11 BYE marker created
 - Weeks 12–17 created
-- Week 18 created as transparent Jan 9–10 official scheduling window marker with `FECHA/HORA TBD`
+- Week 18 created as Jan 9–10 TBD window marker
 
 Every game event:
 - uses `America/Mexico_City`
-- points back to PMX Hub with tracked URL
-- points to full Season Calendar page with tracked URL
+- points to PMX Hub with tracked URL
+- points to full Season Calendar with tracked URL
 - is public and transparent/non-blocking
-- uses Wingstop Condesa as PMX Game Day location where applicable
 - carries special theme/uniform metadata when confirmed
 - includes independent-brand disclaimer
 
-Tracking convention from Google Calendar:
+Tracking convention:
 - `utm_source=google_calendar`
 - `utm_medium=calendar_event`
 - `utm_campaign=pmx_2026_schedule`
 - `utm_content=w##_rival`
 
-Week 18 note:
-`Calendar event intentionally spans Jan 9–10 as a placeholder window and MUST be updated when NFL/Packers confirms exact day/time/network.`
-
 ## CALENDAR ANALYTICS
 
 Existing taxonomy preserved. No new event name introduced.
 
-Calendar page configuration:
+Calendar page:
 - `gameId = PMX-SEASON-2026`
 - `hubVersion = calendar-v1`
 - Measurement ID: `G-QEN5F5YY14`
@@ -156,7 +155,7 @@ Existing event usage:
 - Google Calendar CTA → `CLICK_CALENDAR`
 - footer social clicks → `CLICK_SOCIAL`
 
-Share URL carries:
+Share URL:
 - `utm_source=calendar`
 - `utm_medium=share`
 - `utm_campaign=pmx_2026_schedule`
@@ -164,28 +163,73 @@ Share URL carries:
 
 No `REGISTRO_CONFIRMADO` event is fired.
 
-## SOURCE / CODE QA · CALENDAR
+## 03.5 · SEASON CALENDAR ASSET QA RETURN
 
-Result:
-`PASS · SOURCE STRUCTURE REVIEW`
+Family:
+`PMX · SEASON CALENDAR 2026 · VISUAL FAMILY V1.0`
 
-Verified:
-- HTML loads shared PMX styles + calendar styles
-- authoritative PMX Horizontal V1.1 SVG is reused from repository asset
-- Brand Book colors and Bebas Neue / Montserrat hierarchy are inherited/applied
-- JavaScript references only IDs present in calendar markup
-- current-date logic uses `America/Mexico_City`
-- BYE is excluded from next-game selection
-- Week 18 remains unresolved instead of inventing a kickoff
-- filters operate from explicit HOME/AWAY/PRIME state
-- tracking preserves existing event taxonomy
-- conditional share fallbacks exist
-- internal links preserve incoming UTM attribution
-- footer now contains all five current PMX social destinations
-- confirmed special-theme/uniform metadata is rendered as text only until 03.5 asset return
+03.5 state:
+`HOLD PARCIAL · PROVENANCE PASS / MATERIALIZATION + AUTHORIZATION PENDING`
 
-Limitation:
-`This is source-level QA, not a public-browser PASS for the newly created /calendario/ route.`
+### Opponent logos
+
+- `14/14 SOURCE PASS`
+- unique rivals covered: MIN, NYJ, ATL, TB, CHI, DAL, DET, CAR, NE, LA, NO, BUF, MIA, HOU
+- official NFL club-logo endpoints identified/validated
+- `0/14 MATERIALIZED BY 03.5 RUNTIME`
+- restriction: no redraw, recolor, distortion, pseudo-logo or improvised vectorization
+
+### W5 · Packers Rivalries
+
+Provenance PASS:
+- `GB-RIV-2026-FULL-01`
+- `GB-RIV-2026-HELMET-01`
+- `GB-RIV-2026-JERSEY-01`
+
+No isolated pants asset validated. Do not fabricate cutout.
+
+### W14 · 1923 Classic
+
+Provenance PASS:
+- `GB-1923-2026-FULL-01`
+- `GB-1923-2026-DETAIL-01`
+
+No isolated pants asset validated. No AI/reconstruction of leather-look helmet.
+
+### W16 · Bears Rivalries
+
+Provenance PASS:
+- `CHI-RIV-2026-FULL-01`
+- `CHI-RIV-2026-HELMET-01`
+- `CHI-RIV-2026-JERSEY-01`
+- `CHI-RIV-2026-PANTS-01`
+
+LOCK:
+`BEARS RIVALRIES CONFIRMED FOR CHICAGO · DO NOT INFER PACKERS RIVALRIES W16`
+
+### Themes
+
+- Alumni Weekend → `TEXT ONLY / WAIT`
+- Packers Vs. Cancer → 2025 asset only = `REFERENCE ONLY · DO NOT USE AS 2026 MASTER`
+- Bob Harlan → contextual official photo source PASS; not W8 event-photo proof
+- Salute to Service → provenance PASS
+- Walter Payton MOY → provenance PASS; sponsor cannot be removed/rebuilt
+- Inspire Change → provenance PASS
+- NFL Play 60 → provenance PASS
+- Fan Appreciation → `TEXT ONLY / WAIT`
+
+### Authorization gate
+
+Specific family authorization is not recorded as closed:
+`⚪ NO SOLICITADA · USO EDITORIAL PROVISIONAL`
+
+Therefore:
+- provenance/context may be used for planning and text metadata
+- visual assets are NOT released as final public production package yet
+- 04 must not treat these URLs as final authorized/materalized assets
+- family must be escalated to `00 · Dirección y Gobernanza` for explicit authorization decision
+
+This follows the current workflow: 03.5 validates source/context/rights state; Dirección governs permissions/masters; 04 does not re-investigate or improvise assets.
 
 ## FIGMA · SEASON CALENDAR VISUAL FAMILY
 
@@ -196,42 +240,17 @@ Scope:
 - Feed `1080×1350`
 - Story `1080×1920`
 - CTA to Season Calendar route
-- no opponent logos until exact 03.5-approved assets exist
 
 Design-system discovery completed:
-- authoritative Brand Book V5.1 library available in target file
+- Brand Book V5.1 library available
 - PMX Horizontal V1.1 component resolved
 - Field Dark / Lambeau Green / Cheese Gold / Cream variables resolved
-- Bebas Neue + Montserrat PMX text styles resolved
+- Bebas Neue + Montserrat PMX styles resolved
 
 Write state:
 `HOLD · FIGMA MCP NETWORK CONNECTION FAILED`
 
-This is a connector/network failure, not a permissions failure. Figma account was confirmed with Full seat on `Ibrahim · Design Lab`. No Figma canvas PASS is claimed and no fake completion is recorded.
-
-## 03.5 · REQUIRED SEASON VISUAL PACKAGE
-
-State:
-`PENDING HANDOFF / RETURN`
-
-Request scope:
-- official/traceable opponent logo asset for every unique 2026 opponent
-- Packers Rivalries official visual/uniform references for W5
-- Packers 1923 Classic + leather-look helmet official visual references for W14
-- Bears Rivalries official visual/uniform reference for W16
-- official theme visuals only where useful and licensable/usable under 03.5 rules
-
-03.5 must return per asset:
-- ID / normalized filename
-- exact source URL
-- asset URL when available
-- author/credit when applicable
-- context and subject identification
-- rights/authorization state
-- restrictions
-- recommended usage
-
-No pseudo-logo, redraw, recolor, watermark removal, or AI recreation may substitute for a missing official asset.
+No Figma canvas PASS is claimed.
 
 ## IDENTITY / ASSETS
 
@@ -241,14 +260,11 @@ PMX Horizontal V1.1:
 Repository path:
 `assets/PMX_LOGO_HISTORICO_HORIZONTAL_CANVA_MASTER_V1.1.svg`
 
-Wingstop partner logo:
-`PASS PROVISIONAL · SOURCE-VERIFIED JPG`
+Wingstop logo:
+`REPOSITORY ASSET RETAINED · NO LONGER DISPLAYED IN CORE HUB FOOTER`
 
-Repository path:
-`assets/WS-LOGO-01.jpg`
-
-Calendar opponent identities:
-`NOT USED · NO PSEUDO-LOGOS / NO UNVALIDATED NFL ASSET SUBSTITUTION`
+Opponent identities:
+`PROVENANCE PASS · MATERIALIZATION + FAMILY AUTHORIZATION HOLD · NOT YET USED VISUALLY`
 
 ## ANALYTICS CORE
 
@@ -269,10 +285,6 @@ Custom dimensions:
 Formal QA cutoff:
 `2026-09-05T11:55:39-06:00`
 
-Baseline rule:
-- `≤ 11:55:39 = TEST / SETUP · EXCLUDE FROM CAMPAIGN PERFORMANCE`
-- `> 11:55:39 = ELIGIBLE FOR LIVE CAMPAIGN PERFORMANCE` only when traffic is not internal QA
-
 Events preserved:
 `HUB_VIEW · CLICK_REGISTRO · CLICK_MAPS · CLICK_PROMO · CLICK_CALENDAR · CLICK_GOPACKGO · CLICK_SOCIAL · QR_OPEN`
 
@@ -281,33 +293,29 @@ Integrity:
 
 ## EXTERNAL FORMS.APP DEPENDENCY
 
-The external registration form is not owned or editable by PMX.
-
 State:
 `EXTERNAL DEPENDENCY · NO PMX EDIT ACCESS`
 
-Known conflicts on external surface:
+Known conflicts:
 - broader official-sounding wording
-- 14:00 shown without clear 14:25 kickoff distinction
+- 14:00 without clear 14:25 kickoff distinction
 - reservation-like wording
 
 PMX-controlled surfaces remain locked to:
 `Casa Oficial de Packers en CDMX`
 
-PMX-controlled CTA remains:
+PMX CTA remains:
 `CONFIRMA TU ASISTENCIA`
-
-Governance treatment remains with `00` / partnership contact.
 
 ## NEXT ACTION
 
-1. `Run exact public-browser QA on /calendario/ at 390×844 and 1440×900.`
-2. `Verify calendar HUB_VIEW + CLICK_CALENDAR + CLICK_SOCIAL in GA4 while classifying QA traffic separately.`
-3. `Send 03.5 season visual-package request and wait for official/traceable asset return.`
-4. `Resume Figma Feed + Story build when Figma connector is reachable.`
-5. `After calendar browser QA PASS, use /calendario/ as a shareable acquisition destination.`
-6. `Monitor official NFL/Packers flex-schedule changes and update source + Google Calendar once changes occur.`
+1. `Public-browser recheck of patched core Hub at mobile + desktop.`
+2. `Public-browser QA of /calendario/ at 390×844 and 1440×900.`
+3. `Escalate PMX · SEASON CALENDAR 2026 · VISUAL FAMILY V1.0 to 00 for explicit asset-family authorization.`
+4. `After authorization + materialization, hand exact 03.5 assets to 04/Figma; no substitutions.`
+5. `Verify calendar HUB_VIEW + CLICK_CALENDAR + CLICK_SOCIAL in GA4 with QA traffic classified separately.`
+6. `Monitor NFL/Packers flex changes and update source + Google Calendar.`
 
 ## LAST RELEVANT CHANGE
 
-`Calendar footer expanded to Instagram/X/Facebook/TikTok/YouTube with CLICK_SOCIAL tracking; special themes/uniform metadata added; public Google Calendar now contains the complete 2026 season agenda including BYE and Week 18 TBD window, with tracked links back to the PMX Hub and Season Calendar.`
+`Core Hub cleaned to calendar-style language (@ / VS, WEEK + event label), redundant REDES nav and Wingstop footer logo removed. 03.5 returned provenance PASS for 14 opponent identities and W5/W14/W16 uniform visuals, but materialization and explicit Season Calendar family authorization remain HOLD.`
