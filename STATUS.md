@@ -16,7 +16,7 @@ Public Hub: `https://packersmexico.github.io/`
 
 ## STATUS
 
-`ORG MIGRATION PASS · PAGES ACTIVE · WEEK 1 CONFIGURED · PMX/WINGSTOP ASSETS INTEGRATED · SOURCE/PARITY QA PASS · EXTERNAL COPY / EXACT BROWSER QA HOLDS ONLY`
+`ORG MIGRATION PASS · PAGES ACTIVE · WEEK 1 CONFIGURED · PMX/WINGSTOP ASSETS INTEGRATED · SOURCE/PARITY QA PASS · SCREENSHOT PERCEPTUAL QA PASS · EXTERNAL FORM / EXACT BROWSER QA HOLDS ONLY`
 
 ## INFRASTRUCTURE
 
@@ -139,6 +139,39 @@ JavaScript syntax / local source checks:
 Note:
 `This is implementation-source/parity QA, not a substitute for the required final public browser inspection at exact viewports.`
 
+## SCREENSHOT PERCEPTUAL QA · 2026-09-05
+
+User-provided screenshots reviewed:
+- External forms.app view: `927×913`
+- Public Hub view: `957×925`
+
+Public Hub perceptual result:
+`PASS · NO P0 VISUAL DEFECT OBSERVED IN PROVIDED SCREENSHOT`
+
+Observed as correct in screenshot:
+- authoritative PMX horizontal identity visible
+- Week 1 matchup/date/kickoff hierarchy clear
+- `Casa Oficial de Packers en CDMX` wording correct
+- primary CTA dominates over Maps
+- Calendar / Social / GoPackGo destinations visible without card clutter
+- affiliation disclaimer visible
+- Wingstop partner mark separated from PMX identity
+- Promo OFF / Special OFF reserve no visible space
+- no obvious clipping, overlap, collision or unreadable essential text
+
+Important limitation:
+`957×925 is not an exact required QA viewport; exact 390×844 and 1440×900 browser validation remains open.`
+
+External forms.app result:
+`FAIL · P0 COPY / POSITIONING HOLD CONFIRMED`
+
+Screenshot confirms the external form currently contains:
+- broader official-sounding wording referring to `la casa oficial de los Green Bay Packers en México`
+- only `Hora: 14:00 hrs`, without distinguishing community arrival from `14:25 CDMX` kickoff
+- reservation-like language including `aparta tu lugar` / `reserva`
+
+Required correction remains external to the Hub code.
+
 ## PUBLIC QA
 
 - Org migration: `PASS`
@@ -156,6 +189,7 @@ Note:
 - Pending visual green slot in DATA PENDING: `FIXED · COLLAPSES SILENTLY`
 - Canonical / OG / X metadata: `IMPLEMENTED`
 - Figma implementation contract source parity: `PASS · 25/25`
+- User screenshot perceptual QA: `PASS · 957×925 · NON-EXACT VIEWPORT`
 - Exact final `390×844` browser QA: `PENDING`
 - Exact final `1440×900` browser QA: `PENDING`
 
@@ -164,15 +198,19 @@ QA environment note:
 
 ## REMAINING HOLDS
 
-### P0 · External forms.app wording
-Verify/correct the external form to use the locked public wording:
+### P0 · External forms.app wording · CONFIRMED FAIL
+Correct the external form to use the locked public wording:
 `Casa Oficial de Packers en CDMX`
 
-If the form still says `La casa oficial de los Green Bay Packers en México` or equivalent broader official-sounding wording, publication remains on HOLD until corrected.
+Remove/replace broader official-sounding wording such as:
+`La casa oficial de los Green Bay Packers en México`
 
-Also distinguish clearly:
-- `Llegada comunidad: 14:00`
+Distinguish clearly:
+- `Llegada comunidad: 14:00 CDMX`
 - `Kickoff: 14:25 CDMX`
+
+Avoid implying a guaranteed table reservation. PMX registration wording remains:
+`CONFIRMA TU ASISTENCIA`
 
 ### P0 · GA4 stream metadata housekeeping
 Update the GA4 Web Stream site URL from the previous personal GitHub Pages address to:
@@ -194,7 +232,7 @@ Validate logo sizing, partner hierarchy, mobile readability, overflow/clipping, 
 
 ## NEXT ACTION
 
-1. `Verify/correct forms.app wording and 14:00 arrival / 14:25 kickoff distinction.`
+1. `Correct forms.app wording and 14:00 arrival / 14:25 kickoff distinction; remove reservation implication.`
 2. `Update GA4 Web Stream URL metadata to https://packersmexico.github.io/.`
 3. `Run final 390×844 + 1440×900 real-browser QA on the public Hub.`
 4. `Verify final click events in GA4, classifying QA traffic separately.`
@@ -202,4 +240,4 @@ Validate logo sizing, partner hierarchy, mobile readability, overflow/clipping, 
 
 ## LAST RELEVANT CHANGE
 
-`Source/Figma parity QA completed: 25/25 contract checks PASS; exact public browser QA remains intentionally open.`
+`User screenshot QA recorded: Hub perceptual PASS at provided viewport; forms.app P0 wording/timing/reservation hold confirmed.`
