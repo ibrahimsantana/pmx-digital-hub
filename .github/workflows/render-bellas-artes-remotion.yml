@@ -35,13 +35,9 @@ jobs:
       - name: Download exact PACKERS MÉXICO V1.1 logo
         run: |
           set -euo pipefail
+          python -m pip install --quiet gdown
           rm -f public/pmx_logo_exact.svg
-          curl -L --fail --retry 3 \
-            'https://drive.usercontent.google.com/download?id=1oF6Fkw7f32j3DGd7ftpU_0uI7Bm50tLI&export=download&confirm=t' \
-            -o public/pmx_logo_exact.svg || \
-          curl -L --fail --retry 3 \
-            'https://drive.google.com/uc?export=download&id=1oF6Fkw7f32j3DGd7ftpU_0uI7Bm50tLI' \
-            -o public/pmx_logo_exact.svg
+          gdown 'https://drive.google.com/uc?id=1oF6Fkw7f32j3DGd7ftpU_0uI7Bm50tLI' -O public/pmx_logo_exact.svg
           test -s public/pmx_logo_exact.svg
           grep -qi '<svg' public/pmx_logo_exact.svg
           echo "PMX exact SVG bytes: $(wc -c < public/pmx_logo_exact.svg)"
