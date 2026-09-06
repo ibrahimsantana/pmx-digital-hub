@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Calendario 2026 de Green Bay en horario CDMX: 17 juegos, local/visita, primetime, bye week y Week 18 TBD. PACKERS MÉXICO.">
+    <meta name="theme-color" content="#081D13">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="Calendario Packers 2026 · Horario CDMX · PACKERS MÉXICO">
+    <meta property="og:description" content="Guarda el calendario completo 2026 de Green Bay con horarios convertidos a CDMX.">
+    <meta property="og:url" content="https://packersmexico.github.io/calendario/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Calendario Packers 2026 · PACKERS MÉXICO">
+    <meta name="twitter:description" content="Todos los juegos 2026 de Green Bay en horario CDMX.">
+    <link rel="canonical" href="https://packersmexico.github.io/calendario/">
+    <title>Calendario Packers 2026 · PACKERS MÉXICO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="calendar.css">
+    <script src="config.js" defer></script>
+    <script src="../js/analytics.js" defer></script>
+    <script src="calendar.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al calendario</a>
+
+    <header class="calendar-header" aria-label="PACKERS MÉXICO · Calendario 2026">
+      <div class="calendar-header__inner">
+        <a data-hub-link href="https://packersmexico.github.io/" aria-label="Volver al Hub de PACKERS MÉXICO">
+          <img class="brand-logo" src="../assets/PMX_LOGO_HISTORICO_HORIZONTAL_CANVA_MASTER_V1.1.svg" alt="PACKERS MÉXICO">
+        </a>
+        <a class="hub-back" data-hub-link href="https://packersmexico.github.io/">VOLVER AL HUB →</a>
+      </div>
+    </header>
+
+    <main id="contenido" class="calendar-shell">
+      <section aria-labelledby="calendar-title">
+        <p class="calendar-kicker">PACKERS MÉXICO · HORARIOS CDMX</p>
+        <h1 id="calendar-title" class="calendar-title">TEMPORADA 2026</h1>
+        <p class="calendar-deck">Todos los juegos de Green Bay en una sola página, convertidos a horario de Ciudad de México y listos para consultar durante toda la temporada.</p>
+        <div class="calendar-stats" aria-label="Resumen de temporada">
+          <span>17 JUEGOS</span><span>9 CASA</span><span>8 VISITA</span><span>6 PRIMETIME</span><span>BYE W11</span>
+        </div>
+      </section>
+
+      <section class="next-game" aria-labelledby="next-opponent">
+        <p id="next-week" class="next-game__eyebrow">PRÓXIMO JUEGO</p>
+        <div class="next-game__grid">
+          <div>
+            <h2 id="next-opponent" class="next-game__opponent">PACKERS</h2>
+            <p id="next-meta" class="next-game__meta"></p>
+          </div>
+          <div>
+            <div id="next-time" class="next-game__time">TBD</div>
+          </div>
+        </div>
+        <div class="next-game__actions">
+          <a class="calendar-action calendar-action--primary" data-hub-link href="https://packersmexico.github.io/">VER GAME DAY PMX →</a>
+          <a id="google-calendar-link" class="calendar-action" href="#">ABRIR CALENDARIO PMX →</a>
+          <button id="share-calendar" class="calendar-action" type="button">COMPARTIR CALENDARIO →</button>
+          <p id="share-status" class="share-status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section aria-labelledby="schedule-heading">
+        <div class="schedule-toolbar">
+          <h2 id="schedule-heading" class="schedule-heading">WEEK 1 → 18</h2>
+          <div class="schedule-filters" aria-label="Filtrar calendario">
+            <button class="filter-button" type="button" data-filter="ALL" aria-pressed="true">TODOS</button>
+            <button class="filter-button" type="button" data-filter="HOME" aria-pressed="false">CASA</button>
+            <button class="filter-button" type="button" data-filter="AWAY" aria-pressed="false">VISITA</button>
+            <button class="filter-button" type="button" data-filter="PRIME" aria-pressed="false">PRIMETIME</button>
+          </div>
+        </div>
+        <div id="schedule-list" class="schedule-list" aria-live="polite"></div>
+      </section>
+
+      <p class="calendar-note"><span id="flex-note"></span> Fuente: <a id="source-link" href="https://www.packers.com/schedule/">Green Bay Packers · calendario oficial 2026</a>. PACKERS MÉXICO presenta esta página como utilidad independiente para aficionados.</p>
+    </main>
+
+    <footer class="calendar-footer">
+      <div class="calendar-footer__inner">
+        <div>
+          <p class="calendar-footer__brand">PACKERS MÉXICO</p>
+          <nav class="calendar-footer__links" aria-label="Recursos PACKERS MÉXICO">
+            <a data-hub-link href="https://packersmexico.github.io/">Hub</a>
+            <a href="https://www.instagram.com/packers_mx/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://x.com/Packers_Mx" target="_blank" rel="noopener noreferrer">X</a>
+            <a href="https://www.facebook.com/gopackgomx/" target="_blank" rel="noopener noreferrer">Facebook</a>
+          </nav>
+        </div>
+        <p class="calendar-footer__legal">© PACKERS MÉXICO · no afiliado oficialmente con NFL/Green Bay Packers. Horarios sujetos a cambios oficiales.</p>
+      </div>
+    </footer>
+  </body>
+</html>
