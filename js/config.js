@@ -22,7 +22,7 @@ window.PMX_CONFIG = Object.freeze({
   specialEnabled: false,
   specialTitle: "",
   specialDescription: "",
-  calendarUrl: "https://calendar.google.com/calendar/u/0?cid=ZTNjMzY1NjdlMTRlNjcwZTczYWMzMWI4ZTMyNDA3NWU5Y2M4NThmOTE2YjExNGQ4ZGZkNThkMDI0NTQyNDY5MkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t",
+  calendarUrl: "https://packersmexico.github.io/calendario/",
   gopackgoUrl: "https://www.youtube.com/@gopackgomx6092",
   analytics: Object.freeze({
     GA4_MEASUREMENT_ID: "G-QEN5F5YY14",
