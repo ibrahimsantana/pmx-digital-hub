@@ -60,12 +60,12 @@
   }
 
   function renderGame() {
-    var relation = config.homeAway === "AWAY" ? "AT " : config.homeAway === "HOME" ? "VS " : "";
-    var mobileKicker = [config.kickerMobile || "PRÓXIMO JUEGO", config.week].filter(Boolean).join(" · ");
-    var desktopKicker = [config.kickerDesktop || config.kickerMobile || "PRÓXIMO JUEGO", config.week].filter(Boolean).join(" · ");
+    var relation = config.homeAway === "AWAY" ? "@ " : config.homeAway === "HOME" ? "VS " : "";
+    var gameLabel = config.gameLabel || config.kickerDesktop || config.kickerMobile || "";
+    var kicker = [config.week, gameLabel].filter(Boolean).join(" · ");
 
-    setText("game-kicker-mobile", mobileKicker);
-    setText("game-kicker-desktop", desktopKicker);
+    setText("game-kicker-mobile", kicker);
+    setText("game-kicker-desktop", kicker);
     setText("game-heading-primary", "PACKERS");
     setText("game-heading-secondary", relation + (config.opponent || "RIVAL PENDIENTE"));
     setText("game-datetime", [config.date, config.time ? config.time + " CDMX" : ""].filter(Boolean).join(" · "));
