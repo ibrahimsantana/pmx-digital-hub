@@ -50,7 +50,11 @@
 
   function renderNext(game) {
     if (!game) return;
-    document.getElementById("next-week").textContent = "WEEK " + game.week + (game.special ? " · " + game.special : "");
+    var descriptors = ["WEEK " + game.week];
+    if (game.special) descriptors.push(game.special);
+    if (game.uniform) descriptors.push(game.uniform);
+    if (game.opponentUniform) descriptors.push(game.opponentUniform);
+    document.getElementById("next-week").textContent = descriptors.join(" · ");
     document.getElementById("next-opponent").textContent = matchupLabel(game);
     document.getElementById("next-meta").textContent = game.dateLabel + " · " + locationLabel(game) + (game.tv ? " · " + game.tv : "");
     document.getElementById("next-time").textContent = game.time ? game.time : "TBD";
@@ -95,6 +99,8 @@
       if (game.site !== "BYE") meta.appendChild(createMetaItem(locationLabel(game), false));
       if (game.tv) meta.appendChild(createMetaItem(game.tv, false));
       if (game.special) meta.appendChild(createMetaItem(game.special, true));
+      if (game.uniform) meta.appendChild(createMetaItem(game.uniform, true));
+      if (game.opponentUniform) meta.appendChild(createMetaItem(game.opponentUniform, true));
       opponent.append(name, meta);
 
       var time = document.createElement("div");
@@ -131,6 +137,21 @@
     updateFilterButtons();
   }
 
+  function configureSocialTracking() {
+    document.querySelectorAll("[data-social]").forEach(function (link) {
+      var network = link.getAttribute("data-social");
+      link.addEventListener("click", function () {
+        if (!window.pmxTrack) return;
+        window.pmxTrack("CLICK_SOCIAL", {
+          cta_id: "calendar-social-" + network,
+          destination_type: "social",
+          destination_url: link.href,
+          social_network: network
+        });
+      });
+    });
+  }
+
   function configureLinks() {
     var hubLinks = document.querySelectorAll("[data-hub-link]");
     hubLinks.forEach(function (link) { link.href = preserveAttribution(season.hubUrl); });
@@ -153,6 +174,8 @@
         });
       }
     });
+
+    configureSocialTracking();
   }
 
   function configureShare() {
