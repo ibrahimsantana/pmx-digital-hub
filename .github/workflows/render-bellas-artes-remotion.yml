@@ -4,7 +4,6 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - remotion/bellas-artes-2026
       - remotion/bellas-artes-cover-cta
     paths:
       - 'remotion/bellas-artes-2026/**'
@@ -33,42 +32,59 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Download generated cover and CTA art
+      - name: Download exact PACKERS MÉXICO V1.1 logo
         run: |
-          curl -L --fail 'https://media.canva.com/v2/image-resize/format:PNG/height:200/quality:100/uri:ifs%3A%2F%2FM%2Fc582711b-96e3-4e37-b594-45e505fa4b2a/watermark:F/width:112?csig=AAAAAAAAAAAAAAAAAAAAAGKt0hdnBPlN_6OcRplE0RKruaMbPnPAwoHrkfJ0Lzns&exp=1788669099&osig=AAAAAAAAAAAAAAAAAAAAAKc_dNdQWIAH5J-Pym7jUXghO0PGuUuR8gnm5N7rELnA&signer=media-rpc&x-canva-quality=thumbnail' -o public/cover_generated.png
-          curl -L --fail 'https://media.canva.com/v2/image-resize/format:PNG/height:200/quality:100/uri:ifs%3A%2F%2FM%2F52ccd17f-d53a-47e2-8770-2293bc61370f/watermark:F/width:112?csig=AAAAAAAAAAAAAAAAAAAAAB0tPd45TBXiQJ0XJyrJswxoej_9J05fFHFlRzJSEi9I&exp=1788668196&osig=AAAAAAAAAAAAAAAAAAAAAI-ESdOgypV6jeRS6ECBCjdTP202Kq2REHlcfkj6rNzH&signer=media-rpc&x-canva-quality=thumbnail' -o public/cta_generated.png
+          set -euo pipefail
+          rm -f public/pmx_logo_exact.svg
+          curl -L --fail --retry 3 \
+            'https://drive.usercontent.google.com/download?id=1oF6Fkw7f32j3DGd7ftpU_0uI7Bm50tLI&export=download&confirm=t' \
+            -o public/pmx_logo_exact.svg || \
+          curl -L --fail --retry 3 \
+            'https://drive.google.com/uc?export=download&id=1oF6Fkw7f32j3DGd7ftpU_0uI7Bm50tLI' \
+            -o public/pmx_logo_exact.svg
+          test -s public/pmx_logo_exact.svg
+          grep -qi '<svg' public/pmx_logo_exact.svg
+          echo "PMX exact SVG bytes: $(wc -c < public/pmx_logo_exact.svg)"
 
       - name: Verify required media
         run: |
           test -f public/jen_master.mp4 || (echo 'Missing public/jen_master.mp4' && exit 2)
-          test -f public/pmx_logo_v11.png || (echo 'Missing public/pmx_logo_v11.png' && exit 2)
           test -f public/colectivo_logo.webp || (echo 'Missing public/colectivo_logo.webp' && exit 2)
-          test -f public/cover_generated.png || (echo 'Missing cover_generated.png' && exit 2)
-          test -f public/cta_generated.png || (echo 'Missing cta_generated.png' && exit 2)
+          test -f public/pmx_logo_exact.svg || (echo 'Missing exact PMX V1.1 SVG' && exit 2)
 
       - name: Install ffmpeg
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
-      - name: Prepare higher-quality Jen source
+      - name: Prepare clean higher-quality Jen source
         run: |
-          ffmpeg -y -i public/jen_master.mp4 \
-            -vf "scale=1080:1920:flags=lanczos,eq=contrast=1.025:saturation=1.045:brightness=0.005,unsharp=5:5:0.30:5:5:0.0" \
+          # Source is 32.833 s. CapCut end-card begins around 31 s.
+          # Trim to 30.75 s: all spoken copy is preserved (last locked subtitle ends at 29.164 s).
+          ffmpeg -y -i public/jen_master.mp4 -t 30.75 \
+            -vf "scale=1080:1920:flags=lanczos,eq=contrast=1.025:saturation=1.04:brightness=0.005,unsharp=5:5:0.28:5:5:0.0" \
             -c:v libx264 -preset slow -crf 15 -pix_fmt yuv420p \
             -c:a aac -b:a 192k \
             public/jen_master_hq.mp4
 
-      - name: Render Reel
+      - name: Render Reel V6
         run: npm run render
 
-      - name: Render Cover
+      - name: Render Cover V6
         run: npm run still
+
+      - name: Export QA frames
+        run: |
+          mkdir -p out/qa
+          for t in 0.8 2.3 5.5 10.0 16.0 22.0 28.0 33.0 34.7; do
+            ffmpeg -y -ss "$t" -i out/pmx-bellas-artes-reel.mp4 -frames:v 1 -q:v 2 "out/qa/frame-${t}s.jpg" >/dev/null 2>&1
+          done
 
       - name: Upload render artifact
         uses: actions/upload-artifact@v4
         with:
-          name: PMX-Bellas-Artes-Remotion-Render-V5-CoverCTA
+          name: PMX-Bellas-Artes-Remotion-V6-FINAL-QA
           path: |
             remotion/bellas-artes-2026/out/pmx-bellas-artes-reel.mp4
             remotion/bellas-artes-2026/out/pmx-bellas-artes-cover.png
+            remotion/bellas-artes-2026/out/qa/*.jpg
           if-no-files-found: error
           retention-days: 14
