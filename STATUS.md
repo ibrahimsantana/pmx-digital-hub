@@ -18,7 +18,7 @@ Season Calendar route: `https://packersmexico.github.io/calendario/`
 
 ## STATUS
 
-`CORE HUB TECHNICAL PASS · GA4 PASS · CALENDAR 2026 IMPLEMENTED IN SOURCE · CALENDAR PUBLIC BROWSER QA PENDING · FIGMA CALENDAR VISUAL FAMILY CONNECTOR HOLD · EXTERNAL FORM DEPENDENCY`
+`CORE HUB TECHNICAL PASS · GA4 PASS · CALENDAR 2026 IMPLEMENTED IN SOURCE · PUBLIC GOOGLE CALENDAR COMPLETE · SOCIAL FOOTER 5/5 · SPECIAL THEMES/UNIFORMS MAPPED · CALENDAR PUBLIC BROWSER QA PENDING · FIGMA CALENDAR VISUAL FAMILY CONNECTOR HOLD · 03.5 ASSET PACKAGE PENDING · EXTERNAL FORM DEPENDENCY`
 
 ## CORE HUB · WEEK 1
 
@@ -73,9 +73,74 @@ Calendar capabilities:
 - explicit independent-brand disclaimer
 - no opponent NFL logos used; avoids unvalidated/unmaterialized asset substitutions
 
+Social footer:
+`PASS · 5/5 DESTINATIONS`
+- Instagram
+- X
+- Facebook
+- TikTok
+- YouTube
+
+Social click tracking:
+`CLICK_SOCIAL · PRESERVED TAXONOMY`
+
 Hub integration:
 - root Hub navigation now labels and routes `CALENDARIO 2026` to `/calendario/`
 - same permanent root Hub URL remains unchanged
+
+## SPECIAL THEMES / UNIFORM METADATA
+
+Mapped in calendar source:
+- W3 · Alumni Weekend / Home Opener
+- W5 · NFL Rivalries · Packers Rivalries uniform CONFIRMED
+- W6 · Packers Vs. Cancer
+- W8 · Bob Harlan Tribute
+- W10 · Salute to Service
+- W12 · Thanksgiving Eve
+- W14 · 1923 Classic + Walter Payton Man of the Year · Packers 1923 Classic uniform CONFIRMED
+- W15 · Inspire Change
+- W16 · Christmas Day · Bears Rivalries uniform CONFIRMED; no Packers special uniform inferred
+- W17 · NFL Play 60
+- W18 · Fan Appreciation · day/time TBD
+
+Visual-asset rule:
+`METADATA MAY DISPLAY · TEAM/UNIFORM VISUALS REQUIRE 03.5 RETURN BEFORE PRODUCTION USE`
+
+## PUBLIC GOOGLE CALENDAR
+
+Calendar:
+`PACKERS MÉXICO · Game Days 2026–27`
+
+Calendar ID:
+`e3c36567e14e670e73ac31b8e324075e9cc858f916b114d8dfd58d0245424692@group.calendar.google.com`
+
+State:
+`PASS · COMPLETE SEASON AGENDA CREATED`
+
+Coverage:
+- Week 1 existing Game Day event retained
+- Weeks 2–10 created
+- Week 11 BYE marker created
+- Weeks 12–17 created
+- Week 18 created as transparent Jan 9–10 official scheduling window marker with `FECHA/HORA TBD`
+
+Every game event:
+- uses `America/Mexico_City`
+- points back to PMX Hub with tracked URL
+- points to full Season Calendar page with tracked URL
+- is public and transparent/non-blocking
+- uses Wingstop Condesa as PMX Game Day location where applicable
+- carries special theme/uniform metadata when confirmed
+- includes independent-brand disclaimer
+
+Tracking convention from Google Calendar:
+- `utm_source=google_calendar`
+- `utm_medium=calendar_event`
+- `utm_campaign=pmx_2026_schedule`
+- `utm_content=w##_rival`
+
+Week 18 note:
+`Calendar event intentionally spans Jan 9–10 as a placeholder window and MUST be updated when NFL/Packers confirms exact day/time/network.`
 
 ## CALENDAR ANALYTICS
 
@@ -89,6 +154,7 @@ Calendar page configuration:
 Existing event usage:
 - page load → `HUB_VIEW`
 - Google Calendar CTA → `CLICK_CALENDAR`
+- footer social clicks → `CLICK_SOCIAL`
 
 Share URL carries:
 - `utm_source=calendar`
@@ -115,6 +181,8 @@ Verified:
 - tracking preserves existing event taxonomy
 - conditional share fallbacks exist
 - internal links preserve incoming UTM attribution
+- footer now contains all five current PMX social destinations
+- confirmed special-theme/uniform metadata is rendered as text only until 03.5 asset return
 
 Limitation:
 `This is source-level QA, not a public-browser PASS for the newly created /calendario/ route.`
@@ -140,6 +208,30 @@ Write state:
 `HOLD · FIGMA MCP NETWORK CONNECTION FAILED`
 
 This is a connector/network failure, not a permissions failure. Figma account was confirmed with Full seat on `Ibrahim · Design Lab`. No Figma canvas PASS is claimed and no fake completion is recorded.
+
+## 03.5 · REQUIRED SEASON VISUAL PACKAGE
+
+State:
+`PENDING HANDOFF / RETURN`
+
+Request scope:
+- official/traceable opponent logo asset for every unique 2026 opponent
+- Packers Rivalries official visual/uniform references for W5
+- Packers 1923 Classic + leather-look helmet official visual references for W14
+- Bears Rivalries official visual/uniform reference for W16
+- official theme visuals only where useful and licensable/usable under 03.5 rules
+
+03.5 must return per asset:
+- ID / normalized filename
+- exact source URL
+- asset URL when available
+- author/credit when applicable
+- context and subject identification
+- rights/authorization state
+- restrictions
+- recommended usage
+
+No pseudo-logo, redraw, recolor, watermark removal, or AI recreation may substitute for a missing official asset.
 
 ## IDENTITY / ASSETS
 
@@ -209,13 +301,13 @@ Governance treatment remains with `00` / partnership contact.
 
 ## NEXT ACTION
 
-1. `Wait for GitHub Pages deployment of /calendario/.`
-2. `Run exact public-browser QA on /calendario/ at 390×844 and 1440×900.`
-3. `Verify calendar HUB_VIEW + CLICK_CALENDAR in GA4 while classifying QA traffic separately.`
+1. `Run exact public-browser QA on /calendario/ at 390×844 and 1440×900.`
+2. `Verify calendar HUB_VIEW + CLICK_CALENDAR + CLICK_SOCIAL in GA4 while classifying QA traffic separately.`
+3. `Send 03.5 season visual-package request and wait for official/traceable asset return.`
 4. `Resume Figma Feed + Story build when Figma connector is reachable.`
 5. `After calendar browser QA PASS, use /calendario/ as a shareable acquisition destination.`
-6. `Monitor official NFL/Packers flex-schedule changes and update one source file when changes occur.`
+6. `Monitor official NFL/Packers flex-schedule changes and update source + Google Calendar once changes occur.`
 
 ## LAST RELEVANT CHANGE
 
-`Season Calendar 2026 source implementation completed and linked from the Hub. Official 2026 schedule facts and CDMX conversions are represented without opponent logos. Public browser QA for the new calendar route and Figma visual-family production remain open.`
+`Calendar footer expanded to Instagram/X/Facebook/TikTok/YouTube with CLICK_SOCIAL tracking; special themes/uniform metadata added; public Google Calendar now contains the complete 2026 season agenda including BYE and Week 18 TBD window, with tracked links back to the PMX Hub and Season Calendar.`
