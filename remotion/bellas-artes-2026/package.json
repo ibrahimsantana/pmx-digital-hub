@@ -5,7 +5,7 @@
   "scripts": {
     "studio": "remotion studio src/index.ts",
     "render": "remotion render src/index.ts PMX-BellasArtes-Reel-Master out/pmx-bellas-artes-reel.mp4 --codec=h264 --crf=14 --pixel-format=yuv420p",
-    "still": "remotion still src/index.ts PMX-BellasArtes-Cover out/pmx-bellas-artes-cover.png --frame=120"
+    "still": "remotion still src/index.ts PMX-BellasArtes-Cover out/pmx-bellas-artes-cover.png --frame=30"
   },
   "dependencies": {
     "@fontsource/bebas-neue": "5.2.6",
