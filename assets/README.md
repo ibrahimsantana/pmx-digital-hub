@@ -16,7 +16,7 @@ Fuente autoritativa Drive:
 - SHA-256: `8407762a98552a7e7056aa687a1b259cc386fd2fc8fed5c6833dab5a937eff6f`
 - MD5: `df6e08b10194bda73d07003dcc0d2a8a`
 
-Componente vigente verificado en el Brand Book V5.1 de Figma:
+Componente vigente verificado en Figma:
 
 - fileKey: `z30v1pEwZPp7F4sV7JaExJ`
 - node: `75:4098`
@@ -24,35 +24,36 @@ Componente vigente verificado en el Brand Book V5.1 de Figma:
 - preview: `800×200`
 - export: `SVG`
 
-Estado de materialización:
-
-`✅ ORIGINAL DRIVE BYTES RECOVERED AND CHECKSUM-VERIFIED IN PROJECT RUNTIME`
-
 Estado en repositorio:
 
-`🟡 HOLD · EXACT SVG NOT YET COMMITTED`
+`✅ PASS · EXACT SVG COMMITTED AND USED BY PUBLIC HUB`
 
-El conector GitHub actual no expone upload binario/local-file para repo contents. No reexportar, reconstruir ni copiar desde screenshot. El siguiente upload debe usar exactamente el archivo checksum-verified.
+Ruta:
+`assets/PMX_LOGO_HISTORICO_HORIZONTAL_CANVA_MASTER_V1.1.svg`
 
-Mientras el repo siga en HOLD, el Hub usa únicamente fallback tipográfico `PACKERS MÉXICO`; no muestra pseudo-logo ni texto técnico de placeholder.
+No reexportar, reconstruir, recolorear, separar ni sustituir este asset.
 
-## Disponibles fuera del repositorio
+## Partner · Wingstop Condesa
 
 ### `WS-LOGO-01.jpg`
 
 Estado:
-`MATERIALIZED IN PROJECT CONTEXT · SOURCE-VERIFIED TECHNICAL ASSET · MASTER FORMAT HOLD`
+`✅ MATERIALIZED · SOURCE-VERIFIED TECHNICAL ASSET · PUBLIC HUB ACTIVE · MASTER FORMAT HOLD`
 
-Uso:
-- puede utilizarse en el partner slot cuando el flujo de entrega binaria lo permita;
-- partner slot debe seguir siendo reemplazable;
+Ruta:
+`assets/WS-LOGO-01.jpg`
+
+Uso permitido en este Hub:
+- identificación secundaria de la sede aliada Wingstop Condesa;
+- mantener jerarquía visual subordinada a PACKERS MÉXICO;
+- conservar el JPG tal cual;
 - no vectorizar;
 - no quitar fondo artificialmente;
 - no recolorear;
 - no reconstruir;
 - no elevar a master anual definitivo.
 
-El archivo no es requisito para el layout actual.
+El master SVG/PNG HQ transparente de Wingstop sigue pendiente y podrá sustituir este recurso sin cambiar la arquitectura del partner slot.
 
 ## Dependencias pendientes no bloqueantes
 
